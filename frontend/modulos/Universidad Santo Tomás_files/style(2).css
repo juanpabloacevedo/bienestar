@@ -1,0 +1,312 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 28, 2015, 11:12:37 AM
+    Author     : DiepBap
+*/
+#jux-slideshow-home .jux-event-slider .jux-slide-caption-info{
+    padding-top: 7%;
+    margin-left: -14px;
+}
+#jux-slideshow-home {
+  margin-top: 10px;
+}
+#jux-slideshow-home .jux-event-slider #jux-slider {
+  position: relative;
+}
+#jux-slideshow-home .jux-event-slider #jux-slider .caroufredsel_wrapper {
+  margin: 0px!important;
+}
+#jux-slideshow-home .jux-event-slider #jux-slider ul.jux-sliders {
+  /*                width: 100%!important;*/
+}
+#jux-slideshow-home .jux-event-slider #jux-slider ul.jux-sliders li.jux-slide-item {
+  float: left;
+  position: relative;
+  /*height: 100%;*/
+  margin-left: -12px;
+  /*                    @media screen and(max-width: 767px){
+                        img{ 
+                            height: 300px;
+                        }
+                    }
+                    @media screen and(max-width: 480px){
+                        img{ 
+                             height: 230px;
+                        }
+                    }*/
+}
+#jux-slideshow-home .jux-event-slider #jux-slider ul.jux-sliders li.jux-slide-item img {
+  width: 100%;
+  height: auto;
+}
+#jux-slideshow-home .jux-event-slider #jux-slider ul.jux-sliders .jux-events-time .jux-slide-caption {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+  left: 2.65em;
+  right: 2.65em;
+  width: auto;
+  color: #fff;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.58);
+  -webkit-box-shadow: 0 0 0 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0 17px rgba(0, 0, 0, 0.31);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 0px;
+  padding: 30px;
+  margin: 0;
+  text-align: center;
+  margin-left: -12px;
+}
+#jux-slideshow-home .jux-event-slider #jux-slider ul.jux-sliders .jux-events-time .jux-slide-caption .jux-slide-caption-info h5.title-slide {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 18px;
+  font-weight: 300;
+  margin-top: 0;
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  #jux-slideshow-home .jux-event-slider #jux-slider ul.jux-sliders .jux-events-time .jux-slide-caption .jux-slide-caption-info h5.title-slide {
+    display: none;
+  }
+}
+#jux-slideshow-home .jux-event-slider #jux-slider ul.jux-sliders .jux-events-time .jux-slide-caption .jux-slide-caption-info h3 {
+  font-weight: normal;
+  margin-top: 5px;
+}
+#jux-slideshow-home .jux-event-slider #jux-slider ul.jux-sliders .jux-events-time .jux-slide-caption .jux-slide-caption-info h3 a {
+  font-size: 23px;
+  color: #fff;
+}
+#jux-slideshow-home .jux-event-slider #jux-slider ul.jux-sliders .jux-events-time .jux-slide-caption .jux-slide-caption-info h3 a:hover {
+  color: #ffdb50;
+  text-decoration: none;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+@media screen and (max-width: 767px) {
+  #jux-slideshow-home .jux-event-slider #jux-slider ul.jux-sliders .jux-events-time .jux-slide-caption .jux-slide-caption-info h3 a {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 480px) {
+  #jux-slideshow-home .jux-event-slider #jux-slider ul.jux-sliders .jux-events-time .jux-slide-caption .jux-slide-caption-info h3 a {
+    font-size: 11px;
+  }
+}
+@media screen and (max-width: 480px) {
+  #jux-slideshow-home .jux-event-slider #jux-slider ul.jux-sliders .jux-events-time .jux-slide-caption .jux-slide-caption-info h3 {
+    line-height: 13px;
+  }
+}
+#jux-slideshow-home .jux-event-slider #jux-slider ul.jux-sliders .jux-events-time .jux-slide-caption .jux-slide-caption-info .content-meta {
+  color: #dcdcdc;
+  font-weight: 300;
+}
+@media screen and (max-width: 360px) {
+  #jux-slideshow-home .jux-event-slider #jux-slider ul.jux-sliders .jux-events-time .jux-slide-caption .jux-slide-caption-info .content-meta {
+    display: none;
+  }
+}
+#jux-slideshow-home .jux-event-slider #jux-slider ul.jux-sliders .jux-events-time .jux-slide-caption .jux-slide-caption-info .content-meta span {
+  padding-right: 15px;
+  font-size: 13px;
+}
+#jux-slideshow-home .jux-event-slider #jux-slider ul.jux-sliders .jux-events-time .jux-slide-caption .jux-slide-caption-info .content-meta span > i {
+  padding-right: 4px;
+  color: #ffdb50;
+}
+@media screen and (max-width: 480px) {
+  #jux-slideshow-home .jux-event-slider #jux-slider ul.jux-sliders .jux-events-time .jux-slide-caption .jux-slide-caption-info .content-meta span {
+    padding-right: 0px;
+  }
+}
+@media screen and (max-width: 767px) {
+  #jux-slideshow-home .jux-event-slider #jux-slider ul.jux-sliders .jux-events-time .jux-slide-caption .jux-event-time {
+    display: none;
+  }
+}
+#jux-slideshow-home .jux-event-slider #jux-slider ul.jux-sliders .jux-events-time .jux-slide-caption .jux-event-time {
+  border-left: 2px solid #fcc905;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-right: 0px;
+}
+#jux-slideshow-home .jux-event-slider #jux-slider ul.jux-sliders .jux-events-time .jux-slide-caption .jux-event-time .jux-event-countdown .dash {
+  height: 87px;
+}
+#jux-slideshow-home .jux-event-slider #jux-slider ul.jux-sliders .jux-events-time .jux-slide-caption .jux-event-time .jux-event-countdown .dash .time_number {
+  top: -5px;
+  height: 90px;
+  font-size: 1.5em;
+  line-height: 90px;
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+}
+#jux-slideshow-home .jux-event-slider #jux-slider ul.jux-sliders .jux-events-time .jux-slide-caption .jux-event-time .jux-event-countdown .dash .time_number .digit {
+  color: #fff;
+  line-height: 45px;
+  display: block;
+  overflow: hidden;
+  font-size: 40px;
+  font-weight: bold;
+  width: 44%;
+  float: left;
+  padding: 0px 2px;
+}
+#jux-slideshow-home .jux-event-slider #jux-slider ul.jux-sliders .jux-events-time .jux-slide-caption .jux-event-time .jux-event-countdown .dash .time_number .digit.text-right {
+  text-align: right;
+}
+#jux-slideshow-home .jux-event-slider #jux-slider ul.jux-sliders .jux-events-time .jux-slide-caption .jux-event-time .jux-event-countdown .dash .time_number .digit.text-left {
+  text-align: left;
+}
+#jux-slideshow-home .jux-event-slider #jux-slider ul.jux-sliders .jux-events-time .jux-slide-caption .jux-event-time .jux-event-countdown .dash .time_number h5.dash_title {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  font-size: 18px;
+  color: #fff;
+  font-weight: bold;
+  margin: 0 auto;
+  padding-top: 0;
+  display: inline-block;
+  left: -5px;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  #jux-slideshow-home .jux-event-slider #jux-slider ul.jux-sliders .jux-events-time .jux-slide-caption .jux-event-time {
+    border: none;
+  }
+}
+/*@media screen and (max-width: 1024px) {
+  #jux-slideshow-home .jux-event-slider #jux-slider ul.jux-sliders .jux-events-time .jux-slide-caption {
+    top: 34%;
+    padding: 10px;
+  }
+}
+@media screen and (max-width: 360px) {
+  #jux-slideshow-home .jux-event-slider #jux-slider ul.jux-sliders .jux-events-time .jux-slide-caption {
+    top: 14%;
+    padding: 10px;
+  }
+}*/
+#jux-slideshow-home li {
+  list-style: none;
+}
+#jux-slideshow-home .prev-btn {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+  background: url("../images/prev-icon.png") no-repeat scroll 0 0 transparent;
+  width: 100px;
+  left: 7px;
+  background-size: 50% 101%;
+  height: 100px;
+}
+/*@media screen and (max-width: 1024px) and (min-width: 900px) {
+  #jux-slideshow-home .prev-btn {
+    top: 38%;
+  }
+}
+@media screen and (max-width: 900px) {
+  #jux-slideshow-home .prev-btn {
+    top: 37%;
+  }
+}
+@media screen and (max-width: 767px) {
+  #jux-slideshow-home .prev-btn {
+    background-size: 32% 68%;
+    margin-top: 0px;
+    top: 36%;
+  }
+}*/
+@media screen and (max-width: 480px) {
+  #jux-slideshow-home .prev-btn {
+    display: none!important;
+  }
+}
+#jux-slideshow-home .next-btn {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+  background: url("../images/next-icon.png") no-repeat scroll 0 0 transparent;
+  width: 100px;
+  right: -41px;
+  background-size: 50% 101%;
+  height: 100px;
+}
+/*@media screen and (max-width: 1024px) and (min-width: 900px) {
+  #jux-slideshow-home .next-btn {
+    top: 38%;
+  }
+}
+@media screen and (max-width: 900px) {
+  #jux-slideshow-home .next-btn {
+    top: 37%;
+  }
+}
+@media screen and (max-width: 767px) {
+  #jux-slideshow-home .next-btn {
+    background-size: 32% 68%;
+    margin-top: 0px;
+    right: -46px;
+    top: 36%;
+  }
+}*/
+@media screen and (max-width: 480px) {
+  #jux-slideshow-home .next-btn {
+    display: none!important;
+  }
+}
+#jux-slideshow-home #jux-slider-1-pagination {
+  position: absolute;
+  top: auto;
+  bottom: 9px;
+  left: 50%;
+  right: auto;
+  -webkit-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+}
+#jux-slideshow-home #jux-slider-1-pagination a {
+  -webkit-transition: all 0s ease 0s;
+  -o-transition: all 0s ease 0s;
+  transition: all 0s ease 0s;
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  text-indent: -999em;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  float: left;
+  margin: 3px 4px;
+  border: 1px solid #fff;
+}
+#jux-slideshow-home #jux-slider-1-pagination a.selected {
+  border: 0px solid #fff;
+  background: #fcc905;
+  margin: 3px 2px;
+}

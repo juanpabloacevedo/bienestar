@@ -1,0 +1,179 @@
+.social_slider {
+    position: fixed;
+    right: -370px;
+    z-index: 99997;
+}
+
+.social_slider .tab-links {
+    width:0px;
+}
+/*----- Icons -----*/
+
+.social_slider .tab-links i {
+    color: #fff;
+    position: absolute;
+    font-size: 18px;
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    vertical-align: bottom;
+    line-height: 43px;
+}
+
+.social_slider .tab-links #icon {
+    float: right;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    position: relative;
+    z-index: 99998;
+    display: block;
+    top: 16px;
+    right: 0;
+    margin-top: 3px;
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+.social_slider .tab-links #icon:hover, .social_slider .tab-links #icon:focus, .social_slider .tab-links #icon:active {
+    outline: none !important;
+		background-color: #fff;
+    overflow:hidden;
+    text-shadow: 0px 0px #d5d5d5, 1px 1px #d5d5d5, 2px 2px #d5d5d5, 3px 3px #d5d5d5, 4px 4px #d5d5d5, 5px 5px #d5d5d5, 6px 6px #d5d5d5, 7px 7px #d5d5d5, 8px 8px #d5d5d5, 9px 9px #d5d5d5, 10px 10px #d5d5d5, 11px 11px #d5d5d5, 12px 12px #d5d5d5, 13px 13px #d5d5d5, 14px 14px #d5d5d5, 15px 15px #d5d5d5, 16px 16px #d5d5d5, 17px 17px #d5d5d5, 18px 18px #d5d5d5, 19px 19px #d5d5d5, 20px 20px #d5d5d5, 21px 21px #d5d5d5, 22px 22px #d5d5d5, 23px 23px #d5d5d5, 24px 24px #d5d5d5, 25px 25px #d5d5d5, 26px 26px #d5d5d5, 27px 27px #d5d5d5, 28px 28px #d5d5d5, 29px 29px #d5d5d5, 30px 30px #d5d5d5 !important;
+}
+
+.social_slider .tab-links .facebook_icon {
+    background: #3B5997;
+    overflow: hidden;
+    text-shadow: 0px 0px #2d4278, 1px 1px #2d4278, 2px 2px #2d4278, 3px 3px #2d4278, 4px 4px #2d4278, 5px 5px #2d4278, 6px 6px #2d4278, 7px 7px #2d4278, 8px 8px #2d4278, 9px 9px #2d4278, 10px 10px #2d4278, 11px 11px #2d4278, 12px 12px #2d4278, 13px 13px #2d4278, 14px 14px #2d4278, 15px 15px #2d4278, 16px 16px #2d4278, 17px 17px #2d4278, 18px 18px #2d4278, 19px 19px #2d4278, 20px 20px #2d4278, 21px 21px #2d4278, 22px 22px #2d4278, 23px 23px #2d4278, 24px 24px #2d4278, 25px 25px #2d4278, 26px 26px #2d4278, 27px 27px #2d4278, 28px 28px #2d4278, 29px 29px #2d4278, 30px 30px #2d4278;
+}
+.social_slider .tab-links .facebook_icon:hover i, .social_slider .tab-links .facebook_icon:focus i, .social_slider .tab-links .facebook_icon:active i {
+    color: #3B5997;
+  }
+.social_slider .tab-content .facebook_box {
+    border: 10px solid #3B5997;
+}
+
+.social_slider .tab-links .twitter_icon {
+    margin-top: 7px;
+    background: #2CA9E1;
+    overflow: hidden;
+    text-shadow: 0px 0px #0087ba, 1px 1px #0087ba, 2px 2px #0087ba, 3px 3px #0087ba, 4px 4px #0087ba, 5px 5px #0087ba, 6px 6px #0087ba, 7px 7px #0087ba, 8px 8px #0087ba, 9px 9px #0087ba, 10px 10px #0087ba, 11px 11px #0087ba, 12px 12px #0087ba, 13px 13px #0087ba, 14px 14px #0087ba, 15px 15px #0087ba, 16px 16px #0087ba, 17px 17px #0087ba, 18px 18px #0087ba, 19px 19px #0087ba, 20px 20px #0087ba, 21px 21px #0087ba, 22px 22px #0087ba, 23px 23px #0087ba, 24px 24px #0087ba, 25px 25px #0087ba, 26px 26px #0087ba, 27px 27px #0087ba, 28px 28px #0087ba, 29px 29px #0087ba, 30px 30px #0087ba !important;
+}
+.social_slider .tab-links .twitter_icon:hover i, .social_slider .tab-links .twitter_icon:focus i, .social_slider .tab-links .twitter_icon:active{
+    color: #2CA9E1;
+}
+.social_slider .tab-content .twitter_box {
+    border: 10px solid #2CA9E1;
+}
+
+.social_slider .tab-links .google_icon {
+    margin-top: 7px;
+    background: #353631;
+    overflow: hidden;
+    text-shadow: 0px 0px #2A2B27, 1px 1px #2A2B27, 2px 2px #2A2B27, 3px 3px #2A2B27, 4px 4px #2A2B27, 5px 5px #2A2B27, 6px 6px #2A2B27, 7px 7px #2A2B27, 8px 8px #2A2B27, 9px 9px #2A2B27, 10px 10px #2A2B27, 11px 11px #2A2B27, 12px 12px #2A2B27, 13px 13px #2A2B27, 14px 14px #2A2B27, 15px 15px #2A2B27, 16px 16px #2A2B27, 17px 17px #2A2B27, 18px 18px #2A2B27, 19px 19px #2A2B27, 20px 20px #2A2B27, 21px 21px #2A2B27, 22px 22px #2A2B27, 23px 23px #2A2B27, 24px 24px #2A2B27, 25px 25px #2A2B27, 26px 26px #2A2B27, 27px 27px #2A2B27, 28px 28px #2A2B27, 29px 29px #2A2B27, 30px 30px #2A2B27 !important;
+}
+.social_slider .tab-links .google_icon:hover i, .social_slider .tab-links .google_icon:focus i, .social_slider .tab-links .google_icon:active {
+  color: #353631;
+}
+
+.social_slider .tab-content .google_box {
+    border: 10px solid #353631;
+}
+
+.social_slider .tab-links .youtube_icon {
+    margin-top: 7px;
+    background: #bb0000;
+    overflow: hidden;
+    text-shadow: 0px 0px #880000, 1px 1px #880000, 2px 2px #880000, 3px 3px #880000, 4px 4px #880000, 5px 5px #880000, 6px 6px #880000, 7px 7px #880000, 8px 8px #880000, 9px 9px #880000, 10px 10px #880000, 11px 11px #880000, 12px 12px #880000, 13px 13px #880000, 14px 14px #880000, 15px 15px #880000, 16px 16px #880000, 17px 17px #880000, 18px 18px #880000, 19px 19px #880000, 20px 20px #880000, 21px 21px #880000, 22px 22px #880000, 23px 23px #880000, 24px 24px #880000, 25px 25px #880000, 26px 26px #880000, 27px 27px #880000, 28px 28px #880000, 29px 29px #880000, 30px 30px #880000 !important;
+}
+
+.social_slider .tab-links .youtube_icon:hover i, .social_slider .tab-links .youtube_icon:focus i, .social_slider .tab-links .youtube_icon:active {
+  color: #bb0000;
+}
+
+.social_slider .tab-content .youtube_box {
+    border: 10px solid #bb0000;
+}
+
+.social_slider .tab-links .linkedin_icon {
+    margin-top: 7px;
+    background: #0073B2;
+    overflow: hidden;
+    text-shadow: 0px 0px #005983, 1px 1px #005983, 2px 2px #005983, 3px 3px #005983, 4px 4px #005983, 5px 5px #005983, 6px 6px #005983, 7px 7px #005983, 8px 8px #005983, 9px 9px #005983, 10px 10px #005983, 11px 11px #005983, 12px 12px #005983, 13px 13px #005983, 14px 14px #005983, 15px 15px #005983, 16px 16px #005983, 17px 17px #005983, 18px 18px #005983, 19px 19px #005983, 20px 20px #005983, 21px 21px #005983, 22px 22px #005983, 23px 23px #005983, 24px 24px #005983, 25px 25px #005983, 26px 26px #005983, 27px 27px #005983, 28px 28px #005983, 29px 29px #005983, 30px 30px #005983 !important;
+}
+.social_slider .tab-links .linkedin_icon:hover i, .social_slider .tab-links .linkedin_icon:focus i, .social_slider .tab-links .linkedin_icon:active{
+  color: #0073B2;
+}
+
+.social_slider .tab-content .linkedin_box {
+    border: 10px solid #0073B2;
+}
+
+.social_slider .tab-links .pinterest_icon {
+    margin-top: 7px;
+    background: #CD1D1F;
+    overflow: hidden;
+    text-shadow: 0px 0px #9f191e, 1px 1px #9f191e, 2px 2px #9f191e, 3px 3px #9f191e, 4px 4px #9f191e, 5px 5px #9f191e, 6px 6px #9f191e, 7px 7px #9f191e, 8px 8px #9f191e, 9px 9px #9f191e, 10px 10px #9f191e, 11px 11px #9f191e, 12px 12px #9f191e, 13px 13px #9f191e, 14px 14px #9f191e, 15px 15px #9f191e, 16px 16px #9f191e, 17px 17px #9f191e, 18px 18px #9f191e, 19px 19px #9f191e, 20px 20px #9f191e, 21px 21px #9f191e, 22px 22px #9f191e, 23px 23px #9f191e, 24px 24px #9f191e, 25px 25px #9f191e, 26px 26px #9f191e, 27px 27px #9f191e, 28px 28px #9f191e, 29px 29px #9f191e, 30px 30px #9f191e !important;
+}
+.social_slider .tab-links .pinterest_icon:hover i, .social_slider .tab-links .pinterest_icon:focus i, .social_slider .tab-links .pinterest_icon:active {
+    color: #CD1D1F;
+}
+.social_slider .tab-content .pinterest_box {
+    border: 10px solid #CD1D1F;
+}
+
+.social_slider .tab-links .vimeo_icon {
+    margin-top: 7px;
+    background: #20B9EB;
+    overflow: hidden;
+    text-shadow: 0px 0px #1498c1, 1px 1px #1498c1, 2px 2px #1498c1, 3px 3px #1498c1, 4px 4px #1498c1, 5px 5px #1498c1, 6px 6px #1498c1, 7px 7px #1498c1, 8px 8px #1498c1, 9px 9px #1498c1, 10px 10px #1498c1, 11px 11px #1498c1, 12px 12px #1498c1, 13px 13px #1498c1, 14px 14px #1498c1, 15px 15px #1498c1, 16px 16px #1498c1, 17px 17px #1498c1, 18px 18px #1498c1, 19px 19px #1498c1, 20px 20px #1498c1, 21px 21px #1498c1, 22px 22px #1498c1, 23px 23px #1498c1, 24px 24px #1498c1, 25px 25px #1498c1, 26px 26px #1498c1, 27px 27px #1498c1, 28px 28px #1498c1, 29px 29px #1498c1, 30px 30px #1498c1 !important;
+}
+.social_slider .tab-links .vimeo_icon:hover i, .social_slider .tab-links .vimeo_icon:focus i, .social_slider .tab-links .vimeo_icon:active {
+    color: #20B9EB;
+}
+
+.social_slider .tab-content .vimeo_box {
+    border: 10px solid #20B9EB;
+}
+
+.social_slider .tab-links .vk_icon {
+    margin-top: 7px;
+    background: #45668e;
+    overflow: hidden;
+    text-shadow: 0px 0px #344d6c, 1px 1px #344d6c, 2px 2px #344d6c, 3px 3px #344d6c, 4px 4px #344d6c, 5px 5px #344d6c, 6px 6px #344d6c, 7px 7px #344d6c, 8px 8px #344d6c, 9px 9px #344d6c, 10px 10px #344d6c, 11px 11px #344d6c, 12px 12px #344d6c, 13px 13px #344d6c, 14px 14px #344d6c, 15px 15px #344d6c, 16px 16px #344d6c, 17px 17px #344d6c, 18px 18px #344d6c, 19px 19px #344d6c, 20px 20px #344d6c, 21px 21px #344d6c, 22px 22px #344d6c, 23px 23px #344d6c, 24px 24px #344d6c, 25px 25px #344d6c, 26px 26px #344d6c, 27px 27px #344d6c, 28px 28px #344d6c, 29px 29px #344d6c, 30px 30px #344d6c !important;
+}
+
+.social_slider .tab-links .vk_icon:hover i, .social_slider .tab-links .vk_icon:focus i, .social_slider .tab-links .vk_icon:active {
+    color: #45668e;
+}
+
+.social_slider .tab-content .vk_box {
+    border: 10px solid #45668e;
+}
+
+.social_slider .tab-links .instagram_icon {
+    margin-top: 7px;
+    background: #e95950;
+    overflow: hidden;
+    text-shadow: 0px 0px #e32e23, 1px 1px #e32e23, 2px 2px #e32e23, 3px 3px #e32e23, 4px 4px #e32e23, 5px 5px #e32e23, 6px 6px #e32e23, 7px 7px #e32e23, 8px 8px #e32e23, 9px 9px #e32e23, 10px 10px #e32e23, 11px 11px #e32e23, 12px 12px #e32e23, 13px 13px #e32e23, 14px 14px #e32e23, 15px 15px #e32e23, 16px 16px #e32e23, 17px 17px #e32e23, 18px 18px #e32e23, 19px 19px #e32e23, 20px 20px #e32e23, 21px 21px #e32e23, 22px 22px #e32e23, 23px 23px #e32e23, 24px 24px #e32e23, 25px 25px #e32e23, 26px 26px #e32e23, 27px 27px #e32e23, 28px 28px #e32e23, 29px 29px #e32e23, 30px 30px #e32e23 !important;
+}
+
+.social_slider .tab-links .instagram_icon:hover i, .social_slider .tab-links .instagram_icon:focus i, .social_slider .tab-links .instagram_icon:active {
+    color: #e95950;
+}
+
+.social_slider .tab-content .instagram_box {
+    border: 10px solid #e95950;
+}
+
+.social_slider .tab-links .contactus_icon {
+    margin-top: 7px;
+    background: #008900;
+    overflow: hidden;
+    text-shadow: 0px 0px #005600, 1px 1px #005600, 2px 2px #005600, 3px 3px #005600, 4px 4px #005600, 5px 5px #005600, 6px 6px #005600, 7px 7px #005600, 8px 8px #005600, 9px 9px #005600, 10px 10px #005600, 11px 11px #005600, 12px 12px #005600, 13px 13px #005600, 14px 14px #005600, 15px 15px #005600, 16px 16px #005600, 17px 17px #005600, 18px 18px #005600, 19px 19px #005600, 20px 20px #005600, 21px 21px #005600, 22px 22px #005600, 23px 23px #005600, 24px 24px #005600, 25px 25px #005600, 26px 26px #005600, 27px 27px #005600, 28px 28px #005600, 29px 29px #005600, 30px 30px #005600 !important;
+}
+
+.social_slider .tab-links .contactus_icon:hover i, .social_slider .tab-links .contactus_icon:focus i, .social_slider .tab-links .contactus_icon:active {
+    color: #008900;
+}
