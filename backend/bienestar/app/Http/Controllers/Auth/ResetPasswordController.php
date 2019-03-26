@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace gimnasioVirtual\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+use gimnasioVirtual\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class ResetPasswordController extends Controller

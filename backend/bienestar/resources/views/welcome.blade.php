@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Gimnasio USTA TUNJA</title>
+        <
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -79,7 +80,8 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Gimnasio USTA Version 0.0000000001
+                    <a href="http://www.ustatunja.edu.co/"><img src="{{asset('img/logoUsta.png')}}"></a>
                 </div>
 
                 <div class="links">

@@ -13,6 +13,7 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    'alias' => env('APP_ALIAS', 'Laravel'),
 
     /*
     |--------------------------------------------------------------------------
@@ -171,11 +172,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        gimnasioVirtual\Providers\AppServiceProvider::class,
+        gimnasioVirtual\Providers\AuthServiceProvider::class,
+        // gimnasioVirtual\Providers\BroadcastServiceProvider::class,
+        gimnasioVirtual\Providers\EventServiceProvider::class,
+        gimnasioVirtual\Providers\RouteServiceProvider::class,
 
     ],
 

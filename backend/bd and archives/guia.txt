@@ -1,0 +1,12 @@
+class Rol extends Model
+{
+    protected $table='roles';
+    protected $PrimaryKey='id_rol';
+    public $timestamps=false; // indicacion para que no generere las 2 columnas automatica de registro de actualizacion
+    protected $fillable=[
+        'nombre_rol'
+    ];
+}
+belongsTo= uno a uno 
+hasMany=uno a muchos
+belongsToMany=muchos a muchos
