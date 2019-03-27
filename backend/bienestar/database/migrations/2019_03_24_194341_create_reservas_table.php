@@ -15,7 +15,17 @@ class CreateReservasTable extends Migration
     {
         Schema::create('reservas', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->dateTime('inicio');
+            $table->dateTime('fin');
+            /**llave foranea de reservas a estados */
+            $table->integer('id_estado')->unsigned();
+            /**llave foranea de reservas a espacios deportivos */
+            $table->integer('id_espacio')->unsigned();
+            /**llave foranea de reservas a clases */
+            $table->integer('id_clase')->unsigned();
             $table->timestamps();
+
         });
     }
 

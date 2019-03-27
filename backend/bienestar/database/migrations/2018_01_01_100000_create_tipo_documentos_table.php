@@ -21,7 +21,7 @@ class CreateTipoDocumentosTable extends Migration
         });
         DB::table('tipo_documentos')->insert(
             array(
-                ['nombre_documento' => 'Cedula de ciudadnia','sigla'=>'CC'],
+                ['nombre_documento' => 'Cedula de Ciudadania','sigla'=>'CC'],
                 ['nombre_documento' => 'Tarjeta de Identidad','sigla'=>'TI'],               
             )
         );

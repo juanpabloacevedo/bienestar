@@ -15,8 +15,14 @@ class CreateAsistenciasTable extends Migration
     {
         Schema::create('asistencias', function (Blueprint $table) {
             $table->increments('id');
+            
+            $table->integer('id_user')->unsigned();            //
+            $table->integer('id_clase')->unsigned();
+            $table->integer('asistencias'); 
+            $table->integer('inasistencias'); 
             $table->timestamps();
-        });
+         
+      });
     }
 
     /**

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEstadosTable extends Migration
+class CreateClasesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,15 @@ class CreateEstadosTable extends Migration
      */
     public function up()
     {
-        Schema::create('estados', function (Blueprint $table) {
+        Schema::create('clases', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->boolean('aprobado');
-            $table->boolean('canecelado');
-            $table->boolean('reservado');
-            /**llave foranea de espacios a sedes */
-            $table->integer('id_reserva')->unsigned()->default(1);
-            $table->foreign('id_reserva')->references('id')->on('reservas');
+            $table->integer('cupos')->default(30);
+            $table->boolean('disponible');
+            
+        /**llave foranea de clases a espaciosdeportivos*/
+            $table->integer('id_espacio')->unsigned();
+            $table->foreign('id_espacio')->references('id')->on('espacio_deportivos');
             $table->timestamps();
         });
     }
@@ -33,6 +33,6 @@ class CreateEstadosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('estados');
+        Schema::dropIfExists('clases');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateClasesTable extends Migration
+class AddForeignKeyToEspacioDeportivosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateClasesTable extends Migration
      */
     public function up()
     {
-        Schema::create('clases', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
-        });
+        Schema::table('espacio_deportivos', function (Blueprint $table) {
+		$table->foreign('id_user','fk_users_ref_espacio_deportivos')->references('id')->on('users')->onUpdate('cascade')->onDelete('restrict');
+    });
     }
 
     /**
@@ -26,6 +25,6 @@ class CreateClasesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('clases');
+         Schema::dropIfExists('fk_users_ref_espacio_deportivos');
     }
 }
