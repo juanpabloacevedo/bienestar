@@ -14,8 +14,8 @@ class AddForeignKeyToClaseUsuariosTable extends Migration
     public function up()
     {
         Schema::table('clase_usuarios', function (Blueprint $table) {
-        $table->foreign('id_user','fk_users_ref_clase_usuarios')->references('id')->on('users')->onUpdate('cascade')->onDelete('restrict');
-        $table->foreign('id_clases','fk_clases_ref_clase_usuarios')->references('id')->on('clases')->onUpdate('cascade')->onDelete('restrict');
+        $table->foreign('id_user','fk_users_ref_clase_usuarios')->references('id')->on('users')->onDelete('cascade');
+        $table->foreign('id_clases','fk_clases_ref_clase_usuarios')->references('id')->on('clases')->onDelete('cascade');
     });
     }
 

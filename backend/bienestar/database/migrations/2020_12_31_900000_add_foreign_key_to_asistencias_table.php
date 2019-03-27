@@ -14,8 +14,8 @@ class AddForeignKeyToAsistenciasTable extends Migration
     public function up()
     {
         Schema::table('asistencias', function (Blueprint $table) {
-		$table->foreign('id_user','fk_users_ref_asistencias')->references('id')->on('users')->onUpdate('cascade')->onDelete('restrict');
-        $table->foreign('id_clase','fk_clases_ref_asistencias')->references('id')->on('clases')->onUpdate('cascade')->onDelete('restrict');
+		$table->foreign('id_user','fk_users_ref_asistencias')->references('id')->on('users')->onDelete('cascade');
+        $table->foreign('id_clase','fk_clases_ref_asistencias')->references('id')->on('clases')->onDelete('cascade');
 		
     });
     }

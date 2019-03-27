@@ -14,7 +14,7 @@ class AddForeignKeyToEspacioDeportivosTable extends Migration
     public function up()
     {
         Schema::table('espacio_deportivos', function (Blueprint $table) {
-		$table->foreign('id_user','fk_users_ref_espacio_deportivos')->references('id')->on('users')->onUpdate('cascade')->onDelete('restrict');
+		$table->foreign('id_user','fk_users_ref_espacio_deportivos')->references('id')->on('users')->onDelete('set null');
     });
     }
 

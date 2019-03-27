@@ -17,7 +17,7 @@ class CreateSedesTable extends Migration
             $table->increments('id_sede');
             $table->string('name');
             $table->string('city');
-            $table->string('address');
+            $table->string('address')->nullable();
             $table->timestamps();
             //
             });

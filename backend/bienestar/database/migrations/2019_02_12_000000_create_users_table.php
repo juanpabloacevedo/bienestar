@@ -26,7 +26,7 @@ class CreateUsersTable extends Migration
             $table->integer('id_doc')->unsigned()->default(1);
             $table->foreign('id_doc')->references('id')->on('tipo_documentos');
             //
-            $table->integer('id_asistencia')->unsigned();
+            $table->integer('id_asistencia')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

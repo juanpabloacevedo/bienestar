@@ -18,7 +18,7 @@ class CreateEspacioDeportivosTable extends Migration
             $table->string('name');
             
         /**llave foranea de espacios_deportivos a user */
-            $table->integer('id_user')->unsigned();
+            $table->integer('id_user')->unsigned()->nullable();
             $table->timestamps();
             
         });

@@ -20,7 +20,7 @@ class CreateEspaciosTable extends Migration
             $table->boolean('espacio_disponible');            
         /**llave foranea de espacios a sedes */
             $table->integer('id_sede')->unsigned();
-            $table->foreign('id_sede')->references('id_sede')->on('sedes');
+            $table->foreign('id_sede')->references('id_sede')->on('sedes')->onDelete('cascade');
             $table->timestamps();
             
         });
