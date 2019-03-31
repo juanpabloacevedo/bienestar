@@ -1,8 +1,8 @@
 <?php
 
-namespace gimnasioVirtual\Http\Controllers;
+namespace App\Http\Controllers;
 
-use gimnasioVirtual\Espacios_deportivo;
+use App\Espacios_deportivo;
 use Illuminate\Http\Request;
 
 class EspaciosDeportivoController extends Controller
@@ -41,7 +41,7 @@ class EspaciosDeportivoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \gimnasioVirtual\Espacios_deportivo  $espacios_deportivo
+     * @param  \App\Espacios_deportivo  $espacios_deportivo
      * @return \Illuminate\Http\Response
      */
     public function show(Espacios_deportivo $espacios_deportivo)
@@ -52,7 +52,7 @@ class EspaciosDeportivoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \gimnasioVirtual\Espacios_deportivo  $espacios_deportivo
+     * @param  \App\Espacios_deportivo  $espacios_deportivo
      * @return \Illuminate\Http\Response
      */
     public function edit(Espacios_deportivo $espacios_deportivo)
@@ -64,7 +64,7 @@ class EspaciosDeportivoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \gimnasioVirtual\Espacios_deportivo  $espacios_deportivo
+     * @param  \App\Espacios_deportivo  $espacios_deportivo
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Espacios_deportivo $espacios_deportivo)
@@ -75,7 +75,7 @@ class EspaciosDeportivoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \gimnasioVirtual\Espacios_deportivo  $espacios_deportivo
+     * @param  \App\Espacios_deportivo  $espacios_deportivo
      * @return \Illuminate\Http\Response
      */
     public function destroy(Espacios_deportivo $espacios_deportivo)

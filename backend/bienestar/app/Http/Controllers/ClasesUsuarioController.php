@@ -1,8 +1,8 @@
 <?php
 
-namespace gimnasioVirtual\Http\Controllers;
+namespace App\Http\Controllers;
 
-use gimnasioVirtual\Clases_usuario;
+use App\Clases_usuario;
 use Illuminate\Http\Request;
 
 class ClasesUsuarioController extends Controller
@@ -41,7 +41,7 @@ class ClasesUsuarioController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \gimnasioVirtual\Clases_usuario  $clases_usuario
+     * @param  \App\Clases_usuario  $clases_usuario
      * @return \Illuminate\Http\Response
      */
     public function show(Clases_usuario $clases_usuario)
@@ -52,7 +52,7 @@ class ClasesUsuarioController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \gimnasioVirtual\Clases_usuario  $clases_usuario
+     * @param  \App\Clases_usuario  $clases_usuario
      * @return \Illuminate\Http\Response
      */
     public function edit(Clases_usuario $clases_usuario)
@@ -64,7 +64,7 @@ class ClasesUsuarioController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \gimnasioVirtual\Clases_usuario  $clases_usuario
+     * @param  \App\Clases_usuario  $clases_usuario
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Clases_usuario $clases_usuario)
@@ -75,7 +75,7 @@ class ClasesUsuarioController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \gimnasioVirtual\Clases_usuario  $clases_usuario
+     * @param  \App\Clases_usuario  $clases_usuario
      * @return \Illuminate\Http\Response
      */
     public function destroy(Clases_usuario $clases_usuario)

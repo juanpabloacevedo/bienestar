@@ -1,8 +1,8 @@
 <?php
 
-namespace gimnasioVirtual\Http\Controllers;
+namespace App\Http\Controllers;
 
-use gimnasioVirtual\Asistencia;
+use App\Asistencia;
 use Illuminate\Http\Request;
 
 class AsistenciaController extends Controller
@@ -41,7 +41,7 @@ class AsistenciaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \gimnasioVirtual\Asistencia  $asistencia
+     * @param  \App\Asistencia  $asistencia
      * @return \Illuminate\Http\Response
      */
     public function show(Asistencia $asistencia)
@@ -52,7 +52,7 @@ class AsistenciaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \gimnasioVirtual\Asistencia  $asistencia
+     * @param  \App\Asistencia  $asistencia
      * @return \Illuminate\Http\Response
      */
     public function edit(Asistencia $asistencia)
@@ -64,7 +64,7 @@ class AsistenciaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \gimnasioVirtual\Asistencia  $asistencia
+     * @param  \App\Asistencia  $asistencia
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Asistencia $asistencia)
@@ -75,7 +75,7 @@ class AsistenciaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \gimnasioVirtual\Asistencia  $asistencia
+     * @param  \App\Asistencia  $asistencia
      * @return \Illuminate\Http\Response
      */
     public function destroy(Asistencia $asistencia)

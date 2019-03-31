@@ -1,8 +1,8 @@
 <?php
 
-namespace gimnasioVirtual\Http\Controllers;
+namespace App\Http\Controllers;
 
-use gimnasioVirtual\Tipos_documento;
+use App\Tipos_documento;
 use Illuminate\Http\Request;
 
 class TiposDocumentoController extends Controller
@@ -41,7 +41,7 @@ class TiposDocumentoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \gimnasioVirtual\Tipos_documento  $tipos_documento
+     * @param  \App\Tipos_documento  $tipos_documento
      * @return \Illuminate\Http\Response
      */
     public function show(Tipos_documento $tipos_documento)
@@ -52,7 +52,7 @@ class TiposDocumentoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \gimnasioVirtual\Tipos_documento  $tipos_documento
+     * @param  \App\Tipos_documento  $tipos_documento
      * @return \Illuminate\Http\Response
      */
     public function edit(Tipos_documento $tipos_documento)
@@ -64,7 +64,7 @@ class TiposDocumentoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \gimnasioVirtual\Tipos_documento  $tipos_documento
+     * @param  \App\Tipos_documento  $tipos_documento
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Tipos_documento $tipos_documento)
@@ -75,7 +75,7 @@ class TiposDocumentoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \gimnasioVirtual\Tipos_documento  $tipos_documento
+     * @param  \App\Tipos_documento  $tipos_documento
      * @return \Illuminate\Http\Response
      */
     public function destroy(Tipos_documento $tipos_documento)

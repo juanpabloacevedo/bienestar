@@ -1,8 +1,8 @@
 <?php
 
-namespace gimnasioVirtual\Http\Controllers;
+namespace App\Http\Controllers;
 
-use gimnasioVirtual\Rol;
+use App\Rol;
 use Illuminate\Http\Request;
 
 class RolController extends Controller
@@ -41,7 +41,7 @@ class RolController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \gimnasioVirtual\Rol  $rol
+     * @param  \App\Rol  $rol
      * @return \Illuminate\Http\Response
      */
     public function show(Rol $rol)
@@ -52,7 +52,7 @@ class RolController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \gimnasioVirtual\Rol  $rol
+     * @param  \App\Rol  $rol
      * @return \Illuminate\Http\Response
      */
     public function edit(Rol $rol)
@@ -64,7 +64,7 @@ class RolController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \gimnasioVirtual\Rol  $rol
+     * @param  \App\Rol  $rol
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Rol $rol)
@@ -75,7 +75,7 @@ class RolController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \gimnasioVirtual\Rol  $rol
+     * @param  \App\Rol  $rol
      * @return \Illuminate\Http\Response
      */
     public function destroy(Rol $rol)

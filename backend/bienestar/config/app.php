@@ -172,11 +172,11 @@ return [
         /*
          * Application Service Providers...
          */
-        gimnasioVirtual\Providers\AppServiceProvider::class,
-        gimnasioVirtual\Providers\AuthServiceProvider::class,
-        // gimnasioVirtual\Providers\BroadcastServiceProvider::class,
-        gimnasioVirtual\Providers\EventServiceProvider::class,
-        gimnasioVirtual\Providers\RouteServiceProvider::class,
+        App\Providers\AppServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
+        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
 
     ],
 

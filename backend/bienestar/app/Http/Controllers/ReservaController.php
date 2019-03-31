@@ -1,8 +1,8 @@
 <?php
 
-namespace gimnasioVirtual\Http\Controllers;
+namespace App\Http\Controllers;
 
-use gimnasioVirtual\Reserva;
+use App\Reserva;
 use Illuminate\Http\Request;
 
 class ReservaController extends Controller
@@ -41,7 +41,7 @@ class ReservaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \gimnasioVirtual\Reserva  $reserva
+     * @param  \App\Reserva  $reserva
      * @return \Illuminate\Http\Response
      */
     public function show(Reserva $reserva)
@@ -52,7 +52,7 @@ class ReservaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \gimnasioVirtual\Reserva  $reserva
+     * @param  \App\Reserva  $reserva
      * @return \Illuminate\Http\Response
      */
     public function edit(Reserva $reserva)
@@ -64,7 +64,7 @@ class ReservaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \gimnasioVirtual\Reserva  $reserva
+     * @param  \App\Reserva  $reserva
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Reserva $reserva)
@@ -75,7 +75,7 @@ class ReservaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \gimnasioVirtual\Reserva  $reserva
+     * @param  \App\Reserva  $reserva
      * @return \Illuminate\Http\Response
      */
     public function destroy(Reserva $reserva)

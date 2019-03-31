@@ -1,6 +1,6 @@
 <?php
 
-namespace gimnasioVirtual;
+namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -18,11 +18,32 @@ class User extends Authenticatable{
     ];
     /**alias rol, objeto que mapea la relacion */
     public function rol(){
-        return $this->belongsTo("gimnasioVirtual\Rol","id_rol");
+        return $this->belongsTo("App\Rol","id_rol");
     }
     public function documento(){
-        return $this->belongsTo("gimnasioVirtual\TipoDocumento","id_doc");
+        return $this->belongsTo("App\TipoDocumento","id_doc");
     }
+    public function asistencias(){
+        return $this->belongsTo("App\Asistencia","id_asistencia");
+    }
+    public function isAdmin(){
+		$user = Auth::user();
+		if ($user!=null) {
+			if ($user->id_rol == 1) {
+				return true;
+			}
+		}
+		return false;
+    }
+    public function isUser(){
+		$user = Auth::user();
+		if ($user!=null) {
+			if ($user->id_rol == 2) {
+				return true;
+			}
+		}
+		return false;
+	}
 
 
 }

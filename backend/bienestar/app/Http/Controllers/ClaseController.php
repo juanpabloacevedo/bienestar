@@ -1,8 +1,8 @@
 <?php
 
-namespace gimnasioVirtual\Http\Controllers;
+namespace App\Http\Controllers;
 
-use gimnasioVirtual\Clase;
+use App\Clase;
 use Illuminate\Http\Request;
 
 class ClaseController extends Controller
@@ -41,7 +41,7 @@ class ClaseController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \gimnasioVirtual\Clase  $clase
+     * @param  \App\Clase  $clase
      * @return \Illuminate\Http\Response
      */
     public function show(Clase $clase)
@@ -52,7 +52,7 @@ class ClaseController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \gimnasioVirtual\Clase  $clase
+     * @param  \App\Clase  $clase
      * @return \Illuminate\Http\Response
      */
     public function edit(Clase $clase)
@@ -64,7 +64,7 @@ class ClaseController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \gimnasioVirtual\Clase  $clase
+     * @param  \App\Clase  $clase
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Clase $clase)
@@ -75,7 +75,7 @@ class ClaseController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \gimnasioVirtual\Clase  $clase
+     * @param  \App\Clase  $clase
      * @return \Illuminate\Http\Response
      */
     public function destroy(Clase $clase)

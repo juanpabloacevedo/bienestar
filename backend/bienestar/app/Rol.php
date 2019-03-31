@@ -1,6 +1,6 @@
 <?php
 
-namespace gimnasioVirtual;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
