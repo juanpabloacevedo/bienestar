@@ -10,7 +10,8 @@ use App\User;
 use Session;
 use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
-{
+{   
+    /**creacion de nuevos usuarios */
     public function register(Request $request){
         /**datos obligatorios para el registro */
 		$rules = [
@@ -34,8 +35,7 @@ class UserController extends Controller
             return redirect()->route('register')
             ->with('errors', $validator->errors());
 		}
-        
-        
+               
         /**creacion del usuario,estos datos son los mismos de la migracion o base de datos*/
         $user = new User();
 		$user->name      = $request->name;
@@ -99,7 +99,7 @@ class UserController extends Controller
 		
     }
 
-
+    /**funcion de tipo get que me reg¿dirige al formulario de registro */
     public function create_register(Request $request){
         $errors=Session::get('errors');
         $tipo_documentos = TipoDocumento::all();

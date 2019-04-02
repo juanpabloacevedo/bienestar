@@ -27,10 +27,10 @@ class HomeController extends Controller
     }
     public function admin()
     {
-        return view('admin');
+        return view('administrador.admin');
     }
     public function user()
     {
-        return view('user');
+        return view('usuarios.user');
     }
 }

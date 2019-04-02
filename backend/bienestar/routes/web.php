@@ -20,6 +20,8 @@ Route::get('/', function () {
 Route::get('/home', 'HomeController@index')->name('home');
 /**alias de la ruta, controlador a usar@funcion dentro del controlador */
 Route::get('/login', 'UserController@login');
+Route::get('/register', 'UserController@create_register');
+Route::post('/register', 'UserController@register')->name('register');
 Route::post('/login', 'UserController@login');
 Route::get('/admin', 'HomeController@admin')->name('admin');
 Route::get('/user', 'HomeController@user')->name('user');
