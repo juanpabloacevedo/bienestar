@@ -25,21 +25,29 @@
 		<li><div class="user-view">
 			<div class="background">
 				<img src="{{asset('img/usta_logo.png')}}" style="width: 100%;
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;">
+				height: 100%;
+				margin-left: auto;
+				margin-right: auto;
+				display: block;">
 			</div>
 			<a href="#user"><img class="circle" src="{{asset('img/no_photo.png')}}"></a>
-			<a href="#name"><span class="white-text name">{{Auth::user()->name}} {{Auth::user()->apellido}}</span></a>
-			<a href="#email"><span class="white-text email">{{Auth::user()->email}}</span></a>
-		</div></li>
-		<li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-		<li><a href="#!">Second Link</a></li>
-		<li><div class="divider"></div></li>
-		<li><a class="subheader">Subheader</a></li>
-		<li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-	</ul>
+			
+			<ul>
+				<li><a href="#name"><span class="white-text name">{{Auth::user()->name}} {{Auth::user()->apellido}}</span></a>
+				<li><a href="#email"><span class="white-text email">{{Auth::user()->email}}</span></a></li>
+			</ul>
+				</div>
+				</li>
+				<li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+				<li><a href="#!">Second Link</a></li>
+				<li><div class="divider"></div></li>
+				<li><a class="subheader">Subheader</a></li>
+				<li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+				<li><a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+				<form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+					{{ csrf_field() }}
+				</form>
+			</ul>
 	
 
 	<main>
@@ -48,9 +56,14 @@
 				<div class="nav-wrapper cst-nav-wrapper">
 					<a href="#" data-target="slide-out" class="sidenav-trigger hide-on-large-only"><i class="material-icons color-blue">menu</i></a>
 					<ul id="nav-mobile" class="right hide-on-med-and-down">
-						<li><a href="sass.html">Sass</a></li>
-						<li><a href="badges.html">Components</a></li>
+						<li><a href="{{ url('/indexuser') }}">Usuarios</a></li>
+						<li><a href="{{ url('/home') }}">Home</a></li>
 						<li><a href="collapsible.html">JavaScript</a></li>
+						<li><a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+
+						<form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+							{{ csrf_field() }}
+						</form>
 						<li><a class="dropdown-trigger cst-admin-trigger color-blue bold" href="#!" data-target="dropdown-admin">{{Auth::user()->name}} {{Auth::user()->apellido}}</a></li>
 					</ul>
 				</div>

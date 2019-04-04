@@ -9,6 +9,7 @@ use App\TipoDocumento;
 use App\User;
 use Session;
 use Illuminate\Support\Facades\Auth;
+
 class UserController extends Controller
 {   
     /**creacion de nuevos usuarios */
@@ -107,5 +108,11 @@ class UserController extends Controller
         ->with('tipo_documentos',$tipo_documentos)
         ->with('errors', $errors);
     }
-    
+    public function logout(){
+        return view('welcome');
+    }
+    public function index(){
+        $users=User::all();
+        return view('admin.listausuarios',compact('title','users'));
+    }   
 }
