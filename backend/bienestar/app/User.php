@@ -1,7 +1,5 @@
 <?php
-
 namespace App;
-
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -26,24 +24,7 @@ class User extends Authenticatable{
     public function asistencias(){
         return $this->belongsTo("App\Asistencia","id_asistencia");
     }
-    public function isAdmin(){
-		$user = Auth::user();
-		if ($user!=null) {
-			if ($user->id_rol == 1) {
-				return true;
-			}
-		}
-		return false;
-    }
-    public function isUser(){
-		$user = Auth::user();
-		if ($user!=null) {
-			if ($user->id_rol == 2) {
-				return true;
-			}
-		}
-		return false;
+    
 	}
 
 
-}

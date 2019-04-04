@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
@@ -12,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {   
-    /**creacion de nuevos usuarios */
+    /**funcion POST de creacion de usuarios */
     public function register(Request $request){
         /**datos obligatorios para el registro */
 		$rules = [
@@ -66,7 +64,6 @@ class UserController extends Controller
     public function create_login(){
         return view('auth.login');
         }
-
 
     public function login(Request $request){
 		$rules = [
