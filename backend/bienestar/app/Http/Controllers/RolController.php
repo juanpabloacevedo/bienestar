@@ -12,9 +12,9 @@ class RolController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index(){
+        $roles=Rol::all();
+        return view('admin.roles',compact('roles'));
     }
 
     /**

@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col m12 s12">
         <div>Gimnasio Virtual</div>
-        <h1>Modulo de Administrador</h1>
+        <h1>Espacios o clasCreados</h1>
         <div>
             @if (session('status'))
                 <div class="alert alert-success">
@@ -16,10 +16,13 @@
             {{Auth::user()->rol->name}}
             <div class="title m-b-md">
                 <h2>{{Auth::user()->name}}</h2>
-                Gimnasio USTA Version 0.0000000001
-                <a href="http://www.ustatunja.edu.co/">
-                    <img src="{{asset('img/cedecentro.jpg')}}" style="width:100%">
-                </a>
+                <div>             
+                @forelse($users as $user)
+                    <li>{{ $user->name }}</li>
+                @empty
+                    <li>No hay usuarios registrados.</li>
+                @endforelse
+                </div>
             </div>
         </div>
     </div>

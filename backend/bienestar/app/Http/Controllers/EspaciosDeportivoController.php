@@ -12,9 +12,9 @@ class EspaciosDeportivoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index(){
+        $espaciosDeportivos=EspacioDeportivo::all();
+        return view('admin.asistencias',compact('espaciosDeportivos'));
     }
 
     /**

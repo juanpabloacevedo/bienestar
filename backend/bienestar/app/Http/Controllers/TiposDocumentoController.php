@@ -12,9 +12,9 @@ class TiposDocumentoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index(){
+        $tipodocumentos=TiposDocumento::all();
+        return view('admin.tipodocumentos',compact('tipodocumentos'));
     }
 
     /**

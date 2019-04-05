@@ -23,7 +23,8 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('foto',255)->nullable();
-            
+            $table->boolean('activo')->default(true);
+            $table->boolean('sancionado')->default(false);
             //
             $table->integer('id_rol')->unsigned()->default(2);
             $table->foreign('id_rol')->references('id')->on('rols');

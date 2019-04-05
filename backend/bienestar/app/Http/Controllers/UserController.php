@@ -108,8 +108,10 @@ class UserController extends Controller
     public function logout(){
         return view('welcome');
     }
-    public function index(){
+    public function listausuarios(){
         $users=User::all();
-        return view('admin.listausuarios',compact('title','users'));
-    }   
+        return view('admin.listausuarios',compact('users'));
+    }
+   
+   
 }

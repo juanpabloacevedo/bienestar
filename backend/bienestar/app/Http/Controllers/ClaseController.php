@@ -12,9 +12,10 @@ class ClaseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+
+    public function index(){
+        $clases=Clase::all();
+        return view('admin.clases',compact('clases'));
     }
 
     /**

@@ -69,27 +69,40 @@
 				</div>
 			</div>
 		</nav>
-
-		<!--Content Block-->
-		<div class="col s12 m12 l9 cst-container">
-			<div class="panel panel-primary">
-				<div class="panel-body">
-					@yield('content')
-				</div>
-			</div>
-		</div>
 	</main>
 
-
-	<audio controls id="audio" style="display: none;">
-		<source src="{{ asset('kubycks/public/multimedia/notification.mp3') }}" type="audio/mpeg">
-			Your browser does not support the audio element.
-		</audio>
-<!--JQuery
+		
+		<h2>{{Auth::user()->name}} {{Auth::user()->apellido}}</h2>
+		<section class="row col s12	m12	l12	xl12">			
+			<aside class="row col s12 m2 l2 xl2">
+			<h3>menu</h3>
+				<ul>
+					
+					<li><a href="{{ url('/usuariosinscritos') }}">Usuarios</a></li>
+					<li><a href="/resources/views/admin/clases.blade.php">Clases</a></li>
+					<li><a href="#">Espacios deportivos</a></li>
+					<li><a href="#">Instrcutores</a></li>
+					<li><a href="#">Inasistencias</a></li>
+				</ul>
+			</aside>
+			<article class="row col s12 m8 l8 xl8">
+				<!--blque hueco donde ira el contenido proveniente de una seccion-->
+			@yield('content')
+			</article>	
+			<aside class="row col s12 m2 l2 xl2">
+			<h3>menu derecho</h3>
+			</aside>
+		</section>
+	</main>
+	<!--JQuery
 	<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<!--Materialize-->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	 <!-- Compiled and minified CSS -->
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		
 	<!--Project asset va directamente a la raiz de public-->
 	<script src="{{ asset('js/main.js') }}"></script>
 

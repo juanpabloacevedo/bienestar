@@ -21,8 +21,10 @@ class CreateClasesTable extends Migration
             
         /**llave foranea de clases a espaciosdeportivos*/
             $table->integer('id_espacio')->unsigned();
-            $table->foreign('id_espacio')->references('id')->on('espacio_deportivos');
-            $table->timestamps();
+            
+        /**llave foranea a usuarios */
+        $table->integer('id_user')->unsigned();
+        $table->timestamps();
         });
     }
 

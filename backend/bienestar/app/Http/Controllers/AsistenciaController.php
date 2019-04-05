@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 class AsistenciaController extends Controller
 {
    
-    public function index()
-    {
-        
+    public function index(){
+        $asistencias=Asistencia::all();
+        return view('admin.asistencias',compact('asistencias'));
     }
 
     /**

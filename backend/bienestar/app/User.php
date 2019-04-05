@@ -24,7 +24,6 @@ class User extends Authenticatable{
     public function asistencias(){
         return $this->belongsTo("App\Asistencia","id_asistencia");
     }
-    
 	}
 
 

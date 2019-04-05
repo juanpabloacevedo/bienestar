@@ -1,7 +1,7 @@
 @extends('admin.layouts.base_cms')
 
 @section('content')
-<div class="row">
+<div class="row m12 s12">
     <div class="col m12 s12">
         <div>Gimnasio Virtual</div>
         <h1>Modulo de Administrador</h1>
@@ -16,7 +16,11 @@
             {{Auth::user()->rol->name}}
             <div class="title m-b-md">
                 <h2>{{Auth::user()->name}}</h2>
-                Gimnasio USTA Version 0.0000000001
+                Gimnasio USTA Version 0.0000000099
+                <section>
+                <div></div>
+                
+                </section>
                 <a href="http://www.ustatunja.edu.co/">
                     <img src="{{asset('img/cedecentro.jpg')}}" style="width:100%">
                 </a>
