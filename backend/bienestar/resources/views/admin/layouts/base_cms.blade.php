@@ -15,40 +15,41 @@
 	<!--Import materialize.css-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 	<!--Principal-->
-	<link rel="stylesheet" type="text/css" href="{{ asset('kubycks/public/css/base-cms.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/base-cms.css') }}">
 </head>
 
 <body id="app">
 
 	<!-- Top Nav -->
 	<ul id="slide-out" class="sidenav" style="width:250px">
-		<li><div class="user-view">
-			<div class="background">
-				<img src="{{asset('img/usta_logo.png')}}" style="width: 100%;
-				height: 100%;
-				margin-left: auto;
-				margin-right: auto;
-				display: block;">
-			</div>
-			<a href="#user"><img class="circle" src="{{asset('img/no_photo.png')}}"></a>
-			
-			<ul>
-				<li><a href="#name"><span class="white-text name">{{Auth::user()->name}} {{Auth::user()->apellido}}</span></a>
-				<li><a href="#email"><span class="white-text email">{{Auth::user()->email}}</span></a></li>
-			</ul>
+		<li>
+			<div class="user-view">
+				<div class="background">
+					<img src="{{asset('img/usta_logo.png')}}" style="width: 100%;
+					height: 100%;
+					margin-left: auto;
+					margin-right: auto;
+					display: block;">
 				</div>
-				</li>
-				<li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-				<li><a href="#!">Second Link</a></li>
-				<li><div class="divider"></div></li>
-				<li><a class="subheader">Subheader</a></li>
-				<li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-				<li><a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
-				<form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-					{{ csrf_field() }}
-				</form>
-			</ul>
-	
+				<a href="#user"><img class="circle" src="{{asset('img/no_photo.png')}}"></a>
+
+				  <ul>
+					<li><a href="#name"><span class="white-text name">{{Auth::user()->name}} {{Auth::user()->apellido}}</span></a></li>
+					<li><a href="#email"><span class="white-text email">{{Auth::user()->email}}</span></a></li>
+				</ul>
+			</div>
+		</li>
+		<li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+		<li><a href="#!">Second Link</a></li>
+		<li><div class="divider"></div></li>
+		<li><a class="subheader">Subheader</a></li>
+		<li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+		<li><a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+		<form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+			{{ csrf_field() }}
+		</form>
+	</ul>
+
 
 	<main>
 		<nav>
@@ -71,13 +72,13 @@
 		</nav>
 	</main>
 
-		
+
+
+
 		<h2>{{Auth::user()->name}} {{Auth::user()->apellido}}</h2>
-		<section class="row col s12	m12	l12	xl12">			
-			<aside class="row col s12 m2 l2 xl2">
-			<h3>menu</h3>
-				<ul>
-					
+		<section class="row flex">
+			<aside class="col left-menu hide-on-med-and-down h-100">
+				<ul id="slide-out-fxd" class="sidenav sidenav-fixed">
 					<li><a href="{{ url('/usuariosinscritos') }}">Usuarios</a></li>
 					<li><a href="/resources/views/admin/clases.blade.php">Clases</a></li>
 					<li><a href="#">Espacios deportivos</a></li>
@@ -85,15 +86,36 @@
 					<li><a href="#">Inasistencias</a></li>
 				</ul>
 			</aside>
-			<article class="row col s12 m8 l8 xl8">
+			<article class="cst-content w-100">
 				<!--blque hueco donde ira el contenido proveniente de una seccion-->
-			@yield('content')
-			</article>	
-			<aside class="row col s12 m2 l2 xl2">
-			<h3>menu derecho</h3>
-			</aside>
+				@yield('content')
+			</article>
 		</section>
-	</main>
+		<footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Gimnasio virtual</h5>
+                <p class="grey-text text-lighten-4">Gimnasio virtual version de prueba</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2019 Juan Pablo AceVedo Torres
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+        </footer>
 	<!--JQuery
 	<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -102,11 +124,11 @@
 
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-		
+
 	<!--Project asset va directamente a la raiz de public-->
 	<script src="{{ asset('js/main.js') }}"></script>
 
-	
+
 	@yield('javascript')
 
 </body>
