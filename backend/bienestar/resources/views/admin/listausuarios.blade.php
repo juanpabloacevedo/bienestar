@@ -18,6 +18,7 @@
                         <th>inasistencias</th>
                         <th>rol</th>
                         <th>estado</th>
+                        <th>sancionado</th>
                     </tr>
                 </thead>
                 <tbody>                            
@@ -31,6 +32,15 @@
                     <td>@if(isset($user->asistencias)){{$user->asistencias->count()}}@else 0 @endif</td>
                     <td>{{$user->rol->name}}</td>
                     <td>{{$user->rol->activo}}</td>
+                    <td><div class="switch">
+                        <label>
+                        con sancion
+                        <input type="checkbox">
+                        <span class="lever"></span>
+                        sin sancion
+                        </label>
+                    </div>
+                    </td>
                     </tr>
                     @endforeach
                 </tbody>
@@ -38,5 +48,5 @@
         </ul>
     </div>
 </div>
-<a class="btn-floating btn-large waves-effect waves-light blue pulse" href="{{ url('/registeradmin') }}"><i class="material-icons">add</i></a>
+<a class="btn-floating btn-large waves-effect waves-light blue pulse fixed" href="{{ url('/registeradmin') }}"><i class="material-icons">add</i></a>
 @endsection

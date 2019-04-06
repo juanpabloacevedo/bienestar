@@ -4,6 +4,10 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Juan Pablo Acevedo Torres">
+	<meta name="description" content="Reservas de turnos de uso de espacios deportivos en a universidad Santo Tomas">
+	<meta name="keywords" content="Gimnasio, USTA, usta,usta tunja,usta deportes,universidad santo tomas">
+	<link rel="icon" href="{{asset('img/ustaIcon.ico')}}">
 
 	<!-- CSRF Token -->
 	<meta name="csrf-token" content="{{ csrf_token() }}">
@@ -19,7 +23,6 @@
 </head>
 
 <body id="app">
-
 	<!-- Top Nav -->
 	<ul id="slide-out" class="sidenav" style="width:250px">
 		<li>
