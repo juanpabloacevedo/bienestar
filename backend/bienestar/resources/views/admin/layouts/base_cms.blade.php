@@ -79,10 +79,10 @@
 		<section class="row flex">
 			<aside class="col left-menu hide-on-med-and-down h-100">
 				<ul id="slide-out-fxd" class="sidenav sidenav-fixed">
-					<li><a href="{{ url('/usuariosinscritos') }}">Usuarios</a></li>
-					<li><a href="/resources/views/admin/clases.blade.php">Clases</a></li>
-					<li><a href="#">Espacios deportivos</a></li>
-					<li><a href="#">Instrcutores</a></li>
+					<li><a href="{{ url('/indexuser') }}">Usuarios</a></li>
+					<li><a href="{{ url('/indexespaciosdeportivos') }}">Espacios deportivos</a></li>
+					<li><a href="#">Clases</a></li>
+					<li><a href="#">Reservas</a></li>
 					<li><a href="#">Inasistencias</a></li>
 				</ul>
 			</aside>
@@ -98,21 +98,12 @@
                 <h5 class="white-text">Gimnasio virtual</h5>
                 <p class="grey-text text-lighten-4">Gimnasio virtual version de prueba</p>
               </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                </ul>
               </div>
-            </div>
           </div>
           <div class="footer-copyright">
             <div class="container">
-            © 2019 Juan Pablo AceVedo Torres
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            © 2019 Juan Pablo Acevedo Torres
+            <a class="grey-text text-lighten-4 right" href="http://www.ustatunja.edu.co">Universidad Santo Tomas Tunja</a>
             </div>
           </div>
         </footer>

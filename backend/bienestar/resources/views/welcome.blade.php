@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Gimnasio USTA Version 0.0000000001
+                    Gimnasio USTA Version 0.0000005
                     <a href="http://www.ustatunja.edu.co/"><img src="{{asset('img/logoUsta.png')}}"></a>
                 </div>
 

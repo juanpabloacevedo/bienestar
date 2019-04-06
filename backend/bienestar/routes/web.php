@@ -21,6 +21,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/login', 'UserController@login');
 Route::get('/register', 'UserController@create_register');
 Route::post('/register', 'UserController@register')->name('register');
+Route::get('/registeradmin', 'UserController@create_registeradmin');
+Route::post('/registeradmin', 'UserController@registeradmin')->name('registeradmin');
+/***espacios deportivos o rutinas de entrenamiento */
+Route::get('/registerespdep', 'EspaciosDeportivoController@create_register');
+Route::post('/registerespdep', 'EspaciosDeportivoController@register')->name('registerespdep');
+Route::get('/indexespaciosdeportivos', 'EspaciosDeportivoController@listaespaciosdeportivos');
+
 Route::post('/login', 'UserController@login');
 Route::get('/admin', 'HomeController@admin')->name('admin');
 Route::get('/user', 'HomeController@user')->name('user');

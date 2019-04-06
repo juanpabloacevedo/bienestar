@@ -3,28 +3,34 @@
 @section('content')
 <div class="row">
     <div class="col m12 s12">
-        <div>Gimnasio Virtual</div>
-        <h1>Espacios o clasCreados</h1>
-        <div>
-            @if (session('status'))
-                <div class="alert alert-success">
-                    {{ session('status') }}
-                </div>
-            @endif
-
-            Actualmente estas logueado como: 
-            {{Auth::user()->rol->name}}
-            <div class="title m-b-md">
-                <h2>{{Auth::user()->name}}</h2>
-                <div>             
-                @forelse($users as $user)
-                    <li>{{ $user->name }}</li>
-                @empty
-                    <li>No hay usuarios registrados.</li>
-                @endforelse
-                </div>
+        @if (session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
             </div>
-        </div>
+        @endif
+        <ul>
+            <table class="table striped">
+            <title>Lista y estado de usuarios</title>
+                <thead>
+                    <tr>
+                        <th>Instructor</th>
+                        <th>Actividad o curso</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>                            
+                    @if($espaciosdep->count()==0)
+                    no hay clases o actividades regsitradas
+                    @endif
+                    @foreach($espaciosdep as $esp)
+                    <tr>                    
+                    <td>{{$esp->user->name}}</td>
+                    <td>{{$esp->name}}</td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </ul>
     </div>
 </div>
 @endsection

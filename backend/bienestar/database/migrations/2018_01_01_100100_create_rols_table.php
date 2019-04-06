@@ -19,14 +19,7 @@ class CreateRolsTable extends Migration
             $table->timestamps();
             
         });
-        DB::table('rols')->insert(
-            array([
-                'name' => 'admin'],['name' => 'usuario']
-               
-            )
-        );
-
-    }
+        }
 
     /**
      * Reverse the migrations.

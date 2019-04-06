@@ -26,7 +26,7 @@ class CreateUsersTable extends Migration
             $table->boolean('activo')->default(true);
             $table->boolean('sancionado')->default(false);
             //
-            $table->integer('id_rol')->unsigned()->default(2);
+            $table->integer('id_rol')->nullable()->default(2);
             $table->foreign('id_rol')->references('id')->on('rols');
             //
             $table->integer('id_doc')->unsigned()->default(1);
@@ -37,17 +37,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
-        DB::table('users')->insert(
-            array(
-                'name' => 'administrador',
-                'apellido'=>'ustaTunja',
-                'email'=>'admin@example.com',
-                'password'=>'$2y$10$7QK7St.L9T5ialpAtfKRVOG/bfVwfVqWTPkJtNh1O0j6YnqdYfWWu',
-                'id_rol'=>'1',
-                'id_doc'=>'1',
-                'apellido'=>'1',
-            )
-        );
+        
     }
 
     /**

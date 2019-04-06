@@ -38,4 +38,5 @@
         </ul>
     </div>
 </div>
+<a class="btn-floating btn-large waves-effect waves-light blue pulse" href="{{ url('/registeradmin') }}"><i class="material-icons">add</i></a>
 @endsection

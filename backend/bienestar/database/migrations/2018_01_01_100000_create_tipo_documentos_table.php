@@ -19,12 +19,7 @@ class CreateTipoDocumentosTable extends Migration
             $table->string('sigla',12)->nullable();
             $table->timestamps();
         });
-        DB::table('tipo_documentos')->insert(
-            array(
-                ['nombre_documento' => 'Cedula de Ciudadania','sigla'=>'CC'],
-                ['nombre_documento' => 'Tarjeta de Identidad','sigla'=>'TI'],               
-            )
-        );
+        
     }
 
 

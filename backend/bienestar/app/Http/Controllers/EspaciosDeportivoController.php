@@ -1,9 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Espacios_deportivo;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Validator;
+use App\User;
+use App\EspacioDeportivo;
+use Session;
+use Illuminate\Support\Facades\Auth;
 
 class EspaciosDeportivoController extends Controller
 {
@@ -14,18 +18,43 @@ class EspaciosDeportivoController extends Controller
      */
     public function index(){
         $espaciosDeportivos=EspacioDeportivo::all();
-        return view('admin.asistencias',compact('espaciosDeportivos'));
+        return view('admin.espaciosdeportivos',compact('espaciosDeportivos'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+    public function register(Request $request){
+        /**datos obligatorios para el registro */
+		$rules = [
+            'name'      => 'required|max:255',
+            ];
+        /**credenciales minimas de registro */
+		$credentials = $request->only(
+			'name'			
+        );
+        /**si los datos son incorrectos dirijase a registro */
+		$validator = Validator::make($credentials, $rules);
+		if($validator->fails()) {
+            return redirect()->route('registerespdep')
+            ->with('errors', $validator->errors());
+		}
+               
+        /**creacion del usuario,estos datos son los mismos de la migracion o base de datos*/
+        $espdep = new EspacioDeportivo();
+		$espdep->name      = $request->name;		
+        $espdep->id_user    =$request->id_user;
+		$espdep->save();
+        return redirect()->route('admin',['title'=>'HOME'])->with('group','HOME');;
+        }
+    public function create_register(Request $request){
+            $errors=Session::get('errors');
+            $users = User::where('id_rol',2)->get();
+            return view('admin.espaciodepregister')
+            ->with('users',$users)
+            ->with('errors', $errors);
+        }  
+        public function listaespaciosdeportivos(){
+            $espaciosdep=EspacioDeportivo::all();
+            return view('admin.espaciosdeportivos',compact('espaciosdep'));
+        } 
+    
 
     /**
      * Store a newly created resource in storage.
