@@ -43,7 +43,7 @@ class EspaciosDeportivoController extends Controller
 		$espdep->save();
         return redirect()->route('admin',['title'=>'HOME'])->with('group','HOME');;
         }
-    public function create_register(Request $request){
+        public function create_register(Request $request){
             $errors=Session::get('errors');
             $users = User::where('id_rol',2)->get();
             return view('admin.espaciodepregister')

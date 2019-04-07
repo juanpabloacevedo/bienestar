@@ -134,7 +134,7 @@ class UserController extends Controller
                 if ($user->id_rol==1) {
                     return redirect()->route('admin',['title'=>'ADMINISTRADOR']);
                 }else{
-                    return redirect()->route('user',['title'=>'USUARIO']);
+                    return redirect()->route('home',['title'=>'USUARIO']);
                 }
                 return redirect()->route('admin',['title'=>'ADMINISTRADOR']);
             }else{

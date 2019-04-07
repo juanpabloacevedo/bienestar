@@ -30,6 +30,8 @@
                     @endforeach
                 </tbody>
             </table>
+            <a class="btn-floating btn-large waves-effect waves-light blue pulse fixed" href="{{ url('/registerespdep') }}"><i class="material-icons">add</i></a>
+                    
         </ul>
     </div>
 </div>

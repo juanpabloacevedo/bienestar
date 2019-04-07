@@ -27,11 +27,16 @@ Route::post('/registeradmin', 'UserController@registeradmin')->name('registeradm
 Route::get('/registerespdep', 'EspaciosDeportivoController@create_register');
 Route::post('/registerespdep', 'EspaciosDeportivoController@register')->name('registerespdep');
 Route::get('/indexespaciosdeportivos', 'EspaciosDeportivoController@listaespaciosdeportivos');
+/**clases asignadas a periodos academicos, y adicion de cupos */
+Route::get('/registerclase', 'ClaseController@create_register');
+Route::post('/registerclase', 'ClaseController@register')->name('registerclase');
+Route::get('/indexclases', 'ClaseController@listaclases')->name('indexclases');
+
 
 Route::post('/login', 'UserController@login');
 Route::get('/admin', 'HomeController@admin')->name('admin');
 Route::get('/user', 'HomeController@user')->name('user');
-Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::get('/indexuser', 'UserController@listausuarios');
 /**rutas de administrador */

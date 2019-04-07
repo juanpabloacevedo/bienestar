@@ -6,23 +6,23 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Juan Pablo Acevedo Torres">
 	<meta name="description" content="Reservas de turnos de uso de espacios deportivos en a universidad Santo Tomas">
-	<meta name="keywords" content="Gimnasio, USTA, usta,usta tunja,usta deportes,universidad santo tomas">
+	<meta name="keywords" content="Gimnasio, USTA, usta,usta tunja,usta deportes,universidad santo tomas,bienestar universitario">
 	<link rel="icon" href="{{asset('img/ustaIcon.ico')}}">
 
 	<!-- CSRF Token -->
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 
-	<title>CMS - Gimnasio virtual</title>
+	<title>Gimnasio virtual</title>
 
 	<!--Import Google Icon Font-->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!--Import materialize.css-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 	<!--Principal-->
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/base-cms.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/front.css') }}">
 </head>
 
-<body id="app">
+<body class="front"id="app">
 	<!-- Top Nav -->
 	<ul id="slide-out" class="sidenav" style="width:250px">
 		<li>
@@ -42,7 +42,6 @@
 				</ul>
 			</div>
 		</li>
-		<li><a href="{{ url('/indexuser') }}">Usuarios</a></li>
 		<li><a href="{{ url('/indexespaciosdeportivos') }}">Espacios deportivos</a></li>
 		<li><a href="{{ url('/indexclases') }}">Clases</a></li>
 		<li><div class="divider"></div></li>

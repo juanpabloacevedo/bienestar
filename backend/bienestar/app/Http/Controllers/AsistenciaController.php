@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Http\Request;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Validator;
 
 use App\Asistencia;
-use Illuminate\Http\Request;
 
 class AsistenciaController extends Controller
 {

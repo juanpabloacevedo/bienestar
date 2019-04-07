@@ -18,14 +18,14 @@ class CreateClasesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('cupos')->default(30);
-            $table->boolean('disponible');
+            $table->boolean('disponible')->default(true);
             
         /**llave foranea de clases a espaciosdeportivos*/
             $table->integer('id_espacio')->unsigned();
         /**llave foranea de clases a periodos*/
             $table->integer('id_periodo')->unsigned();             
         /**llave foranea a usuarios */
-            $table->integer('id_user')->unsigned();
+            $table->integer('id_user')->nullable();
             $table->timestamps();
             });
     }
