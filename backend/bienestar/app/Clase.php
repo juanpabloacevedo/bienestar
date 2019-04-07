@@ -11,5 +11,8 @@ class Clase extends Model{
     public function espacio_deportivo(){
         return $this->belongsTo("App\Clase","id_clase");
     }
+    public function periodo(){
+        return $this->belongsTo("App\Periodo","id_periodo");
+    }
     
 }

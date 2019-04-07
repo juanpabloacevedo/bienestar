@@ -3,6 +3,7 @@ use App\TipoDocumento;
 use App\Rol;
 use App\Sede;
 use App\User;
+use App\Periodo;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,6 +15,22 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $objperiodo01=new Periodo();
+        $objperiodo01->name='2019-1';
+        $objperiodo01->inicio='01/02/2019';
+        $objperiodo01->fin='01/06/2019';
+        $objperiodo01->activo=true;
+        $objperiodo01 ->timestamps=false;
+        $objperiodo01 ->save();
+
+        $objperiodo02=new Periodo();
+        $objperiodo02->name='2019-2';
+        $objperiodo02->inicio='01/08/2019';
+        $objperiodo02->fin='01/12/2019';
+        $objperiodo02->activo=false;
+        $objperiodo02 ->timestamps=false;
+        $objperiodo02 ->save();
+
         $objTipoDoc01 =new TipoDocumento();
         $objTipoDoc01->nombre_documento='Cedula de ciudadania';
         $objTipoDoc01->sigla='CC';
@@ -32,35 +49,35 @@ class DatabaseSeeder extends Seeder
         $objTipoDoc03 ->timestamps=false;
         $objTipoDoc03 ->save();
 
-        $objTipoDoc01 =new TipoDocumento();
-        $objTipoDoc01->nombre_documento='Cedula de Identidad';
-        $objTipoDoc01->sigla='CI';
-        $objTipoDoc01 ->timestamps=false;
-        $objTipoDoc01 ->save();
+        $objTipoDoc04 =new TipoDocumento();
+        $objTipoDoc04->nombre_documento='Cedula de Identidad';
+        $objTipoDoc04->sigla='CI';
+        $objTipoDoc04 ->timestamps=false;
+        $objTipoDoc04 ->save();
 
-        $objTipoDoc01 =new TipoDocumento();
-        $objTipoDoc01->nombre_documento='Registro civil';
-        $objTipoDoc01->sigla='RC';
-        $objTipoDoc01 ->timestamps=false;
-        $objTipoDoc01 ->save();
+        $objTipoDoc05 =new TipoDocumento();
+        $objTipoDoc05->nombre_documento='Registro civil';
+        $objTipoDoc05->sigla='RC';
+        $objTipoDoc05 ->timestamps=false;
+        $objTipoDoc05 ->save();
 
-        $objTipoDoc01 =new TipoDocumento();
-        $objTipoDoc01->nombre_documento='Cédula de extranjería';
-        $objTipoDoc01->sigla='CE';
-        $objTipoDoc01 ->timestamps=false;
-        $objTipoDoc01 ->save();
+        $objTipoDoc06 =new TipoDocumento();
+        $objTipoDoc06->nombre_documento='Cédula de extranjería';
+        $objTipoDoc06->sigla='CE';
+        $objTipoDoc06 ->timestamps=false;
+        $objTipoDoc06 ->save();
 
-        $objTipoDoc01 =new TipoDocumento();
-        $objTipoDoc01->nombre_documento='Documento nacional de identidad';
-        $objTipoDoc01->sigla='DNI';
-        $objTipoDoc01 ->timestamps=false;
-        $objTipoDoc01 ->save();
+        $objTipoDoc07 =new TipoDocumento();
+        $objTipoDoc07->nombre_documento='Documento nacional de identidad';
+        $objTipoDoc07->sigla='DNI';
+        $objTipoDoc07 ->timestamps=false;
+        $objTipoDoc07 ->save();
 
-        $objTipoDoc01 =new TipoDocumento();
-        $objTipoDoc01->nombre_documento='documento único de identidad';
-        $objTipoDoc01->sigla='DUI';
-        $objTipoDoc01 ->timestamps=false;
-        $objTipoDoc01 ->save();
+        $objTipoDoc08 =new TipoDocumento();
+        $objTipoDoc08->nombre_documento='documento único de identidad';
+        $objTipoDoc08->sigla='DUI';
+        $objTipoDoc08 ->timestamps=false;
+        $objTipoDoc08 ->save();
 
         $objrol01 =new Rol();
         $objrol01->name='Administrador';
@@ -125,8 +142,8 @@ class DatabaseSeeder extends Seeder
         $objSede05->city='Bogotá,Cundinamarca';
         $objSede05->address='Autopista Norte calle 205, vía Arrayanes km 1.6';
         $objSede05 ->timestamps=false;
-        $objSede05 ->save();
-
+        $objSede05 ->save();        
+/**Super usuario por defecto*/
         $objuser01=new User();
         $objuser01->name='supadministrador';
         $objuser01->apellido='Usta Tunja';

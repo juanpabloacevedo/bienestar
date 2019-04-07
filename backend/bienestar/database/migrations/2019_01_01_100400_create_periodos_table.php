@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTipoDocumentosTable extends Migration
+class CreatePeriodosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,17 @@ class CreateTipoDocumentosTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_documentos', function (Blueprint $table) {
+        Schema::create('periodos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre_documento',32)->unique();
-            $table->string('sigla',12)->nullable();
+            $table->string('name');
+            $table->date('inicio')->nullabel();
+            $table->date('fin')->nullabel();
+            $table->boolean('activo')->default(true);           
+        /**llave foranea de espacios a sedes */
             $table->timestamps();
+            
         });
-        
     }
-
 
     /**
      * Reverse the migrations.
@@ -30,6 +32,6 @@ class CreateTipoDocumentosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_documentos');
+        Schema::dropIfExists('espacios');
     }
 }

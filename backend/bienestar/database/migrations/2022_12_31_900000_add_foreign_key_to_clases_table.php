@@ -16,6 +16,7 @@ class AddForeignKeyToClasesTable extends Migration
         Schema::table('clases', function (Blueprint $table) {
         $table->foreign('id_user','fk_users_ref_users')->references('id')->on('users')->onDelete('cascade');
         $table->foreign('id_espacio','fk_clases_ref_espacios_deportivos')->references('id')->on('espacio_deportivos')->onDelete('cascade');
+        $table->foreign('id_periodo','fk_clases_ref_periodos')->references('id')->on('periodos')->onDelete('cascade');
     });
     }
 
