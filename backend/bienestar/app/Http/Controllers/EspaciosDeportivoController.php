@@ -20,6 +20,7 @@ class EspaciosDeportivoController extends Controller
         $espaciosDeportivos=EspacioDeportivo::all();
         return view('admin.espaciosdeportivos',compact('espaciosDeportivos'));
     }
+
     public function register(Request $request){
         /**datos obligatorios para el registro */
 		$rules = [
@@ -41,8 +42,11 @@ class EspaciosDeportivoController extends Controller
 		$espdep->name      = $request->name;		
         $espdep->id_user    =$request->id_user;
 		$espdep->save();
-        return redirect()->route('admin',['title'=>'HOME'])->with('group','HOME');;
+        return redirect()->route('admin');
+        
         }
+
+
         public function create_register(Request $request){
             $errors=Session::get('errors');
             $users = User::where('id_rol',2)->get();

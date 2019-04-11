@@ -56,8 +56,8 @@
 
 
 	<main>
-		<nav>
-			<div style="background-image: url({{ asset('kubycks/public/media/system/header.png') }});">
+		<nav class="cst-gold">
+			<div >
 				<div class="nav-wrapper cst-nav-wrapper">
 					<a href="#" data-target="slide-out" class="sidenav-trigger hide-on-large-only"><i class="material-icons color-blue">menu</i></a>
 					<ul id="nav-mobile" class="right hide-on-med-and-down">

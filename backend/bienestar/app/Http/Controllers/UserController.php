@@ -113,7 +113,7 @@ class UserController extends Controller
 
     public function create_login(){
         return view('auth.login');
-        }
+    }
 
     public function login(Request $request){
 		$rules = [

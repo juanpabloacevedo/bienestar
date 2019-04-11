@@ -5,8 +5,9 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Clase extends Model{
-    public function user(){
-        return $this->belongsToMany("App\User","id_user");
+    public function users(){
+        return $this->belongsToMany("App\User","clase_usuarios", "id_clases", "id_user")
+        ->withTimestamps();
     }
     public function espaciodeportivo(){
         return $this->belongsTo("App\EspacioDeportivo","id_espacio");
