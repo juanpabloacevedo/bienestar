@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
 use App\EspacioDeportivo;
+use App\Espacio;
 use App\Periodo;
 use App\Clase;
 use App\User;
@@ -19,10 +20,12 @@ class ClaseController extends Controller
      */
 
     public function index(){
+        $espacios=Espacio::all();
         $clases=Clase::where('cupos','>=',1)->orderBy('created_at')->get();
         $users=User::all();
         return view('admin.listaclases')
         ->with('clases',$clases)
+        ->with('espacios',$espacios)
         ->with('users',$users);
     }
     public function store(Request $request){
@@ -47,7 +50,7 @@ class ClaseController extends Controller
                
         /**creacion del usuario,estos datos son los mismos de la migracion o base de datos*/
         $clase = new Clase();
-		$clase->name   = $request->name;		
+        $clase->name   = $request->name;		
         $clase->cupos  = $request->cupos;
         $clase->disponible  = true;
         $clase->id_user  = 1;

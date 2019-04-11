@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Juan Pablo Acevedo Torres">
-	<meta name="description" content="Reservas de turnos de uso de espacios deportivos en a universidad Santo Tomas">
+	<meta name="description" content="Reservas de turnos de uso de espacios deportivos en la universidad Santo Tomas">
 	<meta name="keywords" content="Gimnasio, USTA, usta,usta tunja,usta deportes,universidad santo tomas">
 	<link rel="icon" href="{{asset('img/ustaIcon.ico')}}">
 
@@ -43,8 +43,11 @@
 			</div>
 		</li>
 		<li><a href="{{ url('/indexuser') }}">Usuarios</a></li>
-		<li><a href="{{ url('/indexespaciosdeportivos') }}">Espacios deportivos</a></li>
+		<li><a href="{{ url('/indexespaciosdeportivo') }}">Actividades</a></li>
 		<li><a href="{{ url('/indexclases') }}">Clases</a></li>
+		<li><a href="{{url('/indexsedes')}}">Sedes</a></li>
+		<li><a href="{{url('/indexespacio')}}">Espacios</a></li>
+		<li><a href="{{url('/indexreserva')}}">Reserva</a></li>
 		<li><div class="divider"></div></li>
 		<li><a class="subheader">Subheader</a></li>
 		<li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
@@ -56,27 +59,28 @@
 
 
 	<main>
-		<nav class="cst-gold">
+		<nav class="jpa-color-base">
 			<div >
 				<div class="nav-wrapper cst-nav-wrapper">
 					<a href="#" data-target="slide-out" class="sidenav-trigger hide-on-large-only"><i class="material-icons color-blue">menu</i></a>
 					<ul id="nav-mobile" class="right hide-on-med-and-down">
-						<li><a href="{{ url('/indexuser') }}">Usuarios</a></li>
-						<li><a href="{{ url('/home') }}">Home</a></li>
-						<li><a href="collapsible.html">JavaScript</a></li>
+						<li><a href="http://www.ustatunja.edu.co">Usta Tunja</a></li>
+						<li><a href="https://plataformalms.ustatunja.edu.co/login/index.php">Campus Virtual</a></li>
+						<li><a href="{{ url('/user') }}">usuario</a></li>
+						<li><a href="{{ url('/admin') }}">index</a></li>
 						<li><a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
 
 						<form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
 							{{ csrf_field() }}
 						</form>
-						<li><a class="dropdown-trigger cst-admin-trigger color-blue bold" href="#!" data-target="dropdown-admin">{{Auth::user()->name}} {{Auth::user()->apellido}}</a></li>
+						<li><a class="dropdown-trigger cst-admin-trigger color-blue bold" href="#!" data-target="dropdown-admin">{{Auth::user()->name}}</a></li>
 					</ul>
 				</div>
 			</div>
 		</nav>
 	</main>
 
-
+ 
 
 
 		<h2>{{Auth::user()->name}} {{Auth::user()->apellido}}</h2>
@@ -84,9 +88,11 @@
 			<aside class="col left-menu hide-on-med-and-down h-100">
 				<ul id="slide-out-fxd" class="sidenav sidenav-fixed">
 					<li><a href="{{ url('/indexuser') }}">Usuarios</a></li>
-					<li><a href="{{ url('/indexespaciosdeportivos') }}">Espacios deportivos</a></li>
+					<li><a href="{{ url('/indexespaciosdeportivo') }}">Actividades</a></li>
 					<li><a href="{{ url('/indexclases') }}">Clases</a></li>
-					<li><a href="#">Reservas</a></li>
+					<li><a href="{{url('/indexsedes')}}">Sedes</a></li>
+					<li><a href="{{url('/indexespacio')}}">Espacios</a></li>
+					<li><a href="{{url('/indexreserva')}}">Reserva</a></li>
 					<li><a href="#">Inasistencias</a></li>
 				</ul>
 			</aside>
@@ -95,9 +101,14 @@
 				@yield('content')
 			</article>
 		</section>
-		<footer class="page-footer">
-          <div class="container">
-            <div class="row">
+		<div clas="row">
+			<div class="col s12 m112 l12 xl12">
+			<iframe  src="https://www.youtube.com/embed/-tJYN-eG1zk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+		</div>
+		<footer class="jpa-color-base">
+          <div class="container jpa-color-base" >
+            <div class="row jpa-color-base">
               <div class="col l6 s12">
                 <h5 class="white-text">Gimnasio virtual</h5>
                 <p class="grey-text text-lighten-4">Gimnasio virtual version de prueba</p>

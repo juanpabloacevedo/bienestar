@@ -20,7 +20,7 @@ class CreateEstadosTable extends Migration
             $table->boolean('canecelado');
             $table->boolean('reservado');
             /**llave foranea de espacios a sedes */
-            $table->integer('id_reserva')->unsigned()->default(1);
+            $table->integer('id_reserva')->nullable();
             $table->foreign('id_reserva')->references('id')->on('reservas');
             $table->timestamps();
         });

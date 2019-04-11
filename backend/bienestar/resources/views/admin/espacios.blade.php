@@ -3,28 +3,40 @@
 @section('content')
 <div class="row">
     <div class="col m12 s12">
-        <div>Gimnasio Virtual</div>
-        <h1>Espacios o clases</h1>
-        <div>
-            @if (session('status'))
-                <div class="alert alert-success">
-                    {{ session('status') }}
-                </div>
-            @endif
-
-            Actualmente estas logueado como: 
-            {{Auth::user()->rol->name}}
-            <div class="title m-b-md">
-                <h2>{{Auth::user()->name}}</h2>
-                <div>             
-                @forelse($users as $user)
-                    <li>{{ $user->name }}</li>
-                @empty
-                    <li>No hay usuarios registrados.</li>
-                @endforelse
-                </div>
+        @if (session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
             </div>
-        </div>
+        @endif
+        <ul>
+            <table class="table striped">
+            <h2>Espacios por sede</h2>
+                <thead>
+                    <tr>
+                        <th>espacio</th>
+                        <th>capacidad</th>
+                        <th>disponible</th>
+                        <th>sede</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>                            
+                    @if($espacios->count()==0)
+                    no hay espacios registrados
+                    @endif
+                    @foreach($espacios as $espacio)
+                    <tr>                    
+                    <td>{{$espacio->nombre_espacio}}</td>
+                    <td>{{$espacio->cantidad_usuarios}}</td>
+                    <td>@if($espacio->espacio_disponible==true)si @else no @endif</td>
+                    <td>{{$espacio->sede->name}}</td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+            <a class="btn-floating btn-large waves-effect waves-light blue pulse fixed" href="{{ url('/registerespacio') }}"><i class="material-icons">add</i></a>
+                    
+        </ul>
     </div>
 </div>
 @endsection

@@ -17,8 +17,8 @@ class EspaciosDeportivoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-        $espaciosDeportivos=EspacioDeportivo::all();
-        return view('admin.espaciosdeportivos',compact('espaciosDeportivos'));
+        $espaciosdep=EspacioDeportivo::all();
+        return view('admin.espaciosdeportivos',compact('espaciosdep'));
     }
 
     public function register(Request $request){
@@ -42,7 +42,7 @@ class EspaciosDeportivoController extends Controller
 		$espdep->name      = $request->name;		
         $espdep->id_user    =$request->id_user;
 		$espdep->save();
-        return redirect()->route('admin');
+        return redirect()->route('indexespaciosdeportivo');
         
         }
 
@@ -54,11 +54,7 @@ class EspaciosDeportivoController extends Controller
             ->with('users',$users)
             ->with('errors', $errors);
         }  
-        public function listaespaciosdeportivos(){
-            $espaciosdep=EspacioDeportivo::all();
-            return view('admin.espaciosdeportivos',compact('espaciosdep'));
-        } 
-    
+          
 
     /**
      * Store a newly created resource in storage.

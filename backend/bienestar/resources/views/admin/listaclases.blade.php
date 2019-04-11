@@ -12,7 +12,7 @@
             <div>                
                     <ul>
                     <table class="pagination table striped">
-                    <title>Lista de clases</title>
+                    <h2>Clases Disponibles</h2>
                         <thead>
                             <tr>
                                 <th>id</th>
@@ -35,7 +35,7 @@
                             <td>@if(isset($clase->periodo)) {{$clase->periodo->name}} @endif</td>
                             <td>@if(isset($clase->espaciodeportivo)) {{$clase->espaciodeportivo->name}} @endif</td>
                             <td id="cupos_clase_{{$clase->id}}">{{$clase->cupos}}</td>
-                            <td><a class="waves-effect waves-light btn modal-trigger" href="javascript:open_users_modal({{$clase->id}})"><i class="material-icons">person_add</i></a></td>
+                            <td><a class="waves-effect waves-light btn modal-trigger" href="javascript:open_users_modal({{$clase->id}})"><i class="material-icons">person_add</i></a><a class="waves-effect waves-light btn modal-trigger" href="#modal2"><i class="material-icons">date_range</i></a></td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -71,6 +71,61 @@
         <a class="secondary-content" href="javascript:add_user({{$user->id}})"><i class="material-icons">person_add</i></a>
     </li>
     @endforeach
+    </ul>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Aceptar</a>
+  </div>
+</div>
+<div id="modal2" class="modal">
+  <div class="modal-content">
+    <h4>Reservas</h4>
+    <form class="form-horizontal" method="POST" action="{{ route('registerreserva') }}">
+        <!-- csrf token a nivel global-->
+        {{ csrf_field() }}
+        <ul class="collection">
+        @if($espacios->count()==0)
+        no hay reservas registradas
+        @endif
+        <div class="form-group">
+        <label for="id_espacio" class="col-md-4 control-label">Espacio</label>
+        <div class="col-md-6">                            
+            <select id="id_espacio"  name="id_espacio">
+                @foreach($espacios as $espacio)
+                    <option value="{{$espacio->id}}">{{$espacio->nombre_espacio}}</option>  
+                @endforeach                          
+            </select>
+        </div>
+        <div class="form-group">
+        <label for="id_clase" class="col-md-4 control-label">Clase</label>
+        <div class="col-md-6">                            
+            <select id="id_clase"  name="id_clase">
+                @foreach($clases as $clase)
+                    <option value="{{$clase->id}}">{{$clase->name}}</option>  
+                @endforeach                          
+            </select>
+        </div>
+        <div class="form-group">
+        <label for="inicio" class="col-md-4 control-label">inicio</label>
+                <div class="col-md-6">
+                <input type="datetime" class="datepicker">
+                </div>
+        </div>
+        <div class="form-group">
+        <label for="fin" class="col-md-4 control-label">fin</label>
+                <div class="col-md-6">
+                    <input type="datetime" class="datepicker">
+                </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-6 col-md-offset-4">
+                <button type="submit" class="btn btn-primary">
+                Registrar
+                </button>
+            </div>
+        </div> 
+    </form>
+    </div>
     </ul>
   </div>
   <div class="modal-footer">

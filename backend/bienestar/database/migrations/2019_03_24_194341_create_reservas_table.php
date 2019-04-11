@@ -19,7 +19,7 @@ class CreateReservasTable extends Migration
             $table->dateTime('inicio');
             $table->dateTime('fin');
             /**llave foranea de reservas a estados */
-            $table->integer('id_estado')->unsigned();
+            $table->integer('id_estado')->nullable();
             /**llave foranea de reservas a espacios deportivos */
             $table->integer('id_espacio')->unsigned();
             /**llave foranea de reservas a clases */

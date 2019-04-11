@@ -23,17 +23,24 @@ Route::get('/register', 'UserController@create_register');
 Route::post('/register', 'UserController@register')->name('register');
 Route::get('/registeradmin', 'UserController@create_registeradmin');
 Route::post('/registeradmin', 'UserController@registeradmin')->name('registeradmin');
-/***espacios deportivos */
+/***espacios deportivos 'tipo de clase o deporte'*/
 Route::get('/registerespdep', 'EspaciosDeportivoController@create_register');
 Route::post('/registerespdep', 'EspaciosDeportivoController@register')->name('registerespdep');
-Route::get('/indexespaciosdeportivos', 'EspaciosDeportivoController@listaespaciosdeportivos');
+Route::get('/indexespaciosdeportivo', 'EspaciosDeportivoController@index')->name('indexespaciosdeportivo');
 /**clases */
 Route::get('/registerclase', 'ClaseController@create_register');
 Route::post('/registerclase', 'ClaseController@register')->name('registerclase');
 Route::get('/indexclases', 'ClaseController@index')->name('indexclases');
 Route::post('/claseactual', 'ClaseController@claseActual')->name('claseactual');
 Route::get('/modalclase', 'ClaseController@modalusers')->name('modalclase');
-
+/**espacio 'aula, gimnacio, cancha etc' */
+Route::get('/registerespacio', 'EspacioController@create_register');
+Route::post('/registerespacio', 'EspacioController@create')->name('registerespacio');
+Route::get('/indexespacio', 'EspacioController@index')->name('indexespacio');
+/**reservas */
+Route::post('/registerreserva', 'ReservaController@create')->name('registerreserva');
+Route::get('/registerreserva', 'ReservaController@create_reserva');
+Route::get('/indexreserva', 'ReservaController@index')->name('indexreserva');
 
 
 /**sedes*/
