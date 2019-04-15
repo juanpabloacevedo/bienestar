@@ -4,6 +4,7 @@ use App\Rol;
 use App\Sede;
 use App\User;
 use App\Periodo;
+use App\Estado;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,7 +15,7 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
+    {        
         $objperiodo01=new Periodo();
         $objperiodo01->name='2019-1';
         $objperiodo01->inicio='01/02/2019';
@@ -113,22 +114,22 @@ class DatabaseSeeder extends Seeder
         $objSede01->name='Campus Avenida Universitaria';
         $objSede01->city='Tunja,Boyacá';
         $objSede01->address='Av. Universitaria Cll. 48 No. 1-235 este';
-        $objSede01 ->timestamps=false;
-        $objSede01 ->save();
+        $objSede01->timestamps=false;
+        $objSede01->save();
 
         $objSede02=new Sede();
         $objSede02->name='Campus Centro Histórico';
         $objSede02->city='Tunja,Boyacá';
         $objSede02->address='Cll. 19 Nº 11 - 64';
-        $objSede02 ->timestamps=false;
-        $objSede02 ->save();
+        $objSede02->timestamps=false;
+        $objSede02->save();
 
         $objSede03=new Sede();
         $objSede03->name='Campus Bucaramanga';
         $objSede03->city='Bucaramanga, Santander';
         $objSede03->address='Cra. 18 Nº 9 - 27';
-        $objSede03 ->timestamps=false;
-        $objSede03 ->save();
+        $objSede03->timestamps=false;
+        $objSede03->save();
 
         $objSede04=new Sede();
         $objSede04->name='Campus Casa Tomasina';
@@ -141,8 +142,8 @@ class DatabaseSeeder extends Seeder
         $objSede05->name='Campus San Alberto Magno';
         $objSede05->city='Bogotá,Cundinamarca';
         $objSede05->address='Autopista Norte calle 205, vía Arrayanes km 1.6';
-        $objSede05 ->timestamps=false;
-        $objSede05 ->save();        
+        $objSede05->timestamps=false;
+        $objSede05->save();        
 /**Super usuario por defecto*/
         $objuser01=new User();
         $objuser01->name='supadministrador';
@@ -154,8 +155,18 @@ class DatabaseSeeder extends Seeder
         $objuser01->id_rol='1';
         $objuser01->id_doc='1';
         $objuser01->password='$2y$10$7QK7St.L9T5ialpAtfKRVOG/bfVwfVqWTPkJtNh1O0j6YnqdYfWWu';
-        $objuser01 ->timestamps=false;
-        $objuser01 ->save();
+        $objuser01->timestamps=false;
+        $objuser01->save();
+         
+        $objestado1=new Estado();
+        $objestado1->name='aprobado';
+        $objestado1->timestamps=true;
+        $objestado1->save();
+
+        $objestado2=new Estado();
+        $objestado2->name='cancelado';
+        $objestado2->timestamps=true;
+        $objestado2->save();
 
 
     }

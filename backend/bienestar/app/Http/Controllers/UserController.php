@@ -99,16 +99,9 @@ class UserController extends Controller
         /**si esta logueado como administrador, puede */
         $user->id_rol     =$request->id_rol;
         $user->id_doc     =$request->id_doc;
-		$user->save();
-
-		$credentials = $request->only('email', 'password');        
-	
-        /**Intenta 'attempt' autenticarse con las credenciales email y password */
-			if (Auth::attempt($credentials)) {
-                return redirect()->route('user',['title'=>'HOME'])->with('group','HOME');;
-            }else{
-                return view('auth.login',['errors'=>'credentials']); 
-            }
+        $user->save();
+         return redirect()->route('indexuser');
+        
     }
 
     public function create_login(){
@@ -167,9 +160,12 @@ class UserController extends Controller
     public function logout(){
         return view('welcome');
     }
-    public function listausuarios(){
+    public function index(){
+        $errors=Session::get('errors');
         $users=User::all();
-        return view('admin.listausuarios',compact('users'));
+        return view('admin.usuarios')
+        ->with('users',$users)
+        ->with('errors', $errors);;
     }
    
    

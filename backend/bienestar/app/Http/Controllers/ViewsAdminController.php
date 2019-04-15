@@ -35,7 +35,7 @@ class ViewsAdminController extends Controller
     }
     public function listarUsuarios()
     {
-        return view('admin.listausuarios');
+        return view('admin.usuarios');
     }
     public function listarClases()
     {

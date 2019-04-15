@@ -16,12 +16,7 @@ class CreateEstadosTable extends Migration
         Schema::create('estados', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->boolean('aprobado');
-            $table->boolean('canecelado');
-            $table->boolean('reservado');
             /**llave foranea de espacios a sedes */
-            $table->integer('id_reserva')->nullable();
-            $table->foreign('id_reserva')->references('id')->on('reservas');
             $table->timestamps();
         });
     }

@@ -33,7 +33,6 @@ class CreateUsersTable extends Migration
             $table->foreign('id_doc')->references('id')->on('tipo_documentos');
             $table->string('numero_documento',32)->nullable();
             //
-            $table->integer('id_asistencia')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

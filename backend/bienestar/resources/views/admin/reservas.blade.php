@@ -13,6 +13,7 @@
             <h2>Reservas</h2>
                 <thead>
                     <tr>
+                    <th>nombre reserva</th>
                         <th>clase</th>
                         <th>espacio</th>
                         <th>fecha inicio</th>
@@ -28,10 +29,10 @@
                     <tr>                    
                     <td>{{$reserva->name}}</td>
                     <td>{{$reserva->clase->name}}</td>
-                    <td>{{$reserva->espacio->name}}</td>
-                    <td>{{$reserva->estado->aprobado}}</td>
+                    <td>{{$reserva->espacio->nombre_espacio}}</td>
                     <td>{{$reserva->inicio}}</td>
-                    <td>{{$reserva->fin}}</td>                   
+                    <td>{{$reserva->fin}}</td>
+                    <td>{{$reserva->clase->periodo->name }}</td>                   
                     </tr>
                     @endforeach
                 </tbody>

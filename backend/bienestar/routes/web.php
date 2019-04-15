@@ -38,10 +38,13 @@ Route::get('/registerespacio', 'EspacioController@create_register');
 Route::post('/registerespacio', 'EspacioController@create')->name('registerespacio');
 Route::get('/indexespacio', 'EspacioController@index')->name('indexespacio');
 /**reservas */
-Route::post('/registerreserva', 'ReservaController@create')->name('registerreserva');
-Route::get('/registerreserva', 'ReservaController@create_reserva');
+Route::post('/registerreserva', 'ReservaController@store')->name('registerreserva');
+Route::get('/registerreserva', 'ReservaController@create');
 Route::get('/indexreserva', 'ReservaController@index')->name('indexreserva');
-
+/**asistencias */
+Route::post('/registerasistencia', 'ReservaController@store')->name('registerasistencia');
+Route::get('/registerasistencia', 'ReservaController@create');
+Route::get('/indexasistencia', 'AsistenciaController@index')->name('indexasistencia');
 
 /**sedes*/
 Route::get('/indexsedes', 'SedeController@index')->name('indexsedes');
@@ -53,15 +56,16 @@ Route::get('/admin', 'HomeController@admin')->name('admin');
 Route::get('/user', 'HomeController@user')->name('user');
 Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
-Route::get('/indexuser', 'UserController@listausuarios');
+Route::get('/indexuser', 'UserController@index')->name('indexuser');;
 /**rutas de administrador */
 Route::get('/clases', 'ClaseController@index');
 Route::Post('/espacios', 'UserController@listarEspDep');
 Route::get('/listaclases', 'UserController@listaclases');
-
 /****************************** */
+
 /**Ajax */
 Route::post('/subscribe_user', 'ClaseController@subscribeUser');
+Route::post('/clase_reserva', 'ClaseController@reservarclase');
 
 
 

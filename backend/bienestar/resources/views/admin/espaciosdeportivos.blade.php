@@ -10,7 +10,7 @@
         @endif
         <ul>
             <table class="table striped">
-            <title>Lista y estado de usuarios</title>
+            <h3>Deportes y actividades</h3>
                 <thead>
                     <tr>
                         <th>Instructor</th>

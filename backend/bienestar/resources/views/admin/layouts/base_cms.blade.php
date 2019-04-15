@@ -48,6 +48,7 @@
 		<li><a href="{{url('/indexsedes')}}">Sedes</a></li>
 		<li><a href="{{url('/indexespacio')}}">Espacios</a></li>
 		<li><a href="{{url('/indexreserva')}}">Reserva</a></li>
+		<li><a href="{{url('/indexasistencia')}}">Asistencias</a></li>
 		<li><div class="divider"></div></li>
 		<li><a class="subheader">Subheader</a></li>
 		<li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
@@ -63,7 +64,7 @@
 			<div >
 				<div class="nav-wrapper cst-nav-wrapper">
 					<a href="#" data-target="slide-out" class="sidenav-trigger hide-on-large-only"><i class="material-icons color-blue">menu</i></a>
-					<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<ul id="nav-mobile " class="right hide-on-med-and-down">
 						<li><a href="http://www.ustatunja.edu.co">Usta Tunja</a></li>
 						<li><a href="https://plataformalms.ustatunja.edu.co/login/index.php">Campus Virtual</a></li>
 						<li><a href="{{ url('/user') }}">usuario</a></li>
@@ -74,7 +75,7 @@
 							{{ csrf_field() }}
 						</form>
 						<li><a class="dropdown-trigger cst-admin-trigger color-blue bold" href="#!" data-target="dropdown-admin">{{Auth::user()->name}}</a></li>
-					</ul>
+					</ul>					
 				</div>
 			</div>
 		</nav>
@@ -86,15 +87,34 @@
 		<h2>{{Auth::user()->name}} {{Auth::user()->apellido}}</h2>
 		<section class="row flex">
 			<aside class="col left-menu hide-on-med-and-down h-100">
-				<ul id="slide-out-fxd" class="sidenav sidenav-fixed">
-					<li><a href="{{ url('/indexuser') }}">Usuarios</a></li>
-					<li><a href="{{ url('/indexespaciosdeportivo') }}">Actividades</a></li>
-					<li><a href="{{ url('/indexclases') }}">Clases</a></li>
-					<li><a href="{{url('/indexsedes')}}">Sedes</a></li>
-					<li><a href="{{url('/indexespacio')}}">Espacios</a></li>
-					<li><a href="{{url('/indexreserva')}}">Reserva</a></li>
-					<li><a href="#">Inasistencias</a></li>
-				</ul>
+				<ul id="slide-out-fxd" class="sidenav sidenav-fixed collapsible">
+					<li>
+					<div class="collapsible-header"><i class="material-icons">group</i>Usuarios</div>
+					<div class="collapsible-body"><a href="{{ url('/indexuser') }}">Usuarios</a></div>
+					</li>
+					<li>
+					<div class="collapsible-header"><i class="material-icons">directions_bike</i>Actividades</div>
+					<div class="collapsible-body"><a href="{{ url('/indexespaciosdeportivo') }}">Actividades</a></div>
+					</li>
+					<li>
+					<div class="collapsible-header"><i class="material-icons">list</i>Clases</div>
+					<div class="collapsible-body"><a href="{{url('/indexclases') }}">Clases</a></div>
+					<div class="collapsible-body"><a href="{{url('/indexasistencia')}}">control de asistencia</a></div>
+
+					</li>
+					<li>
+					<div class="collapsible-header"><i class="material-icons">place</i>Sedes</div>
+					<div class="collapsible-body"><a href="{{url('/indexsedes')}}">Sedes</a></div>
+					</li>
+					<li>
+					<div class="collapsible-header"><i class="material-icons">fitness_center</i>Espacios deportivos</div>
+					<div class="collapsible-body"><a href="{{url('/indexespacio')}}">Espacios</a></div>
+					</li>
+					<li>
+					<div class="collapsible-header"><i class="material-icons">timelapse</i>Reservas</div>
+					<div class="collapsible-body"><a href="{{url('/indexreserva')}}">Reserva</a></div>
+					</li>
+					</ul>
 			</aside>
 			<article class="cst-content w-100">
 				<!--blque hueco donde ira el contenido proveniente de una seccion-->
@@ -103,7 +123,7 @@
 		</section>
 		<div clas="row">
 			<div class="col s12 m112 l12 xl12">
-			<iframe  src="https://www.youtube.com/embed/-tJYN-eG1zk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<iframe width="426" height="239" src="https://www.youtube.com/embed/Z7lVr_qLQlM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</div>
 		</div>
 		<footer class="jpa-color-base">

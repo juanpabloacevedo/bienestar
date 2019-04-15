@@ -4,25 +4,29 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
-
 use App\Asistencia;
+use App\Reserva;
+use App\User;
 
 class AsistenciaController extends Controller
 {
    
     public function index(){
-        $asistencias=Asistencia::all();
-        return view('admin.asistencias',compact('asistencias'));
+        $reservas=Reserva::all();
+        return view('admin.asistencias')
+        ->with('reservas',$reservas);
     }
-
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create(){
+        $users=User::all();
+        $reservas=Reserva::all();
+        return view('admin.asistenciasregister')
+        ->with('reservas',$reservas)
+        ->with('users',$users);
     }
 
     /**

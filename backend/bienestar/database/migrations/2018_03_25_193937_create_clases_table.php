@@ -24,8 +24,6 @@ class CreateClasesTable extends Migration
             $table->integer('id_espacio')->unsigned();
         /**llave foranea de clases a periodos*/
             $table->integer('id_periodo')->unsigned();             
-        /**llave foranea a usuarios */
-            $table->integer('id_user')->nullable();
             $table->timestamps();
             });
     }

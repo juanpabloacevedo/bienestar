@@ -15,13 +15,13 @@ class AddForeignKeyToAsistenciasTable extends Migration
     {
         Schema::table('asistencias', function (Blueprint $table) {
 		$table->foreign('id_user','fk_users_ref_asistencias')->references('id')->on('users')->onDelete('cascade');
-        $table->foreign('id_clase','fk_clases_ref_asistencias')->references('id')->on('clases')->onDelete('cascade');
+        $table->foreign('id_reserva','fk_clases_ref_asistencias')->references('id')->on('reservas')->onDelete('cascade');
 		
     });
     }
     public function down()
     {
          Schema::dropIfExists('fk_users_ref_asistencias');
-         Schema::dropIfExists('fk_clases_ref_asistencias');
+         Schema::dropIfExists('fk_reservas_ref_asistencias');
     }
 }

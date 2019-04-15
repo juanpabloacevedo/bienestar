@@ -17,9 +17,8 @@ class CreateAsistenciasTable extends Migration
             $table->increments('id');
             
             $table->integer('id_user')->unsigned();            //
-            $table->integer('id_clase')->unsigned();
-            $table->integer('asistencias'); 
-            $table->integer('inasistencias'); 
+            $table->integer('id_reserva')->unsigned();
+            $table->boolean('asistio'); 
             $table->timestamps();
          
       });

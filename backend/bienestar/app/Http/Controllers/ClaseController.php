@@ -53,7 +53,6 @@ class ClaseController extends Controller
         $clase->name   = $request->name;		
         $clase->cupos  = $request->cupos;
         $clase->disponible  = true;
-        $clase->id_user  = 1;
         $clase->id_espacio = $request->id_espacio;
         $clase->id_periodo = $request->id_periodo;
 		$clase->save();
@@ -96,6 +95,11 @@ class ClaseController extends Controller
         $clase->cupos = $clase->cupos-1;
         $clase->save();
         return response()->json($clase, 200);
+    }
+    public function reservarclase(Request $request){
+        $reserva= Clase::find($request->class_id);
+        $reserva->save();
+        return response()->json($reserva, 200);
     }
 
     public function borrar(Clase $clase){

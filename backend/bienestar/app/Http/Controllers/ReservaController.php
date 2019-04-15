@@ -29,36 +29,7 @@ class ReservaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
-    {
-       /**datos obligatorios para el registro */
-    $rules = [
-        'name'      => 'required|max:255',
-        ];
-    /**credenciales minimas de registro */
-    $credentials = $request->only(
-        'name'			
-    );
-    /**si los datos son incorrectos dirijase a registro */
-    $validator = Validator::make($credentials, $rules);
-    if($validator->fails()) {
-        return redirect()->route('admin')        
-        ->with('errors', $validator->errors());
-    }
-        
-    /**creacion del usuario,estos datos son los mismos de la migracion o base de datos*/
-    $reserva = new Reserva();
-    $reserva->name      = $request->name;
-    $reserva->id_espacio    = $request->id_espacio;		
-    $reserva->id_clase    = $request->id_clase;
-    $reserva->inicio = $request->inicio_dia+$request->inicio_hora;
-    $reserva->fin= $$request->fin_dia+$request->fin_hora;
-    $reserva->save();
-    return redirect()->route('indexreserva');
-    }
-    
-    public function create_reserva()
-    {   
+    public function create(){
         $espacios=Espacio::all();
         $clases=Clase::all();
         $estados=Estado::all();
@@ -67,6 +38,11 @@ class ReservaController extends Controller
         ->with('espacios',$espacios)
         ->with('estados',$estados);
     }
+    
+    public function create_reserva()
+    {   
+        
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -74,9 +50,34 @@ class ReservaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request){
+        /**datos obligatorios para el registro */
+        $rules = [
+            'id_clase'      => 'required|max:255',
+            ];
+        /**credenciales minimas de registro */
+        $credentials = $request->only(
+            'id_clase'			
+        );
+        /**si los datos son incorrectos dirijase a registro */
+        $validator = Validator::make($credentials, $rules);
+        if($validator->fails()) {
+            return response()->json($validator->errors());
+            return redirect()->route('admin')        
+            ->with('errors', $validator->errors());
+        }
+            
+        /**creacion del usuario,estos datos son los mismos de la migracion o base de datos*/
+        $reserva = new Reserva();        
+        $reserva->id_espacio    = $request->id_espacio;		
+        $reserva->id_clase    = $request->id_clase;        
+        $reserva->inicio = Carbon::parse($request->inicio_dia.' '.$request->inicio_hora)->format('Y-m-d H:m');
+        $reserva->fin= Carbon::parse($request->fin_dia.' '.$request->fin_hora)->format('Y-m-d H:m');
+        $reserva->name      = $reserva->id+$reserva->id_clase;
+        $reserva->id_estado=1;
+        $reserva->save();
+        return redirect()->route('indexreserva');
+    
     }
 
     /**

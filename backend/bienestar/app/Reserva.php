@@ -15,4 +15,7 @@ class Reserva extends Model
     public function estado(){
         return $this->belongsTo("App\Estado","id_estado");
     }
+    public function user(){
+        return $this->belongsToMany("App\Asistencia","id_user");
+    }
 }

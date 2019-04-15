@@ -35,7 +35,7 @@
                             <td>@if(isset($clase->periodo)) {{$clase->periodo->name}} @endif</td>
                             <td>@if(isset($clase->espaciodeportivo)) {{$clase->espaciodeportivo->name}} @endif</td>
                             <td id="cupos_clase_{{$clase->id}}">{{$clase->cupos}}</td>
-                            <td><a class="waves-effect waves-light btn modal-trigger" href="javascript:open_users_modal({{$clase->id}})"><i class="material-icons">person_add</i></a><a class="waves-effect waves-light btn modal-trigger" href="#modal2"><i class="material-icons">date_range</i></a></td>
+                            <td><a class="waves-effect waves-light btn modal-trigger" href="javascript:open_users_modal({{$clase->id}})"><i class="material-icons">person_add</i></a><a class="waves-effect waves-light btn modal-trigger" href="javascript:open_reservas_modal({{$clase->id}})"><i class="material-icons">date_range</i></a></td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -77,17 +77,21 @@
     <a href="#!" class="modal-close waves-effect waves-green btn-flat">Aceptar</a>
   </div>
 </div>
+
+
 <div id="modal2" class="modal">
   <div class="modal-content">
     <h4>Reservas</h4>
     <form class="form-horizontal" method="POST" action="{{ route('registerreserva') }}">
-        <!-- csrf token a nivel global-->
-        {{ csrf_field() }}
-        <ul class="collection">
-        @if($espacios->count()==0)
-        no hay reservas registradas
-        @endif
+                        <!-- csrf token a nivel global-->
+                        {{ csrf_field() }}
+                        <div class="form-group">
         <div class="form-group">
+            <label for="name" class="col-md-4 control-label">Nombre</label>
+                <div class="col-md-6">
+                    <input id="name" type="text" class="form-control" name="name" required>
+            </div>
+        </div>
         <label for="id_espacio" class="col-md-4 control-label">Espacio</label>
         <div class="col-md-6">                            
             <select id="id_espacio"  name="id_espacio">
@@ -100,31 +104,33 @@
         <label for="id_clase" class="col-md-4 control-label">Clase</label>
         <div class="col-md-6">                            
             <select id="id_clase"  name="id_clase">
-                @foreach($clases as $clase)
-                    <option value="{{$clase->id}}">{{$clase->name}}</option>  
-                @endforeach                          
+                
+                    <a value="javascript:add_reserva{{$clase->id}}">{{$clase->name}}</option>  
+                          
             </select>
         </div>
         <div class="form-group">
-        <label for="inicio" class="col-md-4 control-label">inicio</label>
+        <label for="inicio_dia" class="col-md-4 control-label">inicio</label>
                 <div class="col-md-6">
-                <input type="datetime" class="datepicker">
+                <input type="text" class="datepicker" name="incio_dia">
+                <input type="text" class="timepicker" name="incio_hora">
                 </div>
         </div>
         <div class="form-group">
-        <label for="fin" class="col-md-4 control-label">fin</label>
+        <label for="fin_dia" class="col-md-4 control-label">fin</label>
                 <div class="col-md-6">
-                    <input type="datetime" class="datepicker">
+                <input type="text"  class="datepicker" name="fin_dia" format="yyyy-mm-dd">
+                <input type="text"  class="timepicker" name="fin_hora">
                 </div>
         </div>
-        <div class="form-group">
-            <div class="col-md-6 col-md-offset-4">
-                <button type="submit" class="btn btn-primary">
-                Registrar
-                </button>
-            </div>
-        </div> 
-    </form>
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Registrar
+                                </button>
+                            </div>
+                        </div>
+                    </form>
     </div>
     </ul>
   </div>
@@ -135,32 +141,5 @@
 @endsection
 
 @section('javascript')
-<script>
-var token = $("meta[name=csrf-token]").attr("content");
-var url_subscribe_user = '{!! url("/subscribe_user") !!}';
-var current_class=0;
-
-function open_users_modal(class_id){
-    current_class = class_id;
-    $('#modal1').modal('open');
-}
-
-function add_user(user_id){
-    $.ajax({
-		method: "POST",
-		url: url_subscribe_user,
-		data: {'class_id':current_class, 'user_id':user_id, '_token': token},
-		dataType: "json",
-		success:function(data){
-            console.log(data);
-			alert('success');
-            document.getElementById('cupos_clase_'+current_class).innerHTML = data.cupos;
-		},
-		error:function(error){
-            alert(error);
-		}
-	});
-}
-
-</script>
+<script src="{{ asset('js/class.js') }}"></script>
 @endsection

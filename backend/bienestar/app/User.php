@@ -18,16 +18,22 @@ class User extends Authenticatable{
     public function rol(){
         return $this->belongsTo("App\Rol","id_rol");
     }
-    public function clase(){
-        return $this->belongsToMany("App\Clase","id_clase");
+    public function clases(){
+        return $this->belongsToMany("App\Clase","clase_usuarios", "id_user", "id_clase")
+        ->withTimestamps();
     }
     public function documento(){
         return $this->belongsTo("App\TipoDocumento","id_doc");
     }
-    public function asistencias(){
-        return $this->belongsTo("App\Asistencia","id_asistencia");
+    public function reservas(){
+        return $this->belongsToMany("App\Reserva","asistencias", "id_user", "id_reserva")
+        ->withTimestamps();
     }
-    
+    public function asistencia(){
+        return $this->hasMany("asistencias", "id_user")
+        ->withTimestamps();
+    }
+        
 	}
 
 

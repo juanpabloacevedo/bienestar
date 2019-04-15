@@ -12,7 +12,7 @@ class CreateClaseUsuariosTable extends Migration{
                 /**Entidad devil ,llave foranea de clase_usuarios a user */
                 $table->integer('id_user')->unsigned();
                 /**Entidad devil ,llave foranea de clase_usuarios a clases */
-                $table->integer('id_clases')->unsigned();
+                $table->integer('id_clase')->unsigned();
                 $table->timestamps();
             });
         }
