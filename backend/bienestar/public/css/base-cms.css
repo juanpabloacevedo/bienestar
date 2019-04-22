@@ -20,6 +20,14 @@
 .w-100{
     width: 100% !important;
 }
-.material-icons:hover { 
-    background-color: yellow;
+.list-color:hover { 
+    background-color:rgb(89, 175, 247) ;
+;    
+}
+.active{
+	color:green;
+	text-decoration: none;
+}
+.collapsible-body{
+	text-align: center;
 }

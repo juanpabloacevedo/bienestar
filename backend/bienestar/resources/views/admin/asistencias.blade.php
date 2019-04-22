@@ -34,23 +34,21 @@
                     <tr style="text-align:center; background-color:yellow">                    
                         <td>{{$reserva->id}}</td>
                         <td>{{$reserva->clase->name}}</td>
-                        <td>{{$reserva->clase->espaciodeportivo->user->apellido}}</td>
+                        <td>{{$reserva->clase->espaciodeportivo->user->name}}</td>
                         <td>{{$reserva->clase->users->count()}}</td>
                         <td>{{$reserva->inicio}}</td>
                         <td>{{$reserva->fin}}</td>
                         <td>
                         <thead>
                         <th style="text-align:center; background-color:green">Lista de clase</th>
-                            <tr>
-                                <th>nombre</th>
-                                <th>codigo</th>                                                   
-                            </tr>
+                        <tr>
+                            <th>nombre</th>
+                            <th>codigo</th>                                                   
+                        </tr>
                         </thead>                        
-                        <tbody>
-                        
+                        <tbody>                        
                         @foreach($reserva->clase->users as $actual)
-                            
-                            <tr >
+                        <tr >
                                 <td>{{$actual->name}}</td>
                                 <td>{{$actual->codigo}}</td>
                                 <td><div class="switch">
@@ -60,16 +58,16 @@
                         <span class="lever"></span>
                         asistio
                         </label>
-                    </div>
-                    </td>
+                            </div>
+                            </td>
+                                </tr>
+                                    @endforeach     
+                                </tbody>
+                                </td>                                         
                             </tr>
-                            @endforeach     
                         </tbody>
-                        </td>                                         
-                    </tr>
-                </tbody>
-                @endforeach     
-            </table>
+                        @endforeach     
+                         </table>
             
                     
         </ul>

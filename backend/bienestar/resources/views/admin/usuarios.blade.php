@@ -32,6 +32,16 @@
                     <td>@if(isset($user->asistencias)){{$user->asistencias->count()}}@else 0 @endif</td>
                     <td>{{$user->rol->name}}</td>
                     <td>{{$user->rol->activo}}</td>
+                    <td> <form class="form-horizontal" method="POST" action="{{ route('listarclases') }}">
+                        {{ csrf_field() }}
+                    <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary" value="{{$user->id}}" name="user">
+                                    listar
+                                </button>
+                            </div>
+                        </div>
+                    </form></td>
                     <td><div class="switch">
                         <label>
                         con sancion

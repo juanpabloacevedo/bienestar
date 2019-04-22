@@ -29,10 +29,7 @@ class ClaseController extends Controller
         ->with('users',$users);
     }
     public function store(Request $request){
-    }
-
-    public function register(Request $request){
-        /**datos obligatorios para el registro */
+          /**datos obligatorios para el registro */
 		$rules = [
             'name'    => 'required|max:255',
             'cupos'   => 'required|max:32'
@@ -105,5 +102,13 @@ class ClaseController extends Controller
     public function borrar(Clase $clase){
         $clase->delete();
     }
-
+    public function listarclases(Request $request){
+    $user=User::find($request->user);
+    $errors=Session::get('errors');
+    $clases=Clase::all('user',$user);
+    return view('admin.misclases')
+    ->with('clases',$clases)
+    ->with('user', $user)
+    ->with('errors', $errors);
+}
 }

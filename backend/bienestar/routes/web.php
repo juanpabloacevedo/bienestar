@@ -29,10 +29,15 @@ Route::post('/registerespdep', 'EspaciosDeportivoController@register')->name('re
 Route::get('/indexespaciosdeportivo', 'EspaciosDeportivoController@index')->name('indexespaciosdeportivo');
 /**clases */
 Route::get('/registerclase', 'ClaseController@create_register');
-Route::post('/registerclase', 'ClaseController@register')->name('registerclase');
+Route::post('/registerclase', 'ClaseController@store')->name('registerclase');
 Route::get('/indexclases', 'ClaseController@index')->name('indexclases');
 Route::post('/claseactual', 'ClaseController@claseActual')->name('claseactual');
 Route::get('/modalclase', 'ClaseController@modalusers')->name('modalclase');
+/**clase por usuario*/
+Route::post('/listarclases', 'ClaseController@listarclases')->name('listarclases');
+
+
+
 /**espacio 'aula, gimnacio, cancha etc' */
 Route::get('/registerespacio', 'EspacioController@create_register');
 Route::post('/registerespacio', 'EspacioController@create')->name('registerespacio');
@@ -48,8 +53,8 @@ Route::get('/indexasistencia', 'AsistenciaController@index')->name('indexasisten
 
 /**sedes*/
 Route::get('/indexsedes', 'SedeController@index')->name('indexsedes');
-Route::get('/registersede', 'SedeController@create_register')->name('registersede');
-Route::post('/registersede', 'SedeController@create');
+Route::get('/registersede', 'SedeController@create')->name('registersede');
+Route::post('/registersede', 'SedeController@store');
 /**iniciales */
 Route::post('/login', 'UserController@login');
 Route::get('/admin', 'HomeController@admin')->name('admin');
