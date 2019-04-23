@@ -103,9 +103,10 @@ class ClaseController extends Controller
         $clase->delete();
     }
     public function listarclases(Request $request){
-    $user=User::find($request->user);
+    $id=$request->user;
+    $user=User::find($id);
     $errors=Session::get('errors');
-    $clases=Clase::all('user',$user);
+    $clases=Clase::all();
     return view('admin.misclases')
     ->with('clases',$clases)
     ->with('user', $user)
