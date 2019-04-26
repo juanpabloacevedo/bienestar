@@ -20,6 +20,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 	<!--Principal-->
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/base-cms.css') }}">
+
 </head>
 
 <body id="app">
@@ -124,11 +125,7 @@
 			@yield('content')
 		</article>
 	</section>
-	<div clas="row">
-		<div class="col s12 m112 l12 xl12">
-			<iframe width="auto" height="auto" src="https://www.youtube.com/embed/Z7lVr_qLQlM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-		</div>
-	</div>
+	
 	<footer class="jpa-color-base">
 		<div class="container jpa-color-base" >
 			<div class="row jpa-color-base">
@@ -145,14 +142,9 @@
 			</div>
 		</div>
 	</footer>
-	<!--JQuery
-		<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>-->
+
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<!-- Compiled and minified CSS -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-		<!-- Materialize icons -->
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<!-- Compiled and minified JavaScript -->
+
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 		<!--Project asset va directamente a la raiz de public-->

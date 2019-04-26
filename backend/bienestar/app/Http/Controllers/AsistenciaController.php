@@ -10,7 +10,7 @@ use App\User;
 
 class AsistenciaController extends Controller
 {
- 
+
     public function index(){
         $reservas=Reserva::all();
         return view('admin.asistencias')
@@ -22,8 +22,8 @@ class AsistenciaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create(){
-        $users    =User::all();
-        $reservas =Reserva::all();
+        $users    = User::all();
+        $reservas = Reserva::all();
         return view('admin.asistenciasregister')
         ->with('reservas',$reservas)
         ->with('users',$users);

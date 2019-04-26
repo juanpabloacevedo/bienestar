@@ -38,12 +38,15 @@
                     <td>{{$reserva->inicio}}</td>
                     <td>{{$reserva->fin}}</td>                                         
                     </tr>
-                        </tbody>
-                        @endforeach     
-                         </table>
-            
+                    </tbody>
+                    @endforeach     
+                    </table>  
                     
         </ul>
     </div>
 </div>
+<h1>My First Google Map</h1>
+
+<div id="googleMap" style="width:100%;height:400px;"></div>
+
 @endsection

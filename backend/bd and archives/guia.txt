@@ -10,3 +10,6 @@ class Rol extends Model
 belongsTo= uno a uno 
 hasMany=uno a muchos
 belongsToMany=muchos a muchos
+
+ctrl+alt+A alinear horizontalmente
+alt+shit+f identar

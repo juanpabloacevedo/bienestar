@@ -19,6 +19,7 @@ class User extends Authenticatable{
         return $this->belongsTo("App\Rol","id_rol");
     }
     public function clases(){
+         /** tabla objetivo, tabla auxiliar,id propio, id del objetivo dentro de la tabla objetivo*/
         return $this->belongsToMany("App\Clase","clase_usuarios", "id_user", "id_clase")
         ->withTimestamps();
     }
@@ -26,6 +27,7 @@ class User extends Authenticatable{
         return $this->belongsTo("App\TipoDocumento","id_doc");
     }
     public function reservas(){
+         /** tabla objetivo, tabla auxiliar,id propio, id del objetivo dentro de la tabla objetivo*/
         return $this->belongsToMany("App\Reserva","asistencias", "id_user", "id_reserva")
         ->withTimestamps();
     }
