@@ -157,6 +157,72 @@ class DatabaseSeeder extends Seeder
         $objuser01->password='$2y$10$7QK7St.L9T5ialpAtfKRVOG/bfVwfVqWTPkJtNh1O0j6YnqdYfWWu';
         $objuser01->timestamps=false;
         $objuser01->save();
+
+        $objuser02=new User();
+        $objuser02->name='instructor1';
+        $objuser02->apellido='Usta Tunja';
+        $objuser02->codigo='0002';
+        $objuser02->celular='000002';
+        $objuser02->usuario='instructor1.ustatunja';
+        $objuser02->email='instructor1@example.com';
+        $objuser02->id_rol='2';
+        $objuser02->id_doc='1';
+        $objuser02->password='$2y$10$7QK7St.L9T5ialpAtfKRVOG/bfVwfVqWTPkJtNh1O0j6YnqdYfWWu';
+        $objuser02->timestamps=false;
+        $objuser02->save();
+
+        $objuser04=new User();
+        $objuser04->name='instructor2';
+        $objuser04->apellido='Usta Tunja';
+        $objuser04->codigo='0003';
+        $objuser04->celular='000003';
+        $objuser04->usuario='instructor2.ustatunja';
+        $objuser04->email='instructor2@example.com';
+        $objuser04->id_rol='2';
+        $objuser04->id_doc='1';
+        $objuser04->password='$2y$10$7QK7St.L9T5ialpAtfKRVOG/bfVwfVqWTPkJtNh1O0j6YnqdYfWWu';
+        $objuser04->timestamps=false;
+        $objuser04->save();
+
+        $objuser03=new User();
+        $objuser03->name='instructor3';
+        $objuser03->apellido='Usta Tunja';
+        $objuser03->codigo='0004';
+        $objuser03->celular='000004';
+        $objuser03->usuario='instructor3.ustatunja';
+        $objuser03->email='instructor3@example.com';
+        $objuser03->id_rol='2';
+        $objuser03->id_doc='1';
+        $objuser03->password='$2y$10$7QK7St.L9T5ialpAtfKRVOG/bfVwfVqWTPkJtNh1O0j6YnqdYfWWu';
+        $objuser03->timestamps=false;
+        $objuser03->save();
+
+        $objuser05=new User();
+        $objuser05->name='usuario1';
+        $objuser05->apellido='Usta Tunja';
+        $objuser05->codigo='0006';
+        $objuser05->celular='000006';
+        $objuser05->usuario='usuario1.ustatunja';
+        $objuser05->email='usuario1@example.com';
+        $objuser05->id_rol='3';
+        $objuser05->id_doc='1';
+        $objuser05->password='$2y$10$7QK7St.L9T5ialpAtfKRVOG/bfVwfVqWTPkJtNh1O0j6YnqdYfWWu';
+        $objuser05->timestamps=false;
+        $objuser05->save();
+
+        $objuser06=new User();
+        $objuser06->name='usuario2';
+        $objuser06->apellido='Usta Tunja';
+        $objuser06->codigo='0005';
+        $objuser06->celular='000005';
+        $objuser06->usuario='usuario2.ustatunja';
+        $objuser06->email='usuario2@example.com';
+        $objuser06->id_rol='3';
+        $objuser06->id_doc='1';
+        $objuser06->password='$2y$10$7QK7St.L9T5ialpAtfKRVOG/bfVwfVqWTPkJtNh1O0j6YnqdYfWWu';
+        $objuser06->timestamps=false;
+        $objuser06->save();
+
          
         $objestado1=new Estado();
         $objestado1->name='aprobado';

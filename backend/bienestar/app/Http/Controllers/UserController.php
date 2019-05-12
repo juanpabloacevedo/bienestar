@@ -124,14 +124,13 @@ class UserController extends Controller
 		if($validator->fails()) {
 			return view('auth.login',['errors'=>'mandatory_fields']); 
 		}
-
-		$user = User::where('email','=',$request->email)->first();
+		$user = User::where('email',$request->email)->first();
 		if ($user!=null) {  
 			if (Auth::attempt($credentials)) {
 				if ($user->id_rol==1) {
 					return redirect()->route('admin',['title'=>'ADMINISTRADOR']);
 				}else{
-					return redirect()->route('home',['title'=>'USUARIO']);
+					return redirect()->route('user',['title'=>'USUARIO']);
 				}
 				return redirect()->route('admin',['title'=>'ADMINISTRADOR']);
 			}else{
@@ -177,7 +176,4 @@ class UserController extends Controller
 		->with('users',$users)
 		->with('errors', $errors);;
 	}
-
-
-
 }

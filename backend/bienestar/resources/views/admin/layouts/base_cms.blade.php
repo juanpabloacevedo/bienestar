@@ -24,7 +24,6 @@
 </head>
 
 <body id="app">
-	<pre>{{request()}}</pre>
 	<!-- Top Nav -->
 	<ul id="slide-out" class="sidenav" style="width:250px">
 		<li>
