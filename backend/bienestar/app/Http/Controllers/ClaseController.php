@@ -21,7 +21,7 @@ class ClaseController extends Controller
 
 	public function index(){
 		$espacios=Espacio::all();
-		$clases=Clase::where('cupos','>=',1)->orderBy('created_at')->get();
+		$clases=Clase::all();
 		$users=User::all();
 		return view('admin.listaclases')
 		->with('clases',$clases)

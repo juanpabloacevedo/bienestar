@@ -9,6 +9,7 @@
                 {{ session('status') }}
             </div>
             @endif
+            dd($clases);
             <div>                
                 <ul>
                     <table class="pagination table striped">
@@ -100,11 +101,7 @@
             <div class="form-group">
                 <label for="id_clase" class="col-md-4 control-label">Clase</label>
                 <div class="col-md-6">                            
-                    <select id="id_clase"  name="id_clase">
-
-                        <a value="javascript:add_reserva{{$clase->id}}">{{$clase->name}}</option>  
-
-                        </select>
+                    <select id="id_clase"  name="id_clase"><select>
                     </div>
                     <div class="form-group">
                         <label for="inicio_dia" class="col-md-4 control-label">inicio</label>
