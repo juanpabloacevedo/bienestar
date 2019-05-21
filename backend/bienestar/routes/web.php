@@ -22,6 +22,7 @@ Route::post('/login', 'UserController@login');
 Route::group(['middleware'=>['auth','admin']],function(){	
 	Route::get('/admin', 'HomeController@admin')->name('admin');
 	Route::get('/user', 'HomeController@user')->name('user');
+	Route::get('/importcsv', 'CSVController@importCSV')->name('importcsv');
 	
 	Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 	Route::get('/indexuser', 'UserController@index')->name('indexuser');
@@ -64,15 +65,14 @@ Route::group(['middleware'=>['auth','admin']],function(){
 	Route::get('/indexsedes', 'SedeController@index')->name('indexsedes');
 	Route::get('/registersede', 'SedeController@create')->name('registersede');
 	Route::post('/registersede', 'SedeController@store');
-	/**iniciales */
 
-	/**rutas de administrador */
+	/**clases y espacios deportivos */
 	Route::get('/clases', 'ClaseController@index');
 	Route::Post('/espacios', 'UserController@listarEspDep');
 	Route::get('/listaclases', 'UserController@listaclases');
 	/****************************** */
 
-	/**Ajax */
+	/**Ajax inscribir usaurios desde clase*/
 	Route::post('/subscribe_user', 'ClaseController@subscribeUser');
 	Route::post('/clase_reserva', 'ClaseController@reservarclase');
 });

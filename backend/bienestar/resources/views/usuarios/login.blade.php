@@ -1,9 +1,8 @@
-
-@extends('layouts.app')
-
-@section('content')
-
-
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
 <body>
 <div class="container" id="header">
   <div class="row">

@@ -108,7 +108,7 @@ class UserController extends Controller
 
 
 	public function create_login(){
-		return view('auth.login');
+		return view('usuarios.login');
 	}
 
 
