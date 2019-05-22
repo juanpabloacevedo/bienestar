@@ -74,6 +74,6 @@
 </div>
 </body>
 
-<script src="../../dist/js/bootstrap.js" type="text/javascript"></script>
+<script src="js/bootstrap.js" type="text/javascript"></script>
 
 </html>

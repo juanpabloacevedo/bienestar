@@ -16,16 +16,16 @@ Route::get('/', function () {
 });
 Route::get('login', 'UserController@create_login')->name('login');
 Route::post('/login', 'UserController@login');
+Route::get('/importcsv', 'CSVController@importCSV')->name('importcsv');
 
 /**permisos de administrador
 */
 Route::group(['middleware'=>['auth','admin']],function(){	
 	Route::get('/admin', 'HomeController@admin')->name('admin');
-	Route::get('/user', 'HomeController@user')->name('user');
-	Route::get('/importcsv', 'CSVController@importCSV')->name('importcsv');
-	
+	Route::get('/user', 'HomeController@user')->name('user');	
 	Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 	Route::get('/indexuser', 'UserController@index')->name('indexuser');
+	Route::post('/importcsv', 'CSVController@importCSV')->name('importcsv');
 	/**alias de la ruta, controlador a usar@funcion dentro del controlador */
 	Route::get('/home', 'HomeController@index')->name('home');
 	Route::get('/register', 'UserController@create_register');

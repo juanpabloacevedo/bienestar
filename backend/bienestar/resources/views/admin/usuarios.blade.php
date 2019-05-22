@@ -59,4 +59,17 @@
     </div>
 </div>
 <a class="btn-floating btn-large waves-effect waves-light blue pulse fixed" href="{{ url('/registeradmin') }}"><i class="material-icons">add</i></a>
+<form method="POST" action="{{ route('importcsv') }}" files="true" enctype="multipart/form-data">
+    {{ csrf_field() }}
+    <div class="file-field input-field">
+      <div class="btn">
+        <span>File</span>
+        <input type="file" name="filecsv">
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text" placeholder="Upload one or more files">
+      </div>
+    </div>
+    <button type="submit">Cargar Usuarios</button>
+  </form>
 @endsection
