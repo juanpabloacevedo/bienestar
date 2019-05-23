@@ -63,13 +63,16 @@
     {{ csrf_field() }}
     <div class="file-field input-field">
       <div class="btn">
-        <span>File</span>
+        <span><i class="large material-icons">file_upload</i></span>
         <input type="file" name="filecsv">
       </div>
       <div class="file-path-wrapper">
         <input class="file-path validate" type="text" placeholder="Upload one or more files">
       </div>
     </div>
-    <button type="submit">Cargar Usuarios</button>
+    <button class="btn waves-effect waves-light orange" type="submit" name="action">Cargar
+    <i class="material-icons right">send</i>
+  </button>
   </form>
 @endsection
+ 

@@ -19,10 +19,10 @@
                     </tr>
                 </thead>
                 <tbody>                            
-                    @if($espaciosdep->count()==0)
+                    @if($espaciosdeportivos->count()==0)
                     no hay clases o actividades regsitradas
                     @endif
-                    @foreach($espaciosdep as $esp)
+                    @foreach($espaciosdeportivos as $esp)
                     <tr>                    
                     <td>{{$esp->user->name}}</td>
                     <td>{{$esp->name}}</td>

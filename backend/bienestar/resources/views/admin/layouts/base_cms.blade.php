@@ -44,9 +44,10 @@
 			</div>
 		</li>
 		<li ><a href="{{ url('/indexuser') }}">Usuarios</a></li>
-		<li ><a href="{{ url('/indexespaciosdeportivo') }}">Actividades</a></li>
+		<li ><a href="{{ url('/indexespdep') }}">Actividades</a></li>
 		<li ><a href="{{ url('/indexclases') }}">Clases</a></li>
 		<li ><a href="{{url('/indexsedes')}}">Sedes</a></li>
+		<li ><a href="{{url('/indexperiodo')}}">Periodos</a></li>
 		<li ><a href="{{url('/indexespacio')}}">Espacios</a></li>
 		<li ><a href="{{url('/indexreserva')}}">Reserva</a></li>
 		<li ><a href="{{url('/indexasistencia')}}">Asistencias</a></li>
@@ -92,29 +93,33 @@
 		<aside class="col left-menu hide-on-med-and-down h-100">
 			<ul id="slide-out-fxd" class="sidenav sidenav-fixed collapsible">
 				<li class="list-color">
-					<div class="collapsible-header"><i class="material-icons">group</i>Usuarios</div>
+					<div class="collapsible-header" onclick="M.toast({html: 'Lista y registro de usuarios'})"><i class="material-icons">group</i>Usuarios</div>
 					<div class="collapsible-body"><a href="{{ url('/indexuser') }}">Usuarios</a></div>
 				</li >
 				<li class="list-color">
-					<div class="collapsible-header"><i class="material-icons">directions_bike</i>Actividades</div>
-					<div class="collapsible-body"><a href="{{ url('/indexespaciosdeportivo') }}">Actividades</a></div>
+					<div class="collapsible-header" onclick="M.toast({html: 'Lista y registro de actividades de gymnasio y deportivas'})"><i class="material-icons">directions_bike</i>Actividades</div>
+					<div class="collapsible-body"><a href="{{ url('/indexespdep') }}">Actividades</a></div>
 				</li>
 				<li class="list-color">
-					<div class="collapsible-header"><i class="material-icons">list</i>Clases</div>
+					<div class="collapsible-header" onclick="M.toast({html: 'Lista y registro de clases'})"><i class="material-icons">list</i>Clases</div>
 					<div class="collapsible-body"><a href="{{url('/indexclases') }}">Clases</a></div>
 					<div class="collapsible-body"><a href="{{url('/indexasistencia')}}">control de asistencia</a></div>
 
 				</li>
 				<li class="list-color">
-					<div class="collapsible-header"><i class="material-icons">place</i>Sedes</div>
+					<div class="collapsible-header" onclick="M.toast({html: 'Lista y registro de ubicaciones o sedes de la universidad'})"><i class="material-icons">place</i>Sedes</div>
 					<div class="collapsible-body"><a href="{{url('/indexsedes')}}">Sedes</a></div>
 				</li>
 				<li class="list-color">
-					<div class="collapsible-header"><i class="material-icons">fitness_center</i>Espacios deportivos</div>
+					<div class="collapsible-header" onclick="M.toast({html: 'Lista y registro de Gymnasios'})"><i class="material-icons">fitness_center</i>Espacios deportivos</div>
 					<div class="collapsible-body"><a href="{{url('/indexespacio')}}">Espacios</a></div>
 				</li>
 				<li class="list-color">
-					<div class="collapsible-header list-color"><i class="material-icons">timelapse</i>Reservas</div>
+					<div class="collapsible-header" onclick="M.toast({html: 'Lista y registro de periodos academicos'})"><i class="material-icons">date_range</i>Periodos Academicos</div>
+					<div class="collapsible-body"><a href="{{url('/indexperiodo')}}">Periodos</a></div>
+				</li>
+				<li class="list-color">
+					<div class="collapsible-header" onclick="M.toast({html: 'Lista y asignacion de fecha,hora y epsacios a clases ya creadas'})"><i class="material-icons">timelapse</i>Reservas</div>
 					<div class="collapsible-body list-color"><a href="{{url('/indexreserva')}}">Reserva</a></div>
 				</li>
 			</ul>

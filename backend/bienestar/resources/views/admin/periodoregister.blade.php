@@ -8,34 +8,28 @@
                 <div class="panel-heading">Registro de Periodos Academicos</div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('registerespacio') }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('registerperiodo') }}">
                         <!-- csrf token a nivel global-->
                         {{ csrf_field() }}
                         <h2>Registro de Periodos Academicos</h2>
                         <div class="form-group">
                             <label for="name" class="col-md-4 control-label">Nombre</label>
-
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="name" required>
                             </div>
-                        </div>     
-                        <div class="form-group">
-                            <label for="id_sede" class="col-md-4 control-label">Sede</label>
-                            <div class="col-md-6">                            
-                            <select id="id_sede"  name="id_sede">
-                            @foreach($sedes as $sede)
-                                <option value="{{$sede->id}}">{{$sede->name}}</option>  
-                            @endforeach                          
-                            </select>
-                           </div>
                         </div>
                         <div class="form-group">
-                            <label for="capacidad" class="col-md-4 control-label">Capacidad</label>
-
+                            <label for="name" class="col-md-4 control-label">Fecha Inicio</label>
                             <div class="col-md-6">
-                                <input id="capacidad" type="number" class="form-control" name="capacidad" min=10 max=50 required>
+                                <input type="text" class="datepicker" name="dateinit" required>
                             </div>
-                        </div> 
+                        </div>
+                        <div class="form-group">
+                            <label for="name" class="col-md-4 control-label">Fecha Fin</label>
+                            <div class="col-md-6">
+                                <input type="text" class="datepicker" name="dateend" required>
+                            </div>
+                        </div>     
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">

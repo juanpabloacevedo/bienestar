@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "18e85cae1fc6a616985fe25158813586",
+    "content-hash": "1e36ce9dddfd5efd286bbddfed98beb7",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1052,6 +1052,47 @@
                 "uuid"
             ],
             "time": "2018-07-19T23:38:55+00:00"
+        },
+        {
+            "name": "styde/html",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/StydeNet/html.git",
+                "reference": "4a99d9e989819ee2179b1717c58aa5c48754abe4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/StydeNet/html/zipball/4a99d9e989819ee2179b1717c58aa5c48754abe4",
+                "reference": "4a99d9e989819ee2179b1717c58aa5c48754abe4",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "5.4.*",
+                "laravelcollective/html": "5.4.*",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "phpspec/phpspec": "~2.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Styde\\Html\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Duilio Palacios",
+                    "email": "admin@styde.net"
+                }
+            ],
+            "description": "Build form fields, menus, alert messages and other view components quickly",
+            "time": "2017-01-30T14:33:36+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

@@ -33,9 +33,9 @@ Route::group(['middleware'=>['auth','admin']],function(){
 	Route::get('/registeradmin', 'UserController@create_registeradmin');
 	Route::post('/registeradmin', 'UserController@registeradmin')->name('registeradmin');
 	/***espacios deportivos 'tipo de clase o deporte'*/
-	Route::get('/registerespdep', 'EspaciosDeportivoController@create_register');
-	Route::post('/registerespdep', 'EspaciosDeportivoController@register')->name('registerespdep');
-	Route::get('/indexespaciosdeportivo', 'EspaciosDeportivoController@index')->name('indexespaciosdeportivo');
+	Route::get('/registerespdep', 'EspaciosDeportivoController@create');
+	Route::post('/registerespdep', 'EspaciosDeportivoController@store')->name('registerespdep');
+	Route::get('/indexespdep', 'EspaciosDeportivoController@index')->name('indexespdep');
 	
 	/**clases */
 	Route::get('/registerclase', 'ClaseController@create_register');
@@ -45,9 +45,10 @@ Route::group(['middleware'=>['auth','admin']],function(){
 	Route::get('/modalclase', 'ClaseController@modalusers')->name('modalclase');
 	/**clase por usuario*/
 	Route::post('/listarclases', 'ClaseController@listarclases')->name('listarclases');
-
-
-
+	/**Periodos academicos**/
+	Route::get('/indexperiodo','PeriodoController@index')->name('indexperiodo');
+	Route::get('/registerperiodo','PeriodoController@create')->name('registerperiodo');
+	Route::post('/registerperiodo','PeriodoController@store');
 	/**espacio 'aula, gimnacio, cancha etc' */
 	Route::get('/registerespacio', 'EspacioController@create_register');
 	Route::post('/registerespacio', 'EspacioController@create')->name('registerespacio');

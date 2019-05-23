@@ -62,7 +62,7 @@ class ClaseController extends Controller
 	public function create_register(Request $request){
 		$errors=Session::get('errors');
 		$espaciosdeportivos= EspacioDeportivo::all();
-		$periodos= Periodo::all();
+		$periodos=Periodo::where("activo","=",1)->get();
 		$users = User::where('id_rol',2)
 		->where('sancionado',false)
 		->where('activo',true)

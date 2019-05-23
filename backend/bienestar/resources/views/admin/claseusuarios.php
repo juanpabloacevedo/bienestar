@@ -11,7 +11,7 @@
             @endif
             <div class="panel-body">
                 <form class="form-horizontal" method="POST" action="{{ route('claseactual') }}">
-                    <!-- csrf token a nivel global-->
+                    <!-- csrf token a nivel global todos los formularios deben llevar el token -->
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label for="id_doc" class="col-md-4 control-label">Tipo de documento</label>
