@@ -84,12 +84,21 @@ class ClaseController extends Controller
 
 
 	public function claseactual(Request $request){
-		$id=$request->id;        
+		$id=$request->iduser;        
 		$claseactual=Clase::find($id);
 		$users=User::all();
-		return view('admin.claseregisterusers')
+		return view('admin.misclases')
 		->with('claseactual',$claseactual)
 		->with('users',$users);
+	}
+	public function listarclaseusuario(Request $request){
+		$iduser=$request->iduser;
+		$user=User::find($iduser)->get();     
+		$claseactual=Clase::where('clase_usuarios.id_user',$iduser)->get();
+		$users=User::all();
+		return view('admin.misclases')
+		->with('user',$user)
+		->with('claseactual',$claseactual);
 	}
 
 

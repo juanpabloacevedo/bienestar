@@ -72,13 +72,11 @@
 					<ul id="nav-mobile " class="right hide-on-med-and-down">
 						<li><a href="http://www.ustatunja.edu.co">Usta Tunja</a></li>
 						<li><a href="https://plataformalms.ustatunja.edu.co/login/index.php">Campus Virtual</a></li>
-						<li><a href="{{ url('/user') }}">usuario</a></li>
-						<li clss="{{request()->routeIs('admin')?'active':''}}"><a href="{{ url('/admin') }}">Administrador</a></li>
+						<li clss="{{request()->routeIs('admin')?'active':''}}"><a href="{{ url('/admin') }}">{{Auth::user()->rol->name}}</a></li>
 						<li><a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
 						<form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
 							{{ csrf_field() }}
 						</form>
-						<li><a class="dropdown-trigger cst-admin-trigger color-blue bold" href="#!" data-target="dropdown-admin">{{Auth::user()->name}}</a></li>
 					</ul>					
 				</div>
 			</div>
@@ -88,7 +86,7 @@
 	
 
 
-	<h2>{{Auth::user()->name}} {{Auth::user()->apellido}}</h2>
+	<h2>{{Auth::user()->name}}</h2>
 	<section class="row flex">
 		<aside class="col left-menu hide-on-med-and-down h-100">
 			<ul id="slide-out-fxd" class="sidenav sidenav-fixed collapsible">

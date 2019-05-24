@@ -30,6 +30,8 @@
                     <td>{{$sede->name}}</td>
                     <td>{{$sede->city}}</td>
                     <td>{{$sede->address}}</td>
+                    <td><a class="waves-effect waves-light btn"><i class="material-icons">edit</i></a>
+                    <a class="waves-effect waves-light btn red"><i class="material-icons">delete</i></a></td>
                     </tr>
                     @endforeach
                 </tbody>

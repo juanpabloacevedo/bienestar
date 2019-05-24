@@ -36,7 +36,12 @@
                                 <td>@if(isset($clase->periodo)) {{$clase->periodo->name}} @endif</td>
                                 <td>@if(isset($clase->espaciodeportivo)) {{$clase->espaciodeportivo->name}} @endif</td>
                                 <td id="cupos_clase_{{$clase->id}}">{{$clase->cupos}}</td>
-                                <td><a class="waves-effect waves-light btn modal-trigger" href="javascript:open_users_modal({{$clase->id}})"><i class="material-icons">person_add</i></a><a class="waves-effect waves-light btn modal-trigger" href="javascript:open_reservas_modal({{$clase->id}})"><i class="material-icons">date_range</i></a></td>
+                                <td>
+                                    <a class="waves-effect waves-light btn modal-trigger" href="javascript:open_users_modal({{$clase->id}})"><i class="material-icons">person_add</i></a>
+                                    <a class="waves-effect waves-light btn modal-trigger" href="javascript:open_reservas_modal({{$clase->id}})"><i class="material-icons">date_range</i></a>
+                                    <a class="waves-effect waves-light btn"><i class="material-icons">edit</i></a>
+                                    <a class="waves-effect waves-light btn red"><i class="material-icons">delete</i></a>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>

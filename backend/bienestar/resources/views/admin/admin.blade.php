@@ -11,7 +11,6 @@
                     {{ session('status') }}
                 </div>
             @endif
-
             Actualmente estas logueado como: 
                 {{Auth::user()->rol->name}}
                 <div class="title m-b-md">
@@ -19,7 +18,6 @@
                 Gimnasio USTA Version 0.0000000099
                 <section>
                 <div></div>
-                
                 </section>
                 <a href="http://www.ustatunja.edu.co/">
                     <img src="{{asset('img/cedecentro.jpg')}}" style="width:100%">

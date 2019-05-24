@@ -15,6 +15,7 @@
                     <tr>
                         <th>Instructor</th>
                         <th>Actividad o curso</th>
+                        <th></th>
                         
                     </tr>
                 </thead>
@@ -26,6 +27,10 @@
                     <tr>                    
                     <td>{{$esp->user->name}}</td>
                     <td>{{$esp->name}}</td>
+                      <td>
+                            <a class="waves-effect waves-light btn"><i class="material-icons">edit</i></a>
+                            <a class="waves-effect waves-light btn red"><i class="material-icons">delete</i></a>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
