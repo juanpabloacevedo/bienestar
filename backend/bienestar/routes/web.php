@@ -41,7 +41,8 @@ Route::group(['middleware'=>['auth','admin']],function(){
 	Route::get('/registerclase', 'ClaseController@create_register');
 	Route::post('/registerclase', 'ClaseController@store')->name('registerclase');
 	Route::get('/indexclases', 'ClaseController@index')->name('indexclases');
-	Route::post('/claseactual', 'ClaseController@listarclaseusuario')->name('claseactual');
+	Route::post('/usuarioactual', 'ClaseController@listarclaseusuario')->name('usuarioactual');
+	Route::post('/claseactual', 'ClaseController@listarusuarioclase')->name('claseactual');
 	Route::get('/modalclase', 'ClaseController@modalusers')->name('modalclase');
 	/**clase por usuario*/
 	Route::post('/listarclases', 'ClaseController@listarclases')->name('listarclases');

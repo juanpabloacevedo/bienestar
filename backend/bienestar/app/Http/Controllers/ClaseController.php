@@ -23,7 +23,7 @@ class ClaseController extends Controller
 		$espacios=Espacio::all();
 		$clases=Clase::all();
 		$users=User::all();
-		return view('admin.listaclases')
+		return view('admin.clases')
 		->with('clases',$clases)
 		->with('espacios',$espacios)
 		->with('users',$users);
@@ -73,16 +73,7 @@ class ClaseController extends Controller
 		->with('periodos',$periodos)
 		->with('errors', $errors);
 	}
-
-
-	//**funcion de adicion de usuarios */
-	public function listaclases(){
-		$users=User::all();
-		$clases=Clase::all();
-		return view('admin.listaclases',compact('clases',$clases));
-	}
-
-
+	/*
 	public function claseactual(Request $request){
 		$id=$request->iduser;        
 		$claseactual=Clase::find($id);
@@ -91,14 +82,26 @@ class ClaseController extends Controller
 		->with('claseactual',$claseactual)
 		->with('users',$users);
 	}
+	*/
+	/*recibe la id de usuario y envia la lista de clases inscritas por ese usuario*/
 	public function listarclaseusuario(Request $request){
 		$iduser=$request->iduser;
-		$user=User::find($iduser)->get();     
-		$claseactual=Clase::where('clase_usuarios.id_user',$iduser)->get();
-		$users=User::all();
-		return view('admin.misclases')
+		$user=User::find($iduser);
+		$clases=Clase::Join('clase_usuarios', 'clases.id', '=', 'clase_usuarios.id_clase')
+   ->where('clase_usuarios.id_user', '=',$iduser)->get();
+		return view('admin.clasesinscritas')
 		->with('user',$user)
-		->with('claseactual',$claseactual);
+		->with('clases',$clases);
+	}
+	/*recibe la id de clase y envia la lista de usuarios de esa clase*/
+	public function listarusuarioclase(Request $request){
+		$idclase=$request->idclase;
+		$clase=Clase::find($idclase);
+		$users=User::Join('clase_usuarios','users.id','=','clase_usuarios.id_user')
+   		->where('clase_usuarios.id_clase', '=',$idclase)->get();
+		return view('admin.usuariosinscritos')
+		->with('users',$users)
+		->with('clase',$clase);
 	}
 
 

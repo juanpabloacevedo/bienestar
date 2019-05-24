@@ -35,7 +35,7 @@
                         <td>@if($user->rol->activo==false)Activo
                         @endif</td>
 
-                        <td> <form class="form-horizontal" method="POST" action="{{ route('claseactual') }}">
+                        <td> <form class="form-horizontal" method="POST" action="{{ route('usuarioactual') }}">
                             {{ csrf_field() }}
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">

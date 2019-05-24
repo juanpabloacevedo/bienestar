@@ -156,6 +156,20 @@ class DatabaseSeeder extends Seeder{
         $objuser01->password='$2y$10$7QK7St.L9T5ialpAtfKRVOG/bfVwfVqWTPkJtNh1O0j6YnqdYfWWu';
         $objuser01->timestamps=false;
         $objuser01->save();
+
+        $objuser01=new User();
+        $objuser01->name='Instructor 01';
+        $objuser01->apellido='example';
+        $objuser01->codigo='0002';
+        $objuser01->celular='000002';
+        $objuser01->usuario='Instructor01';
+        $objuser01->email='Instructor01@example.com';
+        $objuser01->id_rol='2';
+        $objuser01->id_doc='1';
+        $objuser01->password='$2y$10$7QK7St.L9T5ialpAtfKRVOG/bfVwfVqWTPkJtNh1O0j6YnqdYfWWu';
+        $objuser01->timestamps=false;
+        $objuser01->save();
+
 /**estados por defecto*/
         $objestado1=new Estado();
         $objestado1->name='aprobado';

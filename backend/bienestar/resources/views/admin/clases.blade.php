@@ -9,7 +9,6 @@
                 {{ session('status') }}
             </div>
             @endif
-            dd($clases);
             <div>                
                 <ul>
                     <table class="pagination table striped">
@@ -21,7 +20,7 @@
                                 <th>periodo</th>
                                 <th>espacio deportivo</th>
                                 <th>cupos</th>
-                                <th></th>
+                                <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>                            
@@ -37,10 +36,19 @@
                                 <td>@if(isset($clase->espaciodeportivo)) {{$clase->espaciodeportivo->name}} @endif</td>
                                 <td id="cupos_clase_{{$clase->id}}">{{$clase->cupos}}</td>
                                 <td>
-                                    <a class="waves-effect waves-light btn modal-trigger" href="javascript:open_users_modal({{$clase->id}})"><i class="material-icons">person_add</i></a>
-                                    <a class="waves-effect waves-light btn modal-trigger" href="javascript:open_reservas_modal({{$clase->id}})"><i class="material-icons">date_range</i></a>
+                                    <a class="waves-effect waves-light btn modal-trigger" href="javascript:open_users_modal({{$clase->id}})"><i class="material-icons">person_add</i></a>                                 
                                     <a class="waves-effect waves-light btn"><i class="material-icons">edit</i></a>
                                     <a class="waves-effect waves-light btn red"><i class="material-icons">delete</i></a>
+                                    <form class="form-horizontal" method="POST" action="{{ route('claseactual') }}">
+                                        {{ csrf_field() }}
+                                        <div class="form-group">
+                                            <div class="col-md-6 col-md-offset-4">
+                                                <button type="submit" class="btn btn-primary" value="{{$clase->id}}" name="idclase">
+                                                    <i class="material-icons">list</i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach

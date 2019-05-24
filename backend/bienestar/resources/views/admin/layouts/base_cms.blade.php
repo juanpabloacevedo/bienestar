@@ -101,9 +101,7 @@
 				<li class="list-color">
 					<div class="collapsible-header" onclick="M.toast({html: 'Lista y registro de clases'})"><i class="material-icons">list</i>Clases</div>
 					<div class="collapsible-body"><a href="{{url('/indexclases') }}">Clases</a></div>
-					<div class="collapsible-body"><a href="{{url('/indexasistencia')}}">control de asistencia</a></div>
-
-				</li>
+					</li>
 				<li class="list-color">
 					<div class="collapsible-header" onclick="M.toast({html: 'Lista y registro de ubicaciones o sedes de la universidad'})"><i class="material-icons">place</i>Sedes</div>
 					<div class="collapsible-body"><a href="{{url('/indexsedes')}}">Sedes</a></div>
