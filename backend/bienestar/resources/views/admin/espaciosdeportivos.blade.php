@@ -15,17 +15,22 @@
                     <tr>
                         <th>Instructor</th>
                         <th>Actividad o curso</th>
+                        <th></th>
                         
                     </tr>
                 </thead>
                 <tbody>                            
-                    @if($espaciosdep->count()==0)
+                    @if($espaciosdeportivos->count()==0)
                     no hay clases o actividades regsitradas
                     @endif
-                    @foreach($espaciosdep as $esp)
+                    @foreach($espaciosdeportivos as $esp)
                     <tr>                    
                     <td>{{$esp->user->name}}</td>
                     <td>{{$esp->name}}</td>
+                      <td>
+                            <a class="waves-effect waves-light btn"><i class="material-icons">edit</i></a>
+                            <a class="waves-effect waves-light btn red"><i class="material-icons">delete</i></a>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

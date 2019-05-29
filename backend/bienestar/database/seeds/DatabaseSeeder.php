@@ -7,15 +7,14 @@ use App\Periodo;
 use App\Estado;
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
-{
+class DatabaseSeeder extends Seeder{
     /**
      * Run the database seeds.
      *
      * @return void
      */
-    public function run()
-    {        
+    public function run(){ 
+    /**periodos academicos iniciales**/       
         $objperiodo01=new Periodo();
         $objperiodo01->name='2019-1';
         $objperiodo01->inicio='01/02/2019';
@@ -31,7 +30,7 @@ class DatabaseSeeder extends Seeder
         $objperiodo02->activo=false;
         $objperiodo02 ->timestamps=false;
         $objperiodo02 ->save();
-
+/**Tipo de documentos permitidos para registrar en el sistema*/
         $objTipoDoc01 =new TipoDocumento();
         $objTipoDoc01->nombre_documento='Cedula de ciudadania';
         $objTipoDoc01->sigla='CC';
@@ -79,7 +78,7 @@ class DatabaseSeeder extends Seeder
         $objTipoDoc08->sigla='DUI';
         $objTipoDoc08 ->timestamps=false;
         $objTipoDoc08 ->save();
-
+/**Roles**/
         $objrol01 =new Rol();
         $objrol01->name='Administrador';
         $objrol01 ->timestamps=false;
@@ -109,7 +108,7 @@ class DatabaseSeeder extends Seeder
         $objrol07->name='Administrativo';
         $objrol07 ->timestamps=false;
         $objrol07 ->save();
-
+/**sedes iniciales por defecto **/
         $objSede01=new Sede();
         $objSede01->name='Campus Avenida Universitaria';
         $objSede01->city='Tunja,Boyacá';
@@ -157,7 +156,21 @@ class DatabaseSeeder extends Seeder
         $objuser01->password='$2y$10$7QK7St.L9T5ialpAtfKRVOG/bfVwfVqWTPkJtNh1O0j6YnqdYfWWu';
         $objuser01->timestamps=false;
         $objuser01->save();
-         
+
+        $objuser01=new User();
+        $objuser01->name='Instructor 01';
+        $objuser01->apellido='example';
+        $objuser01->codigo='0002';
+        $objuser01->celular='000002';
+        $objuser01->usuario='Instructor01';
+        $objuser01->email='Instructor01@example.com';
+        $objuser01->id_rol='2';
+        $objuser01->id_doc='1';
+        $objuser01->password='$2y$10$7QK7St.L9T5ialpAtfKRVOG/bfVwfVqWTPkJtNh1O0j6YnqdYfWWu';
+        $objuser01->timestamps=false;
+        $objuser01->save();
+
+/**estados por defecto*/
         $objestado1=new Estado();
         $objestado1->name='aprobado';
         $objestado1->timestamps=true;
@@ -167,7 +180,5 @@ class DatabaseSeeder extends Seeder
         $objestado2->name='cancelado';
         $objestado2->timestamps=true;
         $objestado2->save();
-
-
     }
 }

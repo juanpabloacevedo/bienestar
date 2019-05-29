@@ -30,6 +30,10 @@
                     <td>{{$espacio->cantidad_usuarios}}</td>
                     <td>@if($espacio->espacio_disponible==true)si @else no @endif</td>
                     <td>{{$espacio->sede->name}}</td>
+                      <td>
+                            <a class="waves-effect waves-light btn"><i class="material-icons">edit</i></a>
+                            <a class="waves-effect waves-light btn red"><i class="material-icons">delete</i></a>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

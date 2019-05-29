@@ -13,7 +13,7 @@ class SedeController extends Controller
         $sedes=Sede::all();
         return view('admin.sedes',compact('sedes'));
     }
-    public function create_register(Request $request){
+    public function create(Request $request){
         $errors=Session::get('errors');
         $sedes = Sede::all();
         return view('admin.sederegister')
@@ -21,7 +21,7 @@ class SedeController extends Controller
         ->with('errors', $errors);
     }
 
-    public function create(Request $request){
+    public function store(Request $request){
         /**datos obligatorios para el registro */
 		$rules = [
             'name'      => 'required|max:255',
@@ -45,6 +45,7 @@ class SedeController extends Controller
 		$sede->save();
         return redirect()->route('indexsedes')->withSuccess('Guardado');
         }
+
         public function sedeActual(Request $request,$id){
             $sedeactual=Sede::find($id);
             return view('admin.sedes',compact('sedeactual'));
