@@ -32,7 +32,7 @@
                         <td>{{$user->apellido}}</td>
                         <td>@if(isset($user->asistencias)){{$user->asistencias->count()}}@else 0 @endif</td>
                         <td>{{$user->rol->name}}</td>
-                        <td>@if($user->rol->activo==false)Activo
+                        <td>@if($user->activo==true)Activo@else{False}@endelse
                         @endif</td>
 
                         <td> <form class="form-horizontal" method="POST" action="{{ route('usuarioactual') }}">
@@ -47,7 +47,16 @@
                         </form></td>
                         <td>                               
                             <a class="waves-effect waves-light btn"><i class="material-icons">edit</i></a>
-                            <a class="waves-effect waves-light btn red"><i class="material-icons">delete</i></a>
+                            <td> <form class="form-horizontal" method="POST" action="{{ route('destroyuser') }}">
+                            {{ csrf_field() }}
+                            <div class="form-group">
+                                <div class="col-md-6 col-md-offset-4">
+                                    <button type="submit" class="btn btn-primary" value="{{$user->id}}" name="iduser">
+                                        <i class="material-icons">delete</i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form></td>
                         </td>
                         <td><div class="switch">
                             <label>

@@ -10,7 +10,7 @@
         @endif
         <ul>
             <table class="table striped">
-            <h2>Sedes</h2>>
+            <h2>Sedes</h2>
                 <thead>
                     <tr>
                         <th>id</th>

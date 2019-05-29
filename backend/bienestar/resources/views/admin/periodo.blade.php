@@ -28,8 +28,10 @@
                         <td>{{$periodo->name}}</td>
                         <td>{{$periodo->inicio}}</td>
                         <td>{{$periodo->fin}}</td>
-                        <td>{{$periodo->activo}}</td>
+                        <td>@if($periodo->activo==true)Activo
+                        @endif</td>
                         <td>
+
                             <a class="waves-effect waves-light btn"><i class="material-icons">edit</i></a>
                             <a class="waves-effect waves-light btn red"><i class="material-icons">delete</i></a>
                         </td>

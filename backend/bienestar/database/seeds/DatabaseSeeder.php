@@ -180,7 +180,5 @@ class DatabaseSeeder extends Seeder{
         $objestado2->name='cancelado';
         $objestado2->timestamps=true;
         $objestado2->save();
-
-
     }
 }

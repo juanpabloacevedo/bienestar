@@ -24,7 +24,11 @@ Route::group(['middleware'=>['auth','admin']],function(){
 	Route::get('/admin', 'HomeController@admin')->name('admin');
 	Route::get('/user', 'HomeController@user')->name('user');	
 	Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
+
+	/**usuarios*/
 	Route::get('/indexuser', 'UserController@index')->name('indexuser');
+	Route::post('/destroyuser','UserController@desactive')->name('destroyuser');
+	/*Rutas de archivos CSV*/
 	Route::post('/importcsv', 'CSVController@importCSV')->name('importcsv');
 	/**alias de la ruta, controlador a usar@funcion dentro del controlador */
 	Route::get('/home', 'HomeController@index')->name('home');
@@ -47,6 +51,7 @@ Route::group(['middleware'=>['auth','admin']],function(){
 	/**clase por usuario*/
 	Route::post('/listarclases', 'ClaseController@listarclases')->name('listarclases');
 	/**Periodos academicos**/
+	Route::get('/validarpe','PeriodoController@validarperiodos')->name('validarpe');
 	Route::get('/indexperiodo','PeriodoController@index')->name('indexperiodo');
 	Route::get('/registerperiodo','PeriodoController@create')->name('registerperiodo');
 	Route::post('/registerperiodo','PeriodoController@store');

@@ -176,4 +176,12 @@ class UserController extends Controller
 		->with('users',$users)
 		->with('errors', $errors);;
 	}
+	public function desactive(Request $request){
+		$user =User::find($request->iduser);
+		$user->name ='';
+		$user->activo=false;
+		$user->save();
+		return redirect()->route('indexuser');
+
+	}
 }

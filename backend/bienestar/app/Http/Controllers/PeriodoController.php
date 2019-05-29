@@ -42,4 +42,23 @@ class PeriodoController extends Controller{
 		$periodo->save();
 		return redirect()->route('indexperiodo');
 	}
+
+	public function validarperiodos(){
+		$periodos=Periodo::all();
+		$cont=0;
+		for ($i=0; $i <sizeof($periodos) ; $i++) { 
+			if ($periodos[$i]->activo==false) {
+				$cont=$cont+1;
+			}
+		}
+		printf($cont);
+		if($cont>1){
+			$cont=0;
+			for ($i=0; $i <sizeof($periodos) ; $i++) { 
+			$periodos[$i]->activo=false;
+			printf($periodos[$i]->activo);	
+			}
+		}
+		printf($cont);
+	}
 }

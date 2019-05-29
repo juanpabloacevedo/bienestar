@@ -12,7 +12,7 @@
             <div>                
                 <ul>
                     <table class="pagination table striped">
-                        <h2>Clases Disponibles</h2>
+                        <h2>Clases</h2>
                         <thead>
                             <tr>
                                 <th>id</th>
