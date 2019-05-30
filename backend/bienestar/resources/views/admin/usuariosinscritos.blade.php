@@ -10,7 +10,7 @@
         @endif
         <ul>
             <table class="table striped">
-                <h2>Clases Inscritas</h2>
+                <h2>Usuarios Inscritos</h2>
                 <div class="row">
                     <div class="bsc col m12 s12"></div>
                     <div><i class="material-icons prefix">search</i><input id="bsc_clase" type="text" placeholder="clase" name="bsc_clase"></div>
