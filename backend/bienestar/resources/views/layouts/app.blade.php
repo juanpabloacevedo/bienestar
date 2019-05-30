@@ -18,6 +18,7 @@
         <nav class="navbar navbar-default navbar-static-top" style="
         height: 60px;
         padding: 10px">
+         <a class="navbar-brand" href="http://www.ustatunja.edu.co"><img src="{{asset('img/Logo_2019_Universidad_Santo_Tomas.png')}}"class="img img-fluid" alt="logo" style="width: 25%"></a>
 
             <div class="container">
                 <div class="navbar-header">
