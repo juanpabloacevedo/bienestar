@@ -186,7 +186,7 @@ class UserController extends Controller
 
 	public function index(){
 		$errors=Session::get('errors');
-		$users=User::paginate(3);
+		$users=User::paginate(20);
 		return view('admin.usuarios')
 		->with('users',$users)
 		->with('errors', $errors);;
