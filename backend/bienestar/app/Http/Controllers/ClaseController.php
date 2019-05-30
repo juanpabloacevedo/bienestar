@@ -73,16 +73,7 @@ class ClaseController extends Controller
 		->with('periodos',$periodos)
 		->with('errors', $errors);
 	}
-	/*
-	public function claseactual(Request $request){
-		$id=$request->iduser;        
-		$claseactual=Clase::find($id);
-		$users=User::all();
-		return view('admin.misclases')
-		->with('claseactual',$claseactual)
-		->with('users',$users);
-	}
-	*/
+	
 	/*recibe la id de usuario y envia la lista de clases inscritas por ese usuario*/
 	public function listarclaseusuario(Request $request){
 		$iduser=$request->iduser;

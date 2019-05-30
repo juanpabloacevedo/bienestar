@@ -111,10 +111,10 @@ class UserController extends Controller
 	public function create_login(){
 		if(Auth::user()){
 			if (Auth::user()->id_rol==1) {
-					return redirect()->route('admin',['title'=>'ADMINISTRADOR']);
-				}else{
-					return redirect()->route('user',['title'=>'USUARIO']);
-				}
+				return redirect()->route('admin',['title'=>'ADMINISTRADOR']);
+			}else{
+				return redirect()->route('user',['title'=>'USUARIO']);
+			}
 		}
 		return view('usuarios.login');
 	}
@@ -155,10 +155,10 @@ class UserController extends Controller
 	public function create_register(Request $request){
 		if(Auth::user()){
 			if (Auth::user()->id_rol==1) {
-					return redirect()->route('admin',['title'=>'ADMINISTRADOR']);
-				}else{
-					return redirect()->route('user',['title'=>'USUARIO']);
-				}
+				return redirect()->route('admin',['title'=>'ADMINISTRADOR']);
+			}else{
+				return redirect()->route('user',['title'=>'USUARIO']);
+			}
 		}
 		$errors=Session::get('errors');
 		$tipo_documentos = TipoDocumento::all();
@@ -186,16 +186,26 @@ class UserController extends Controller
 
 	public function index(){
 		$errors=Session::get('errors');
-		$users=User::all();
+		$users=User::paginate(3);
 		return view('admin.usuarios')
 		->with('users',$users)
 		->with('errors', $errors);;
 	}
+
+
 	public function desactive(Request $request){
 		$user =User::find($request->iduser);
 		$user->activo=false;
 		$user->save();
 		return redirect()->route('indexuser');
 
+	}
+
+
+	function changeStatus(Request $request){
+		$user = User::find($request->user_id);
+		$user->activo = !$user->activo;
+		$user->save();
+		return response()->json($user);
 	}
 }

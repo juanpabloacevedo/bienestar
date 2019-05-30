@@ -32,3 +32,25 @@
 .collapsible-body{
 	text-align: center;
 }
+
+//paginator
+
+.pagination {
+    
+}
+
+.pagination li.active {
+    background-color: #64b5f6;
+    color: black;
+    font-weight: bold;
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+    margin-top: -0.45rem;
+    border-radius: 62%;
+}
+
+.pagination li a {
+    width: 2rem;
+    background-color: #9caac1 !important;
+}

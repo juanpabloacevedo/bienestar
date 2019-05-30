@@ -49,31 +49,33 @@
                         <td>                               
                             <a class="waves-effect waves-light btn"><i class="material-icons">edit</i></a>
                             <td> <form class="form-horizontal" method="POST" action="{{ route('destroyuser') }}">
-                            {{ csrf_field() }}
-                            <div class="form-group">
-                                <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary" value="{{$user->id}}" name="iduser">
-                                        <i class="material-icons red-text">block</i>
-                                    </button>
+                                {{ csrf_field() }}
+                                <div class="form-group">
+                                    <div class="col-md-6 col-md-offset-4">
+                                        <button type="submit" class="btn btn-primary" value="{{$user->id}}" name="iduser">
+                                            <i class="material-icons red-text">block</i>
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                        </form></td>
+                            </form></td>
                         </td>
-                        <td><div class="switch">
-                            <label>
-                                con sancion
-                                <input type="checkbox">
-                                <span class="lever"></span>
-                                sin sancion
-                            </label>
-                        </div>
-                    </td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </ul>
-</div>
+                        <td>
+                            <div class="switch" onchange="change_status({{$user->id}})">
+                                <label>
+                                    con sancion
+                                    <input type="checkbox" @if($user->activo) checked @endif >
+                                    <span class="lever"></span>
+                                    sin sancion
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+            {{$users->render()}}
+        </ul>
+    </div>
 </div>
 <a class="btn-floating btn-large waves-effect waves-light blue pulse fixed" href="{{ url('/registeradmin') }}"><i class="material-icons">add</i></a>
 <form method="POST" action="{{ route('importcsv') }}" files="true" enctype="multipart/form-data">
@@ -91,4 +93,33 @@
     <i class="material-icons right">check</i>
 </button>
 </form>
+
+
 @endsection
+
+@section('javascript')
+<script>
+     //variables
+     var token              = $("meta[name=csrf-token]").attr("content");
+     var url_change_user_status = '{!! url("/change_user_status") !!}';
+
+
+     function change_status(user_id){
+        $.ajax({
+            method: "POST",
+            url: url_change_user_status,
+            data: { 'user_id':user_id, '_token': token},
+            dataType: "json",
+            success:function(data){
+                console.log(data);
+                  M.toast({html: 'usuario '+data.name+' '+data.activo})
+            },
+            error:function(error){
+                console.log(error);
+            }
+        });
+    }
+
+</script>
+@endsection
+

@@ -81,8 +81,10 @@ Route::group(['middleware'=>['auth','admin']],function(){
 	/****************************** */
 
 	/**Ajax inscribir usaurios desde clase*/
+	Route::post('/change_user_status', 'UserController@changeStatus');
 	Route::post('/subscribe_user', 'ClaseController@subscribeUser');
 	Route::post('/clase_reserva', 'ClaseController@reservarclase');
+
 });
 
 
