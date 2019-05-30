@@ -55,8 +55,8 @@
 		<li><a href="http://www.ustatunja.edu.co">Usta Tunja</a></li>
 		<li><a href="https://plataformalms.ustatunja.edu.co/login/index.php">Campus Virtual</a></li>
 		<li><a class="navbar-brand" href="{{ url('/') }}">
-                        <i class="material-icons">home</i>
-                    </a></li>
+			<i class="material-icons">home</i>
+		</a></li>
 		<li clss="{{request()->routeIs('admin')?'active':''}}"><a href="{{ url('/admin') }}">Administrador</a></li>
 
 		<li><a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
@@ -85,92 +85,92 @@
 					<ul style="height: 80px">
 						<li>
 							<a class="navbar-brand" href="{{ url('/') }}">
-                        <i class="material-icons">home</i>
-                    </a>
+								<i class="material-icons">home</i>
+							</a>
 						</li>
 						<li>
-						<img src="{{asset('img/logoUsta.png')}}" style="
-					height:80px;
-					margin-left: auto;
-					margin-right: auto;
-					display: block;">
-				</div>	
-						</li>
-					</ul>					
-				</div>
-			</div>
-		</nav>
-	</main>
-
-	
-
-
-	<h2>{{Auth::user()->name}}</h2>
-	<section class="row flex">
-		<aside class="col left-menu hide-on-med-and-down h-100">
-			<ul id="slide-out-fxd" class="sidenav sidenav-fixed collapsible">
-				<li class="list-color">
-					<div class="collapsible-header" onclick="M.toast({html: 'Lista y registro de usuarios'})"><i class="material-icons">group</i>Usuarios</div>
-					<div class="collapsible-body"><a href="{{ url('/indexuser') }}">Usuarios</a></div>
-				</li >
-				<li class="list-color">
-					<div class="collapsible-header" onclick="M.toast({html: 'Lista y registro de actividades de gymnasio y deportivas'})"><i class="material-icons">directions_bike</i>Actividades</div>
-					<div class="collapsible-body"><a href="{{ url('/indexespdep') }}">Actividades</a></div>
-				</li>
-				<li class="list-color">
-					<div class="collapsible-header" onclick="M.toast({html: 'Lista y registro de clases'})"><i class="material-icons">list</i>Clases</div>
-					<div class="collapsible-body"><a href="{{url('/indexclases') }}">Clases</a></div>
+							<img src="{{asset('img/logoUsta.png')}}" style="
+							height:80px;
+							margin-left: auto;
+							margin-right: auto;
+							display: block;">
+						</div>	
 					</li>
-				<li class="list-color">
-					<div class="collapsible-header" onclick="M.toast({html: 'Lista y registro de ubicaciones o sedes de la universidad'})"><i class="material-icons">place</i>Sedes</div>
-					<div class="collapsible-body"><a href="{{url('/indexsedes')}}">Sedes</a></div>
-				</li>
-				<li class="list-color">
-					<div class="collapsible-header" onclick="M.toast({html: 'Lista y registro de Gymnasios'})"><i class="material-icons">fitness_center</i>Espacios deportivos</div>
-					<div class="collapsible-body"><a href="{{url('/indexespacio')}}">Espacios</a></div>
-				</li>
-				<li class="list-color">
-					<div class="collapsible-header" onclick="M.toast({html: 'Lista y registro de periodos academicos'})"><i class="material-icons">date_range</i>Periodos Academicos</div>
-					<div class="collapsible-body"><a href="{{url('/indexperiodo')}}">Periodos</a></div>
-				</li>
-				<li class="list-color">
-					<div class="collapsible-header" onclick="M.toast({html: 'Lista y asignacion de fecha,hora y epsacios a clases ya creadas'})"><i class="material-icons">timelapse</i>Reservas</div>
-					<div class="collapsible-body list-color"><a href="{{url('/indexreserva')}}">Reserva</a></div>
-				</li>
-			</ul>
-		</aside>
-		<article class="cst-content w-100">
-			<!--blque hueco donde ira el contenido proveniente de una seccion-->
-			@yield('content')
-		</article>
-	</section>
-	
-	<footer class="jpa-color-base">
-		<div class="container jpa-color-base" >
-			<div class="row jpa-color-base">
-				<div class="col l6 s12">
+				</ul>					
+			</div>
+		</div>
+	</nav>
+</main>
+
+
+
+
+<h2>{{Auth::user()->name}}</h2>
+<section class="row flex">
+	<aside class="col left-menu hide-on-med-and-down h-100">
+		<ul id="slide-out-fxd" class="sidenav sidenav-fixed collapsible">
+			<li class="list-color">
+				<div class="collapsible-header" onclick="M.toast({html: 'Lista y registro de usuarios'})"><i class="material-icons">group</i>Usuarios</div>
+				<div class="collapsible-body"><a href="{{ url('/indexuser') }}">Usuarios</a></div>
+			</li >
+			<li class="list-color">
+				<div class="collapsible-header" onclick="M.toast({html: 'Lista y registro de actividades de gymnasio y deportivas'})"><i class="material-icons">directions_bike</i>Actividades</div>
+				<div class="collapsible-body"><a href="{{ url('/indexespdep') }}">Actividades</a></div>
+			</li>
+			<li class="list-color">
+				<div class="collapsible-header" onclick="M.toast({html: 'Lista y registro de ubicaciones o sedes de la universidad'})"><i class="material-icons">place</i>Sedes</div>
+				<div class="collapsible-body"><a href="{{url('/indexsedes')}}">Sedes</a></div>
+			</li>
+			<li class="list-color">
+				<div class="collapsible-header" onclick="M.toast({html: 'Lista y registro de Gymnasios'})"><i class="material-icons">fitness_center</i>Espacios deportivos</div>
+				<div class="collapsible-body"><a href="{{url('/indexespacio')}}">Espacios</a></div>
+			</li>
+			<li class="list-color">
+				<div class="collapsible-header" onclick="M.toast({html: 'Lista y registro de clases'})"><i class="material-icons">list</i>Clases</div>
+				<div class="collapsible-body"><a href="{{url('/indexclases') }}">Clases</a></div>
+			</li>
+			<li class="list-color">
+				<div class="collapsible-header" onclick="M.toast({html: 'Lista y registro de periodos academicos'})"><i class="material-icons">date_range</i>Periodos Academicos</div>
+				<div class="collapsible-body"><a href="{{url('/indexperiodo')}}">Periodos</a></div>
+			</li>
+			<li class="list-color">
+				<div class="collapsible-header" onclick="M.toast({html: 'Lista y asignacion de fecha,hora y epsacios a clases ya creadas'})"><i class="material-icons">timelapse</i>Reservas</div>
+				<div class="collapsible-body list-color"><a href="{{url('/indexreserva')}}">Reserva</a></div>
+			</li>
+		</ul>
+	</aside>
+	<article class="cst-content w-100">
+		<!--blque hueco donde ira el contenido proveniente de una seccion-->
+		@yield('content')
+	</article>
+</section>
+
+<footer class="jpa-color-base">
+	<div class="container jpa-color-base" >
+		<div class="row jpa-color-base">
+			<div class="col l6 s12">
 				<h5 class="white-text">Gimnasio virtual</h5>
-					<p class="grey-text text-lighten-4">Gimnasio virtual version de prueba</p>
-				</div>
+				<p class="grey-text text-lighten-4">Gimnasio virtual version de prueba</p>
 			</div>
 		</div>
-		<div class="footer-copyright">
-			<div class="container">
-				© 2019 Juan Pablo Acevedo Torres
-				<a class="grey-text text-lighten-4 right" href="http://www.ustatunja.edu.co">Universidad Santo Tomas Tunja</a>
-			</div>
+	</div>
+	<div class="footer-copyright">
+		<div class="container">
+			© 2019 Juan Pablo Acevedo Torres
+			<a class="grey-text text-lighten-4 right" href="http://www.ustatunja.edu.co">Universidad Santo Tomas Tunja</a>
 		</div>
-	</footer>
+	</div>
+</footer>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-		<!--Project asset va directamente a la raiz de public-->
-		<script src="{{ asset('js/main.js') }}"></script>
+<!--Project asset va directamente a la raiz de public-->
+<script src="{{ asset('js/main.js') }}"></script>
 
 
-		@yield('javascript')
+@yield('javascript')
 
-	</body>
-	</html>
+</body>
+</html>
