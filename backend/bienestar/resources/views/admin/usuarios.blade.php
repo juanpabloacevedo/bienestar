@@ -32,7 +32,8 @@
                         <td>{{$user->apellido}}</td>
                         <td>@if(isset($user->asistencias)){{$user->asistencias->count()}}@else 0 @endif</td>
                         <td>{{$user->rol->name}}</td>
-                        <td>@if($user->activo==true)Activo@else{False}@endelse
+                        <td>@if($user->activo==true)<i class="material-icons green-text">sentiment_very_satisfied</i> @else
+                            <i class="material-icons red-text">sentiment_very_dissatisfied</i>
                         @endif</td>
 
                         <td> <form class="form-horizontal" method="POST" action="{{ route('usuarioactual') }}">
@@ -52,7 +53,7 @@
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
                                     <button type="submit" class="btn btn-primary" value="{{$user->id}}" name="iduser">
-                                        <i class="material-icons">delete</i>
+                                        <i class="material-icons red-text">block</i>
                                     </button>
                                 </div>
                             </div>

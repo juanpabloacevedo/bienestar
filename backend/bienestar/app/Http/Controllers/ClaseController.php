@@ -22,7 +22,7 @@ class ClaseController extends Controller
 	public function index(){
 		$espacios=Espacio::all();
 		$clases=Clase::all();
-		$users=User::all();
+		$users=User::where('activo',true)->get();
 		return view('admin.clases')
 		->with('clases',$clases)
 		->with('espacios',$espacios)
@@ -88,7 +88,7 @@ class ClaseController extends Controller
 		$iduser=$request->iduser;
 		$user=User::find($iduser);
 		$clases=Clase::Join('clase_usuarios', 'clases.id', '=', 'clase_usuarios.id_clase')
-   ->where('clase_usuarios.id_user', '=',$iduser)->get();
+   		->where('clase_usuarios.id_user', '=',$iduser)->get();
 		return view('admin.clasesinscritas')
 		->with('user',$user)
 		->with('clases',$clases);
