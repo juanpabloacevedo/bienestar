@@ -7,7 +7,7 @@
 	<meta name="author" content="Juan Pablo Acevedo Torres">
 	<meta name="description" content="Reservas de turnos de uso de espacios deportivos en la universidad Santo Tomas">
 	<meta name="keywords" content="Gimnasio, USTA, usta,usta tunja,usta deportes,universidad santo tomas">
-	<link rel="icon" href="{{asset('img/ustaIcon.ico')}}">
+	<link rel="icon" href="{{asset('img/system/ustaIcon.ico')}}">
 
 	<!-- CSRF Token -->
 	<meta name="csrf-token" content="{{ csrf_token() }}">
@@ -54,7 +54,9 @@
 		<li><a class="subheader">Subheader</a></li>
 		<li><a href="http://www.ustatunja.edu.co">Usta Tunja</a></li>
 		<li><a href="https://plataformalms.ustatunja.edu.co/login/index.php">Campus Virtual</a></li>
-		<li><a href="{{ url('/user') }}">usuario</a></li>
+		<li><a class="navbar-brand" href="{{ url('/') }}">
+                        <i class="material-icons">home</i>
+                    </a></li>
 		<li clss="{{request()->routeIs('admin')?'active':''}}"><a href="{{ url('/admin') }}">Administrador</a></li>
 
 		<li><a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
@@ -65,9 +67,11 @@
 
 
 	<main>
-		<nav class="jpa-color-base">
+		<nav class="jpa-color-base" style="height:100px">
+
 			<div >
 				<div class="nav-wrapper cst-nav-wrapper">
+
 					<a href="#" data-target="slide-out" class="sidenav-trigger hide-on-large-only"><i class="material-icons color-blue">menu</i></a>
 					<ul id="nav-mobile " class="right hide-on-med-and-down">
 						<li><a href="http://www.ustatunja.edu.co">Usta Tunja</a></li>
@@ -77,6 +81,21 @@
 						<form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
 							{{ csrf_field() }}
 						</form>
+					</ul>
+					<ul style="height: 80px">
+						<li>
+							<a class="navbar-brand" href="{{ url('/') }}">
+                        <i class="material-icons">home</i>
+                    </a>
+						</li>
+						<li>
+						<img src="{{asset('img/logoUsta.png')}}" style="
+					height:80px;
+					margin-left: auto;
+					margin-right: auto;
+					display: block;">
+				</div>	
+						</li>
 					</ul>					
 				</div>
 			</div>

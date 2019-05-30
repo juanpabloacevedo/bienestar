@@ -13,6 +13,7 @@ class UserController extends Controller
 {   
 	/**funcion POST de creacion de usuarios */
 	public function register(Request $request){
+
 		/**datos obligatorios para el registro */
 		$rules = [
 			'name'      => 'required|max:255',
@@ -108,11 +109,19 @@ class UserController extends Controller
 
 
 	public function create_login(){
-		return view('auth.login');
+		if(Auth::user()){
+			if (Auth::user()->id_rol==1) {
+					return redirect()->route('admin',['title'=>'ADMINISTRADOR']);
+				}else{
+					return redirect()->route('user',['title'=>'USUARIO']);
+				}
+		}
+		return view('usuarios.login');
 	}
 
 
 	public function login(Request $request){
+
 		$rules = [
 			'email'     => 'required',
 			'password'  => 'required'
@@ -122,7 +131,7 @@ class UserController extends Controller
 		$validator = Validator::make($credentials, $rules);
 
 		if($validator->fails()) {
-			return view('auth.login',['errors'=>'mandatory_fields']); 
+			return view('usuarios.login',['errors'=>'mandatory_fields']); 
 		}
 		$user = User::where('email',$request->email)->first();
 		if ($user!=null) {  
@@ -132,19 +141,25 @@ class UserController extends Controller
 				}else{
 					return redirect()->route('user',['title'=>'USUARIO']);
 				}
-				return redirect()->route('admin',['title'=>'ADMINISTRADOR']);
 			}else{
-				return view('auth.login',['errors'=>'incorrect']); 
+				return view('usuarios.login',['errors'=>'incorrect']); 
 			}
 
 		}else{
-			return view('auth.login',['errors'=>'incorrect']); 
+			return view('usuarios.login',['errors'=>'incorrect']); 
 		}
 
 	}
 
 	/**funcion de tipo get que me reg¿dirige al formulario de registro */
 	public function create_register(Request $request){
+		if(Auth::user()){
+			if (Auth::user()->id_rol==1) {
+					return redirect()->route('admin',['title'=>'ADMINISTRADOR']);
+				}else{
+					return redirect()->route('user',['title'=>'USUARIO']);
+				}
+		}
 		$errors=Session::get('errors');
 		$tipo_documentos = TipoDocumento::all();
 		return view('auth.register')
@@ -178,7 +193,6 @@ class UserController extends Controller
 	}
 	public function desactive(Request $request){
 		$user =User::find($request->iduser);
-		$user->name ='';
 		$user->activo=false;
 		$user->save();
 		return redirect()->route('indexuser');

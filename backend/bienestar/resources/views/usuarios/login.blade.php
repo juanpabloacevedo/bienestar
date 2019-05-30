@@ -25,24 +25,25 @@
             <br/>
             <h3>Acceso a plataforma</h3>
           </div>
-          <img src="../../dist/img/persona.png" class="img img-fluid" alt="Persona" style="width: 10%;">
+          <img src="{{asset('img/system/baseline-person-24px.svg')}}" class="img img-fluid" alt="Persona" style="width: 10%;">
 
           <div class="card-body">
             <div class="row text-center align-items-center justify-content-center">
               <div class="col-md-6">
-                <form method="POST" action="{{ route('login') }}">
+                <form method="POST">
                   {{ csrf_field() }}
 
               <div class="form-group">
-                <label for="user">Usuario</label>
-                <input type="email" class="form-control" id="email" placeholder="Usuario">
+                <label for="email">Usuario</label>
+                <input id="email" type="email" class="form-control"  name="email" placeholder="E-mail">
               </div>
                   <div class="form-group">
                     <label for="password">Contraseña</label>
-                    <input type="password" class="form-control" id="password" placeholder="Contraseña">
+                    <input id="password" type="password" class="form-control" name="password" placeholder="Contraseña">
                   </div>
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <a href="{{url('/register')}}">Registrarse</a>
                     <label class="form-check-label" for="defaultCheck1">
                       No cerrar sesion
                     </label>
@@ -73,7 +74,7 @@
   </div>
 </div>
 </body>
-
-<script src="js/bootstrap.js" type="text/javascript"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!--<script src="js/bootstrap.js" type="text/javascript"></script>-->
 
 </html>

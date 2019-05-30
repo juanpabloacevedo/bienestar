@@ -2,14 +2,14 @@
   'app' => 
   array (
     'name' => 'gimnasioVirtual',
-    'alias' => 'gimnasio Virtual',
+    'alias' => 'Laravel',
     'env' => 'local',
     'debug' => true,
     'url' => 'http://localhost',
     'timezone' => 'America/Bogota',
     'locale' => 'es',
     'fallback_locale' => 'es',
-    'key' => 'base64:fafS94U/34yNolF15gkOyA6RKH+YNepn9kXFKhkZDUo=',
+    'key' => 'base64:08QjIz9oQbwE5BC5DpML4BK4ENgDcdY167F/AVdAJVE=',
     'cipher' => 'AES-256-CBC',
     'log' => 'single',
     'log_level' => 'debug',
@@ -170,7 +170,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'C:\\github\\bienestar\\backend\\bienestar\\backend\\bienestar\\storage\\framework/cache/data',
+        'path' => 'C:\\github\\bienestar\\backend\\bienestar\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -275,12 +275,12 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\github\\bienestar\\backend\\bienestar\\backend\\bienestar\\storage\\app',
+        'root' => 'C:\\github\\bienestar\\backend\\bienestar\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\github\\bienestar\\backend\\bienestar\\backend\\bienestar\\storage\\app/public',
+        'root' => 'C:\\github\\bienestar\\backend\\bienestar\\storage\\app/public',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
@@ -313,7 +313,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'C:\\github\\bienestar\\backend\\bienestar\\backend\\bienestar\\resources\\views/vendor/mail',
+        0 => 'C:\\github\\bienestar\\backend\\bienestar\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -393,7 +393,7 @@
     'lifetime' => 120,
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'C:\\github\\bienestar\\backend\\bienestar\\backend\\bienestar\\storage\\framework/sessions',
+    'files' => 'C:\\github\\bienestar\\backend\\bienestar\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -412,9 +412,9 @@
   array (
     'paths' => 
     array (
-      0 => 'C:\\github\\bienestar\\backend\\bienestar\\backend\\bienestar\\resources\\views',
+      0 => 'C:\\github\\bienestar\\backend\\bienestar\\resources\\views',
     ),
-    'compiled' => 'C:\\github\\bienestar\\backend\\bienestar\\backend\\bienestar\\storage\\framework\\views',
+    'compiled' => 'C:\\github\\bienestar\\backend\\bienestar\\storage\\framework\\views',
   ),
   'tinker' => 
   array (

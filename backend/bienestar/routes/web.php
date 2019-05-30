@@ -17,6 +17,8 @@ Route::get('/', function () {
 Route::get('login', 'UserController@create_login')->name('login');
 Route::post('/login', 'UserController@login');
 Route::get('/importcsv', 'CSVController@importCSV')->name('importcsv');
+Route::get('/register', 'UserController@create_register');
+Route::post('/register', 'UserController@register')->name('register');
 
 /**permisos de administrador
 */
@@ -32,8 +34,7 @@ Route::group(['middleware'=>['auth','admin']],function(){
 	Route::post('/importcsv', 'CSVController@importCSV')->name('importcsv');
 	/**alias de la ruta, controlador a usar@funcion dentro del controlador */
 	Route::get('/home', 'HomeController@index')->name('home');
-	Route::get('/register', 'UserController@create_register');
-	Route::post('/register', 'UserController@register')->name('register');
+	
 	Route::get('/registeradmin', 'UserController@create_registeradmin');
 	Route::post('/registeradmin', 'UserController@registeradmin')->name('registeradmin');
 	/***espacios deportivos 'tipo de clase o deporte'*/
