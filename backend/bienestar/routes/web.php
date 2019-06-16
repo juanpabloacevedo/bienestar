@@ -19,7 +19,7 @@ Route::post('/login', 'UserController@login');
 Route::get('/importcsv', 'CSVController@importCSV')->name('importcsv');
 Route::get('/register', 'UserController@create_register');
 Route::post('/register', 'UserController@register')->name('register');
-
+Route::get('validar','ReservaController@validateReservation');
 /**permisos de administrador
 */
 Route::group(['middleware'=>['auth','admin']],function(){	

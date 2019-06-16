@@ -9,6 +9,7 @@ use App\Clase;
 use App\Reserva;
 use App\Espacio;
 use App\Estado;
+use App\Periodo;
 
 
 class ReservaController extends Controller
@@ -39,22 +40,22 @@ class ReservaController extends Controller
         ->with('estados',$estados);
     }
     
-    public function create_reserva()
-    {   
-        
+    public function validateReservation(Reserva $reserva){
+        $actual=Carbon::now();
+        $inicio=Carbon::parse($reserva->inicio);
+        //dd($reserva, $inicio, $actual,$inicio);
+        if($inicio>=$actual){
+            return true;
+        }else{
+            return false;
+        }
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request){
         /**datos obligatorios para el registro */
         $rules = [
             'id_clase'      => 'required|max:255',
-            ];
+        ];
         /**credenciales minimas de registro */
         $credentials = $request->only(
             'id_clase'			
@@ -66,18 +67,23 @@ class ReservaController extends Controller
             return redirect()->route('admin')        
             ->with('errors', $validator->errors());
         }
-            
+
         /**creacion del usuario,estos datos son los mismos de la migracion o base de datos*/
         $reserva = new Reserva();        
         $reserva->id_espacio    = $request->id_espacio;		
-        $reserva->id_clase    = $request->id_clase;        
+        $reserva->id_clase    = $request->id_clase;     
         $reserva->inicio = Carbon::parse($request->inicio_dia.' '.$request->inicio_hora)->format('Y-m-d H:m');
         $reserva->fin= Carbon::parse($request->fin_dia.' '.$request->fin_hora)->format('Y-m-d H:m');
         $reserva->name      = $reserva->id+$reserva->id_clase;
         $reserva->id_estado=1;
-        $reserva->save();
-        return redirect()->route('indexreserva');
-    
+        if($this->validateReservation($reserva)){
+            $reserva->save();
+            return redirect()->route('indexreserva');
+        }else{
+            dd("algo esta mal");
+        }
+        
+
     }
 
     /**

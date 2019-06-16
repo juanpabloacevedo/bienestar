@@ -30,15 +30,16 @@
             </select>
         </div>
         <div class="form-group">
-        <label for="inicio_dia" class="col-md-4 control-label">inicio</label>
+        <label for="inicio_dia" class="col-md-4 control-label">Inicio</label>
                 <div class="col-md-6">
-                <input type="date" datetime="2017-02-14" name="incio_dia" format="yyyy-mm-dd">
-                <input type="time" datetime="2017-02-14" name="incio_hora">
+                <input type="text" class="datepicker" datetime="2017-02-14" name="inicio_dia" format="yyyy-mm-dd">
+                <input type="time" datetime="2017-02-14" name="inicio_hora">
                 </div>
         </div>
         <div class="form-group">
         <label for="fin_dia" class="col-md-4 control-label">fin</label>
                 <div class="col-md-6">
+             <input type="text" class="datepicker" datetime="2017-02-14" name="fin_dia" format="yyyy-mm-dd">
                 <input type="date" datetime="2017-02-14" name="fin_dia" format="yyyy-mm-dd">
                 <input type="time" datetime="2017-02-14" name="fin_hora">
                 </div>
