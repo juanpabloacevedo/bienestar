@@ -1,0 +1,16 @@
+.front sidenav{
+background: blue;
+}
+.flex{
+    display: flex !important;
+}
+.h-100{
+    height:100% !important;
+}
+#slide-out-fxd{
+    width:250px;
+    position:relative;
+}
+.w-100{
+    width: 100% !important;
+}
