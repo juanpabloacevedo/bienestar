@@ -8,7 +8,7 @@
 	<meta name="description" content="Reservas de turnos de uso de espacios deportivos en a universidad Santo Tomas">
 	<meta name="keywords" content="Gimnasio, USTA, usta,usta tunja,usta deportes,universidad santo tomas,bienestar universitario">
 	<link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
-
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 	<!-- CSRF Token -->
 	<meta name="csrf-token" content="{{ csrf_token() }}">
@@ -36,6 +36,9 @@
 							<li class="nav-item active">
 								<a class="nav-link" href="Usuarios.html">Usuario</a>
 							</li>
+							<li><a class="navbar-brand" href="{{ url('changepass') }}">
+			<i class="material-icons" style="width: 100%">vpn_key</i>
+		</a></li>
 							<li class="nav-item active"><a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
 							<form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
 								{{ csrf_field() }}

@@ -141,10 +141,10 @@ class UserController extends Controller
 					return redirect()->route('admin',['title'=>'ADMINISTRADOR']);
 				}elseif($user->id_rol==2){
 					//return view('instructor.instructor'); 
-                    return redirect()->route('instructor',['title'=>'INSTRUCTOR']);
+					return redirect()->route('instructor',['title'=>'INSTRUCTOR']);
 				}else{
-                    return redirect()->route('user',['title'=>'USUARIO']);
-                }
+					return redirect()->route('user',['title'=>'USUARIO']);
+				}
 			}else{
 				return view('usuarios.login',['errors'=>'incorrect']); 
 			}
@@ -161,11 +161,11 @@ class UserController extends Controller
 			if (Auth::user()->id_rol==1) {
 				return redirect()->route('admin',['title'=>'ADMINISTRADOR']);
 			}else if (Auth::user()->id_rol==2){
-                return redirect()->route('instructor',['title'=>'INSTRUCTOR']);
+				return redirect()->route('instructor',['title'=>'INSTRUCTOR']);
 
 			}else{
-                return redirect()->route('user',['title'=>'USUARIO']);
-            }
+				return redirect()->route('user',['title'=>'USUARIO']);
+			}
 		}
 		$errors=Session::get('errors');
 		$tipo_documentos = TipoDocumento::all();
@@ -208,12 +208,27 @@ class UserController extends Controller
 
 	}
 
-
+	/**Activa y desactiva usuarios*/
 	function changeStatus(Request $request){
 		$user = User::find($request->user_id);
 		$user->activo = !$user->activo;
 		$user->save();
 		return response()->json($user);
 	}
-	
+	public function changePass(){
+		if(Auth::user()){
+			return view('admin.cambiarContrasenia');
+		}else{
+			return view('index');
+		}
+	}
+
+	public function changePassword(Request $request){
+		$passnew=bcrypt($request->password);
+		$user=Auth::user();
+		$user->password=$passnew;
+		$user->save();
+		return view('index');
+	}
+
 }

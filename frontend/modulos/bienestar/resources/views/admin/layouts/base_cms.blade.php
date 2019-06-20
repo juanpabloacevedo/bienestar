@@ -40,12 +40,13 @@
 				<ul>
 					<li><a href="#name"><span class="white-text name">{{Auth::user()->name}} {{Auth::user()->apellido}}</span></a></li>
 					<li><a href="#email"><span class="white-text email">{{Auth::user()->email}}</span></a></li>
+					<li ><a href="{{ url('/changepass') }}">Cambiar contrasenia</a></li>
 				</ul>
 			</div>
 		</li>
-		<li ><a href="{{ url('/indexuser') }}">Usuarios</a></li>
-		<li ><a href="{{ url('/indexespdep') }}">Actividades</a></li>
-		<li ><a href="{{ url('/indexclases') }}">Clases</a></li>
+		<li ><a href="{{url('/indexuser') }}">Usuarios</a></li>
+		<li ><a href="{{url('/indexespdep') }}">Actividades</a></li>
+		<li ><a href="{{url('/indexclases') }}">Clases</a></li>
 		<li ><a href="{{url('/indexsedes')}}">Sedes</a></li>
 		<li ><a href="{{url('/indexperiodo')}}">Periodos</a></li>
 		<li ><a href="{{url('/indexespacio')}}">Espacios</a></li>
@@ -58,6 +59,7 @@
 			<i class="material-icons">home</i>
 		</a></li>
 		<li clss="{{request()->routeIs('admin')?'active':''}}"><a href="{{ url('/admin') }}">Administrador</a></li>
+		<li ><a href="{{ url('/changepass') }}">Cambiar contrasenia</a></li>
 
 		<li><a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
 		<form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">

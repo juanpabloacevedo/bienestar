@@ -16,7 +16,12 @@ Route::get('/', function () {
 });
 Route::get('login', 'UserController@create_login')->name('login');
 Route::post('/login', 'UserController@login');
-Route::get('/pruebas','ClaseController@claseusuario')->name('pruebas');
+/**Cambiar contrasenia*/
+Route::get('/changepass','UserController@changePass')->name('changepass');
+Route::post('/changepass','UserController@changePassword');
+
+
+Route::get('/pruebas','UserController@changePass')->name('pruebas');
 
 Route::get('/register', 'UserController@create_register');
 Route::post('/register', 'UserController@register')->name('register');
