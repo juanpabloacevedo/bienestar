@@ -20,8 +20,7 @@ Route::post('/login', 'UserController@login');
 Route::get('/changepass','UserController@changePass')->name('changepass');
 Route::post('/changepass','UserController@changePassword');
 
-
-Route::get('/pruebas','UserController@changePass')->name('pruebas');
+Route::get('/pruebas','PeriodoController@validarperiodos')->name('pruebas');
 
 Route::get('/register', 'UserController@create_register');
 Route::post('/register', 'UserController@register')->name('register');

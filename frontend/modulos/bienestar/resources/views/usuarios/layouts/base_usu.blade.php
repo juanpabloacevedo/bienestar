@@ -37,8 +37,8 @@
 								<a class="nav-link" href="Usuarios.html">Usuario</a>
 							</li>
 							<li><a class="navbar-brand" href="{{ url('changepass') }}">
-			<i class="material-icons" style="width: 100%">vpn_key</i>
-		</a></li>
+								<i class="material-icons" style="width: 100%">vpn_key</i>
+							</a></li>
 							<li class="nav-item active"><a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
 							<form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
 								{{ csrf_field() }}
@@ -91,28 +91,28 @@
 	<div class="container" id="footer">
 		<div class="row">
 			<div class="col-md-12">
-				</br>
-				<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-					<div class="col-md-4"><h6 class="text-left text-white" >Universiad Santo Tomás  © 2019 <p> Facultad Ingenería de Sistemas </h6></div>
+			</br>
+			<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+				<div class="col-md-4"><h6 class="text-left text-white" >Universiad Santo Tomás  © 2019 <p> Facultad Ingenería de Sistemas </h6></div>
 					<div class="col-md-4"><h6 class="text-center text-white" >Juan Pablo Acebedo <p>Juan Sebatian Ulloa</h6></div>
-					<div class="col-md-4"><h6 class="text-right text-white" >Gimnasio Virtual <p> Línea gratuita nacional: 01-8000-932340 </h6></div>
+						<div class="col-md-4"><h6 class="text-right text-white" >Gimnasio Virtual <p> Línea gratuita nacional: 01-8000-932340 </h6></div>
 
 
 
-				</nav>
+						</nav>
 
+					</div>
+				</div>
 			</div>
-		</div>
-	</div>
 	<!--JQuery
-	<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>-->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="{{asset('js/bootstrap.js')}}" type="text/javascript"></script>
+		<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="{{asset('js/bootstrap.js')}}" type="text/javascript"></script>
 
-	<script src="{{ asset('js/main.js') }}"></script>
+		<script src="{{ asset('js/main.js') }}"></script>
 
 
-	@yield('javascript')
+		@yield('javascript')
 
-</body>
-</html>
+	</body>
+	</html>

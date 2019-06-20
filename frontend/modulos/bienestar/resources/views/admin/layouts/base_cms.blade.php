@@ -40,7 +40,9 @@
 				<ul>
 					<li><a href="#name"><span class="white-text name">{{Auth::user()->name}} {{Auth::user()->apellido}}</span></a></li>
 					<li><a href="#email"><span class="white-text email">{{Auth::user()->email}}</span></a></li>
-					<li ><a href="{{ url('/changepass') }}">Cambiar contrasenia</a></li>
+					<li><a class="navbar-brand" href="{{ url('changepass') }}">
+								<i class="material-icons" style="width: 100%">vpn_key</i>
+							</a></li>
 				</ul>
 			</div>
 		</li>
@@ -59,7 +61,7 @@
 			<i class="material-icons">home</i>
 		</a></li>
 		<li clss="{{request()->routeIs('admin')?'active':''}}"><a href="{{ url('/admin') }}">Administrador</a></li>
-		<li ><a href="{{ url('/changepass') }}">Cambiar contrasenia</a></li>
+
 
 		<li><a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
 		<form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
@@ -80,6 +82,9 @@
 						<li><a href="https://plataformalms.ustatunja.edu.co/login/index.php">Campus Virtual</a></li>
 						<li clss="{{request()->routeIs('admin')?'active':''}}"><a href="{{ url('/admin') }}">{{Auth::user()->rol->name}}</a></li>
 						<li><a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+						<li><a class="navbar-brand" href="{{ url('changepass') }}">
+								<i class="material-icons" style="width: 100%">vpn_key</i>
+							</a></li>
 						<form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
 							{{ csrf_field() }}
 						</form>

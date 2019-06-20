@@ -38,27 +38,26 @@ class PeriodoController extends Controller{
 		$periodo->name   = $request->name;		
 		$periodo->inicio  = $request->dateinit;
 		$periodo->fin  = $request->dateinit;
-		$periodo->activo  = false;
+		$periodo->activo  = true;
 		$periodo->save();
 		return redirect()->route('indexperiodo');
 	}
-
 	public function validarperiodos(){
 		$periodos=Periodo::all();
-		$cont=0;
-		for ($i=0; $i <sizeof($periodos) ; $i++) { 
-			if ($periodos[$i]->activo==false) {
-				$cont=$cont+1;
-			}
+		foreach ($periodos as $periodo) {
+			$periodo->activo=false;
+			$periodo->save();
 		}
-		printf($cont);
-		if($cont>1){
-			$cont=0;
-			for ($i=0; $i <sizeof($periodos) ; $i++) { 
-			$periodos[$i]->activo=false;
-			printf($periodos[$i]->activo);	
+		$actual=Carbon::now();
+		foreach ($periodos as $periodo) {			 
+			$inicio=Carbon::parse($periodo->inicio);
+			$fin=Carbon::parse($periodo->fin);
+			if ($actual>=$inicio and $actual>=$fin) {
+
+				$periodo->activo=true;
+				$periodo->save();
 			}
+			return redirect()->route('indexperiodo');
 		}
-		printf($cont);
 	}
 }
