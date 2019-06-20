@@ -36,9 +36,10 @@
 							<li class="nav-item active">
 								<a class="nav-link" href="Usuarios.html">Usuario</a>
 							</li>
-							<li class="nav-item active">
-								<a class="nav-link" href="{{ route('logout') }}">logout</a>
-							</li>
+							<li class="nav-item active"><a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+							<form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+								{{ csrf_field() }}
+							</form>
 							<li class="nav-item active">
 								<a class="nav-link" href="#!" data-target="dropdown-admin">{{Auth::user()->name}} {{Auth::user()->apellido}}</a>
 							</li>
@@ -84,76 +85,6 @@
 			</div>
 		</div>
 	</div>
-	<ul id="slide-out" class="sidenav" style="width:250px">
-		<li>
-			<div class="user-view">
-				<div class="background">
-					<img src="{{asset('img/usta_logo.png')}}" style="width: 100%;
-					height: 100%;
-					margin-left: auto;
-					margin-right: auto;
-					display: block;">
-				</div>
-				<a href="#user"><img class="circle" src="{{asset('img/no_photo.png')}}"></a>
-
-				  <ul>
-					<li><a href="#name"><span class="white-text name">{{Auth::user()->name}} {{Auth::user()->apellido}}</span></a></li>
-					<li><a href="#email"><span class="white-text email">{{Auth::user()->email}}</span></a></li>
-				</ul>
-			</div>
-		</li>
-		<li><a href="">Espacios deportivos</a></li>
-		<li><a href="{{ url('/indexclases') }}">Clases</a></li>
-		<li><div class="divider"></div></li>
-		<li><a class="subheader">Subheader</a></li>
-		<li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
-		<li><a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
-		<form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-			{{ csrf_field() }}
-		</form>
-	</ul>
-
-
-	<main>
-		<nav>
-			<div style="background-image: url({{ asset('kubycks/public/media/system/header.png') }});">
-				<div class="nav-wrapper cst-nav-wrapper">
-					<a href="#" data-target="slide-out" class="sidenav-trigger hide-on-large-only"><i class="material-icons color-blue">menu</i></a>
-					<ul id="nav-mobile" class="right hide-on-med-and-down">
-						<li><a href="{{ url('/indexuser') }}">Usuarios</a></li>
-						<li><a href="{{ url('/home') }}">Home</a></li>
-						<li><a href="collapsible.html">JavaScript</a></li>
-						<li><a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
-
-						<form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-							{{ csrf_field() }}
-						</form>
-						<li><a class="dropdown-trigger cst-admin-trigger color-blue bold" href="#!" data-target="dropdown-admin">{{Auth::user()->name}} {{Auth::user()->apellido}}</a></li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-	</main>
-
-
-
-
-		<h2>{{Auth::user()->name}} {{Auth::user()->apellido}}</h2>
-		<section class="row flex">
-			<aside class="col left-menu hide-on-med-and-down h-100">
-				<ul id="slide-out-fxd" class="sidenav sidenav-fixed">
-					<li><a href="{{ url('/indexuser') }}">Usuarios</a></li>
-					<li><a href="{{ url('/indexespaciosdeportivos') }}">Espacios deportivos</a></li>
-					<li><a href="{{ url('/indexclases') }}">Clases</a></li>
-					<li><a href="#">Reservas</a></li>
-					<li><a href="#">Inasistencias</a></li>
-				</ul>
-			</aside>
-			<article class="cst-content w-100">
-				<!--blque hueco donde ira el contenido proveniente de una seccion-->
-
-			</article>
-		</section>
 	<div class="container" id="footer">
 		<div class="row">
 			<div class="col-md-12">

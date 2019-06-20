@@ -138,9 +138,11 @@ class UserController extends Controller
 			if (Auth::attempt($credentials)) {
 				if ($user->id_rol==1) {
 					return redirect()->route('admin',['title'=>'ADMINISTRADOR']);
+				}elseif($user->id_rol==2){
+                    return redirect()->route('instructor',['title'=>'INSTRUCTOR']);
 				}else{
-					return redirect()->route('user',['title'=>'USUARIO']);
-				}
+                    return redirect()->route('user',['title'=>'USUARIO']);
+                }
 			}else{
 				return view('usuarios.login',['errors'=>'incorrect']); 
 			}

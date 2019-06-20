@@ -43,7 +43,7 @@
                        <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Login</a></li>
+                            <li><a href="{{ route('login') }}"></a></li>
                         @else
                             @if(Auth::user()->isAdmin())
                                 <li> <a class="navbar-brand"  href="{{ url('/admin') }}">
