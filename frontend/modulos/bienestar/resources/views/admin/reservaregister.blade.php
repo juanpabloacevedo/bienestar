@@ -40,7 +40,6 @@
         <label for="fin_dia" class="col-md-4 control-label">fin</label>
                 <div class="col-md-6">
              <input type="text" class="datepicker" datetime="2017-02-14" name="fin_dia" format="yyyy-mm-dd">
-                <input type="date" datetime="2017-02-14" name="fin_dia" format="yyyy-mm-dd">
                 <input type="time" datetime="2017-02-14" name="fin_hora">
                 </div>
         </div>

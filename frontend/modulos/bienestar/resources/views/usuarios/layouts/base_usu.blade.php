@@ -94,7 +94,7 @@
 			</br>
 			<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 				<div class="col-md-4"><h6 class="text-left text-white" >Universiad Santo Tomás  © 2019 <p> Facultad Ingenería de Sistemas </h6></div>
-					<div class="col-md-4"><h6 class="text-center text-white" >Juan Pablo Acebedo <p>Juan Sebatian Ulloa</h6></div>
+					<div class="col-md-4"><h6 class="text-center text-white" >Juan Pablo Acevedo <p>Juan Sebatian Ulloa</h6></div>
 						<div class="col-md-4"><h6 class="text-right text-white" >Gimnasio Virtual <p> Línea gratuita nacional: 01-8000-932340 </h6></div>
 
 

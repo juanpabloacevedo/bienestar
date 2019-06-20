@@ -37,7 +37,7 @@ class PeriodoController extends Controller{
 		$periodo = new Periodo();
 		$periodo->name   = $request->name;		
 		$periodo->inicio  = $request->dateinit;
-		$periodo->fin  = $request->dateinit;
+		$periodo->fin  = $request->dateend;
 		$periodo->activo  = true;
 		$periodo->save();
 		return redirect()->route('indexperiodo');
@@ -52,10 +52,12 @@ class PeriodoController extends Controller{
 		foreach ($periodos as $periodo) {			 
 			$inicio=Carbon::parse($periodo->inicio);
 			$fin=Carbon::parse($periodo->fin);
-			if ($actual>=$inicio and $actual>=$fin) {
-
+			//dd($actual,'',$inicio,'',$fin);
+			if ( $actual->gte($inicio) and $actual->lte($inicio)) {
+				printf($actual, $inicio);
 				$periodo->activo=true;
 				$periodo->save();
+			}else{
 			}
 			return redirect()->route('indexperiodo');
 		}
