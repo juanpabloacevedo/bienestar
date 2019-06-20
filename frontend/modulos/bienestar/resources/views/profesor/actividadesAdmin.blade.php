@@ -1,3 +1,5 @@
+@extends('profesor.layouts.base_inst.blade')
+@section('contetnt')
 <!DOCTYPE html>
 <html lang="en">
 

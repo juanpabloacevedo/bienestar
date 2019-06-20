@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use Session;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
@@ -9,7 +11,6 @@ use App\Espacio;
 use App\Periodo;
 use App\Clase;
 use App\User;
-use Session;
 
 class ClaseController extends Controller
 {
@@ -28,7 +29,12 @@ class ClaseController extends Controller
 		->with('espacios',$espacios)
 		->with('users',$users);
 	}
-
+	public function listClass(){
+		$espacios=Espacio::all();
+		$clases=Clase::all();
+		$user=Auth::user();
+		dd($user->id);
+	}
 
 	public function store(Request $request){
 		/**datos obligatorios para el registro */
@@ -79,7 +85,7 @@ class ClaseController extends Controller
 		$iduser=$request->iduser;
 		$user=User::find($iduser);
 		$clases=Clase::Join('clase_usuarios', 'clases.id', '=', 'clase_usuarios.id_clase')
-   		->where('clase_usuarios.id_user', '=',$iduser)->get();
+		->where('clase_usuarios.id_user', '=',$iduser)->get();
 		return view('admin.clasesinscritas')
 		->with('user',$user)
 		->with('clases',$clases);
@@ -89,7 +95,7 @@ class ClaseController extends Controller
 		$idclase=$request->idclase;
 		$clase=Clase::find($idclase);
 		$users=User::Join('clase_usuarios','users.id','=','clase_usuarios.id_user')
-   		->where('clase_usuarios.id_clase', '=',$idclase)->get();
+		->where('clase_usuarios.id_clase', '=',$idclase)->get();
 		return view('admin.usuariosinscritos')
 		->with('users',$users)
 		->with('clase',$clase);
@@ -127,6 +133,26 @@ class ClaseController extends Controller
 		->with('user', $user)
 		->with('errors', $errors);
 	}
+	/**controladores de usuario*/
 
+	/**lista todas las clases y retorna el usuario actual*/
+	public function clases(){
+		$espacios=Espacio::all();
+		$clases=Clase::all();
+		$user=Auth::user();
+			return view('profesor.clasesAdmin')
+			->with('clases',$clases)
+		->with('user', $user)
+		->with('errors', $errors);
+	}
+	/**lista todas las clases inscritas por el usuario actual */
+	public function claseusuario(){
+		$user=Auth::user();
+		$clases=Clase::Join('clase_usuarios', 'clases.id', '=', 'clase_usuarios.id_clase')
+		->where('clase_usuarios.id_user', '=',$user->id)->get();
+		return view('admin.clasesinscritas')
+		->with('user',$user)
+		->with('clases',$clases);
+	}
 	
 }

@@ -9,7 +9,7 @@
     'timezone' => 'America/Bogota',
     'locale' => 'es',
     'fallback_locale' => 'es',
-    'key' => 'base64:U0TRV2oRueMDjOCK1wV4C7o6exEOMxiS7EEVY2GE9uY=',
+    'key' => 'base64:aOEy3HuFUIBgT1afo4Cy6ItzigsaseW1NUv/TvjPuHs=',
     'cipher' => 'AES-256-CBC',
     'log' => 'single',
     'log_level' => 'debug',
@@ -170,7 +170,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'C:\\Bienestar\\bienestar\\backend\\bienestar\\storage\\framework/cache/data',
+        'path' => 'C:\\github\\bienestar\\backend\\bienestar\\frontend\\modulos\\bienestar\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -210,7 +210,7 @@
       'sqlite' => 
       array (
         'driver' => 'sqlite',
-        'database' => 'bienestar_test',
+        'database' => 'pruebas',
         'prefix' => '',
       ),
       'mysql' => 
@@ -218,7 +218,7 @@
         'driver' => 'mysql',
         'host' => '127.0.0.1',
         'port' => '5432',
-        'database' => 'bienestar_test',
+        'database' => 'pruebas',
         'username' => 'tester',
         'password' => 'tester',
         'unix_socket' => '',
@@ -233,7 +233,7 @@
         'driver' => 'pgsql',
         'host' => '127.0.0.1',
         'port' => '5432',
-        'database' => 'bienestar_test',
+        'database' => 'pruebas',
         'username' => 'tester',
         'password' => 'tester',
         'charset' => 'utf8',
@@ -246,7 +246,7 @@
         'driver' => 'sqlsrv',
         'host' => '127.0.0.1',
         'port' => '5432',
-        'database' => 'bienestar_test',
+        'database' => 'pruebas',
         'username' => 'tester',
         'password' => 'tester',
         'charset' => 'utf8',
@@ -275,12 +275,12 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\Bienestar\\bienestar\\backend\\bienestar\\storage\\app',
+        'root' => 'C:\\github\\bienestar\\backend\\bienestar\\frontend\\modulos\\bienestar\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\Bienestar\\bienestar\\backend\\bienestar\\storage\\app/public',
+        'root' => 'C:\\github\\bienestar\\backend\\bienestar\\frontend\\modulos\\bienestar\\storage\\app/public',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
@@ -313,7 +313,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'C:\\Bienestar\\bienestar\\backend\\bienestar\\resources\\views/vendor/mail',
+        0 => 'C:\\github\\bienestar\\backend\\bienestar\\frontend\\modulos\\bienestar\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -393,7 +393,7 @@
     'lifetime' => 120,
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'C:\\Bienestar\\bienestar\\backend\\bienestar\\storage\\framework/sessions',
+    'files' => 'C:\\github\\bienestar\\backend\\bienestar\\frontend\\modulos\\bienestar\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -412,9 +412,9 @@
   array (
     'paths' => 
     array (
-      0 => 'C:\\Bienestar\\bienestar\\backend\\bienestar\\resources\\views',
+      0 => 'C:\\github\\bienestar\\backend\\bienestar\\frontend\\modulos\\bienestar\\resources\\views',
     ),
-    'compiled' => 'C:\\Bienestar\\bienestar\\backend\\bienestar\\storage\\framework\\views',
+    'compiled' => 'C:\\github\\bienestar\\backend\\bienestar\\frontend\\modulos\\bienestar\\storage\\framework\\views',
   ),
   'tinker' => 
   array (

@@ -1,4 +1,4 @@
-@extends('instructor.layout.base_inst')
+@extends('profesor.layout.base_inst')
 @section('contetnt')
 <body>
 <div class="card-body text-center align-content-center align-items-center">

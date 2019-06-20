@@ -33,8 +33,8 @@ class HomeController extends Controller
     {
         return view('usuarios.bienbenidoU');
     }
-    public  function  instructor()
+    public  function instructor()
     {
-        return view('instructor.bienbenidoA');
+        return view('profesor.instructor');
     }
 }

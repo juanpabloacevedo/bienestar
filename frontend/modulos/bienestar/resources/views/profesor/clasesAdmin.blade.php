@@ -1,3 +1,5 @@
+@extends('profesor.layout.base_inst.blade')
+@section('contetnt')
 <!DOCTYPE html>
 <html lang="en">
 
@@ -258,7 +260,7 @@
   </div>
 </div>
 </body>
-
+@endcontent
 <script src="../../dist/js/bootstrap.js" type="text/javascript"></script>
 
 </html>

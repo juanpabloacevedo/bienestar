@@ -16,18 +16,16 @@ Route::get('/', function () {
 });
 Route::get('login', 'UserController@create_login')->name('login');
 Route::post('/login', 'UserController@login');
-Route::get('/importcsv', 'CSVController@importCSV')->name('importcsv');
+Route::get('/pruebas','ClaseController@claseusuario')->name('pruebas');
+
 Route::get('/register', 'UserController@create_register');
 Route::post('/register', 'UserController@register')->name('register');
 Route::get('validar','ReservaController@validateReservation');
-/**permisos de administrador
-*/
+/**permisos de administrador*/
 Route::group(['middleware'=>['auth','admin']],function(){	
 	Route::get('/admin', 'HomeController@admin')->name('admin');
 	Route::get('/user', 'HomeController@user')->name('user');
-	Route::get('/instructor','HomeController@Instructor')->name('instructor');
 	Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
-
 	/**usuarios*/
 	Route::get('/indexuser', 'UserController@index')->name('indexuser');
 	Route::post('/destroyuser','UserController@desactive')->name('destroyuser');
@@ -87,10 +85,9 @@ Route::group(['middleware'=>['auth','admin']],function(){
 	Route::post('/clase_reserva', 'ClaseController@reservarclase');
 
 });
-
-Route::group(['middleware'=>['auth','Instructor']],function() {
-   Route::get('/user', 'HomeController@user')->name('user');
-    Route::get('/instructor', 'HomeController@Instructor')->name('instructor');
+/**Rutas de instructor*/
+Route::group(['middleware'=>['auth','instructor']],function() {
+    Route::get('/instructor', 'HomeController@instructor')->name('instructor');
     Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 });
 /**rutas de usuario*/
@@ -100,12 +97,4 @@ Route::group(['middleware'=>['auth','user']],function(){
 	Route::get('/home', 'HomeController@index')->name('home');
 	
 });
-
-
-//Auth::routes();
-
-
-
-
-
 

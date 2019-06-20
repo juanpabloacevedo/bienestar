@@ -1,13 +1,14 @@
 <?php
 namespace App\Http\Controllers;
+use Session;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
 use App\TipoDocumento;
 use App\User;
 use App\Rol;
-use Session;
-use Illuminate\Support\Facades\Auth;
+
 
 class UserController extends Controller
 {   
@@ -139,6 +140,7 @@ class UserController extends Controller
 				if ($user->id_rol==1) {
 					return redirect()->route('admin',['title'=>'ADMINISTRADOR']);
 				}elseif($user->id_rol==2){
+					//return view('instructor.instructor'); 
                     return redirect()->route('instructor',['title'=>'INSTRUCTOR']);
 				}else{
                     return redirect()->route('user',['title'=>'USUARIO']);
@@ -213,4 +215,5 @@ class UserController extends Controller
 		$user->save();
 		return response()->json($user);
 	}
+	
 }
