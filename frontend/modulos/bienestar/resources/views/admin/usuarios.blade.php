@@ -47,35 +47,36 @@
                             </div>
                         </form></td>
                         <td>                               
-                            <a class="waves-effect waves-light btn"><i class="material-icons">edit</i></a>
-                            <td> <form class="form-horizontal" method="POST" action="{{ route('destroyuser') }}">
+                            <td>
+                               <form class="form-horizontal" method="POST" action="{{ route('edituserg') }}">
                                 {{ csrf_field() }}
                                 <div class="form-group">
                                     <div class="col-md-6 col-md-offset-4">
                                         <button type="submit" class="btn btn-primary" value="{{$user->id}}" name="iduser">
-                                            <i class="material-icons red-text">block</i>
+                                            <i class="material-icons red-text">edit</i>
                                         </button>
                                     </div>
                                 </div>
-                            </form></td>
+                            </form>
                         </td>
-                        <td>
-                            <div class="switch" onchange="change_status({{$user->id}})">
-                                <label>
-                                    con sancion
-                                    <input type="checkbox" @if($user->activo) checked @endif >
-                                    <span class="lever"></span>
-                                    sin sancion
-                                </label>
-                            </div>
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
-            {{$users->render()}}
-        </ul>
-    </div>
+                    </td>
+                    <td>
+                        <div class="switch" onchange="change_status({{$user->id}})">
+                            <label>
+                                con sancion
+                                <input type="checkbox" @if($user->activo) checked @endif >
+                                <span class="lever"></span>
+                                sin sancion
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+        {{$users->render()}}
+    </ul>
+</div>
 </div>
 <a class="btn-floating btn-large waves-effect waves-light blue pulse fixed" href="{{ url('/registeradmin') }}"><i class="material-icons">add</i></a>
 <form method="POST" action="{{ route('importcsv') }}" files="true" enctype="multipart/form-data">
@@ -112,7 +113,7 @@
             dataType: "json",
             success:function(data){
                 console.log(data);
-                  M.toast({html: 'usuario '+data.name+' '+data.activo})
+                M.toast({html: 'usuario '+data.name+' '+data.activo})
             },
             error:function(error){
                 console.log(error);

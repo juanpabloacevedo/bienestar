@@ -108,6 +108,45 @@ class UserController extends Controller
 		return redirect()->route('indexuser');
 		
 	}
+	public function editarDatos(Request $request){
+		$user=User::find($request->iduser);
+		$errors=Session::get('errors');
+		$tipo_documentos = TipoDocumento::all();
+		$roles = Rol::all();
+		if (Auth::user()->id_rol==1) {
+			return view('admin.editarusuario')
+			->with('user',$user)
+			->with('errors', $errors)
+			->with('tipo_documentos',$tipo_documentos)
+			->with('roles',$roles);
+
+		}else{
+			return view('usuarios.editarusuario')
+			->with('user',$user)
+			->with('errors', $errors)
+			->with('tipo_documentos',$tipo_documentos)
+		->with('roles',$roles);
+		}
+	}
+	public function editUserP(Request $request){
+		$id=$request->iduser;
+		$user =User::find($id);
+		$user->name      = $request->name;
+		$user->apellido  = $request->apellido;
+		$user->codigo    = $request->codigo;
+		$user->celular     = $request->celular;        
+		$user->usuario     = $request->usuario;
+		$user->email     = $request->email;
+		$user->numero_documento = $request->numero_documento;
+		/**si esta logueado como administrador, puede */
+		$user->id_rol     =$request->id_rol;
+		$user->id_doc     =$request->id_doc;
+		$user->save();
+		return redirect()->route('indexuser');
+		
+	}
+
+
 
 
 	public function create_login(){

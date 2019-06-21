@@ -20,6 +20,9 @@ Route::post('/login', 'UserController@login');
 /**Cambiar contrasenia*/
 Route::get('/changepass','UserController@changePass')->name('changepass');
 Route::post('/changepass','UserController@changePassword');
+/**Editar Usuario*/
+Route::post('/edituserg','UserController@editarDatos')->name('edituserg');
+Route::post('/edituserp','UserController@editUserP')->name('edituserp');;
 
 
 
