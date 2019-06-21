@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\hash;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
 use App\TipoDocumento;
@@ -224,11 +225,12 @@ class UserController extends Controller
 	}
 
 	public function changePassword(Request $request){
-		$passnew=bcrypt($request->password);
 		$user=Auth::user();
-		$user->password=$passnew;
-		$user->save();
-		return view('index');
+		if(hash::check($request->password, $user->password)){
+			$user->password=bcrypt($request->new_password);
+			$user->save();
+			return view('admin.admin');		
+		}
+		return view('admin.cambiarContrasenia');
 	}
-
 }

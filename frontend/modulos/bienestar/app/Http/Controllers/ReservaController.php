@@ -40,19 +40,16 @@ class ReservaController extends Controller
         $inicio=Carbon::parse($reserva->inicio);
         $inicioperiodo=Carbon::parse($periodo->inicio);
         $finperiodo=Carbon::parse($periodo->fin);
-        dd($periodo);
-        if($inicio>=$actual){
-           if($inicio<=$inicioperiodo and $inicio>=$finperiodo){
-            dd('si es valido 1',$inicio);
+        if($inicio->gte($actual)){
+           if($inicio->gte($inicioperiodo) and $inicio->lte($finperiodo)){
             return true;
-           }else{
-            dd('no es valido 2',$inicio);
-           }
         }else{
-            dd('no es valido 3',$inicio);
+            dd('se totio esta mierda');
             return false;
         }
-    }
+    }else{
+        dd('no valida');
+    }}
 
     public function store(Request $request){
         /**datos obligatorios para el registro */
