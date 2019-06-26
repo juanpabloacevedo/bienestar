@@ -87,7 +87,9 @@ Route::group(['middleware'=>['auth','admin']],function(){
 	Route::get('/listaclases', 'UserController@listaclases');
 	/****************************** */
 
-	/**Ajax inscribir usaurios desde clase*/
+	/**Ajax inscribir usuarios desde clase*/
+	Route::post('/deleteclassuser','ClaseController@deleteClassUser')->name('deleteclassuser');
+	Route::post('/change_user_status_activo', 'UserController@changeStatusActivo');
 	Route::post('/change_user_status', 'UserController@changeStatus');
 	Route::post('/subscribe_user', 'ClaseController@subscribeUser');
 	Route::post('/clase_reserva', 'ClaseController@reservarclase');

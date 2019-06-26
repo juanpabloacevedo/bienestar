@@ -23,7 +23,7 @@ class ClaseController extends Controller
 	public function index(){
 		$espacios=Espacio::all();
 		$clases=Clase::all();
-		$users=User::where('activo',true)->get();
+		$users=User::where('sancionado',false)->where('activo',true)->get();
 		return view('admin.clases')
 		->with('clases',$clases)
 		->with('espacios',$espacios)
@@ -140,8 +140,8 @@ class ClaseController extends Controller
 		$espacios=Espacio::all();
 		$clases=Clase::all();
 		$user=Auth::user();
-			return view('profesor.clasesAdmin')
-			->with('clases',$clases)
+		return view('profesor.clasesAdmin')
+		->with('clases',$clases)
 		->with('user', $user)
 		->with('errors', $errors);
 	}
@@ -154,5 +154,22 @@ class ClaseController extends Controller
 		->with('user',$user)
 		->with('clases',$clases);
 	}
-	
+
+	function changeStatus(Request $request){
+		$user = User::find($request->user_id);
+		$user->sancionado = !$user->sancionado;
+		$user->save();
+		return response()->json($user);
+	}
+	/**AJAX*/
+	public function deleteClassUser(Request $request){
+		$user=Auth::user($request->user_id);
+		$clase=Clase::where('clase.usuarios','id_clase','clase','clase.usuarios',$request->clas_id)->get();
+		dd($clase);
+		$clases=Clase::Join('clase_usuarios', 'users.id', '=', 'clase_usuarios.id_clase')
+		->where('clase_usuarios.id_clase', '=',$clase->id)->get();
+		dd($clases);
+	}
+
 }
+

@@ -248,13 +248,22 @@ class UserController extends Controller
 
 	}
 
-	/**Activa y desactiva usuarios*/
+	/**sancionar y quitar sancion del usuario*/
 	function changeStatus(Request $request){
+		$user = User::find($request->user_id);
+		$user->sancionado = !$user->sancionado;
+		$user->save();
+		return response()->json($user);
+	}
+	/**Activar y Desactivar Usuarios*/
+	function changeStatusActivo(Request $request){
 		$user = User::find($request->user_id);
 		$user->activo = !$user->activo;
 		$user->save();
 		return response()->json($user);
 	}
+
+
 	public function changePass(){
 		if(Auth::user()){
 			return view('admin.cambiarContrasenia');

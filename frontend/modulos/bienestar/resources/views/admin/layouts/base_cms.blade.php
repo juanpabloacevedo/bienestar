@@ -26,6 +26,7 @@
 <body id="app">
 	<!-- Top Nav -->
 	<ul id="slide-out" class="sidenav" style="width:250px">
+
 		<li>
 			<div class="user-view">
 				<div class="background">
@@ -46,7 +47,7 @@
 				</ul>
 			</div>
 		</li>
-		<li ><a href="{{url('/indexuser') }}">Usuarios</a></li>
+		<li ><a href="{{url('/indexuser') }}">Administrar Usuarios</a></li>
 		<li ><a href="{{url('/indexespdep') }}">Actividades</a></li>
 		<li ><a href="{{url('/indexclases') }}">Clases</a></li>
 		<li ><a href="{{url('/indexsedes')}}">Sedes</a></li>
@@ -90,11 +91,12 @@
 						</form>
 					</ul>
 					<ul style="height: 80px">
+						<li><a href="{{ URL::previous() }}"><i class="material-icons red-text">arrow_back</i></a></li>
 						<li>
 							<a class="navbar-brand" href="{{ url('/') }}">
 								<i class="material-icons">home</i>
-							</a>
-						</li>
+							</a>							
+						</li>						
 						<li>
 							<img src="{{asset('img/logoUsta.png')}}" style="
 							height:80px;
@@ -118,15 +120,15 @@
 		<ul id="slide-out-fxd" class="sidenav sidenav-fixed collapsible">
 			<li class="list-color">
 				<div class="collapsible-header" onclick="M.toast({html: 'Lista y registro de usuarios'})"><i class="material-icons">group</i>Usuarios</div>
-				<div class="collapsible-body"><a href="{{ url('/indexuser') }}">Usuarios</a></div>
+				<div class="collapsible-body"><a href="{{ url('/indexuser') }}">Administrar Usuarios</a></div>
 			</li >
 			<li class="list-color">
 				<div class="collapsible-header" onclick="M.toast({html: 'Lista y registro de actividades de gymnasio y deportivas'})"><i class="material-icons">directions_bike</i>Actividades</div>
-				<div class="collapsible-body"><a href="{{ url('/indexespdep') }}">Actividades</a></div>
+				<div class="collapsible-body"><a href="{{ url('/indexespdep') }}">Administrar Actividades</a></div>
 			</li>
 			<li class="list-color">
 				<div class="collapsible-header" onclick="M.toast({html: 'Lista y registro de ubicaciones o sedes de la universidad'})"><i class="material-icons">place</i>Sedes</div>
-				<div class="collapsible-body"><a href="{{url('/indexsedes')}}">Sedes</a></div>
+				<div class="collapsible-body"><a href="{{url('/indexsedes')}}">Administrar Sedes</a></div>
 			</li>
 			<li class="list-color">
 				<div class="collapsible-header" onclick="M.toast({html: 'Lista y registro de Gymnasios'})"><i class="material-icons">fitness_center</i>Espacios deportivos</div>
@@ -134,15 +136,15 @@
 			</li>
 			<li class="list-color">
 				<div class="collapsible-header" onclick="M.toast({html: 'Lista y registro de clases'})"><i class="material-icons">list</i>Clases</div>
-				<div class="collapsible-body"><a href="{{url('/indexclases') }}">Clases</a></div>
+				<div class="collapsible-body"><a href="{{url('/indexclases') }}">Administrar Clases</a></div>
 			</li>
 			<li class="list-color">
 				<div class="collapsible-header" onclick="M.toast({html: 'Lista y registro de periodos academicos'})"><i class="material-icons">date_range</i>Periodos Academicos</div>
-				<div class="collapsible-body"><a href="{{url('/indexperiodo')}}">Periodos</a></div>
+				<div class="collapsible-body"><a href="{{url('/indexperiodo')}}">Administrar Periodos</a></div>
 			</li>
 			<li class="list-color">
 				<div class="collapsible-header" onclick="M.toast({html: 'Lista y asignacion de fecha,hora y epsacios a clases ya creadas'})"><i class="material-icons">timelapse</i>Reservas</div>
-				<div class="collapsible-body list-color"><a href="{{url('/indexreserva')}}">Reserva</a></div>
+				<div class="collapsible-body list-color"><a href="{{url('/indexreserva')}}">Administrar Reservas</a></div>
 			</li>
 		</ul>
 	</aside>
@@ -158,15 +160,18 @@
 			<div class="col l6 s12">
 				<h5 class="white-text">Gimnasio virtual</h5>
 				<p class="grey-text text-lighten-4">Gimnasio virtual version de prueba</p>
+				<p>Version 0.9.8 26-06-2019</p>
 			</div>
 		</div>
 	</div>
+
 	<div class="footer-copyright">
 		<div class="container">
-			© 2019 Juan Pablo Acevedo Torres
+			© 2019 Juan Pablo Acevedo Torres-Juan Sebastian Ulloa
 			<a class="grey-text text-lighten-4 right" href="http://www.ustatunja.edu.co">Universidad Santo Tomas Tunja</a>
 		</div>
 	</div>
+
 </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

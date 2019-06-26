@@ -11,7 +11,9 @@ class Clase extends Model{
         return $this->belongsToMany("App\User","clase_usuarios", "id_clase", "id_user")
         ->withTimestamps();
     }
-
+    public function espacio(){
+        return $this->belongsTo("App\Espacio","id_espacio");
+    }
 
     public function espaciodeportivo(){
         return $this->belongsTo("App\EspacioDeportivo","id_espacio");

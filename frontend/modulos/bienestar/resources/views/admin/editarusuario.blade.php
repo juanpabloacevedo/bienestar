@@ -5,13 +5,13 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Editar datos de usuario Admin</div>
+                <div class="panel-heading"><h2 class="titulomod">EDITAR USUARIO</h2></div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('edituserp') }}">
                         <!-- csrf token a nivel global-->
                         {{ csrf_field() }}
-						<div class="form-group">
+						<div class="form-group" style="display: none">
                             <label for="iduser" class="col-md-4 control-label">Id</label>
 
                             <div class="col-md-6">
@@ -96,7 +96,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Registrar
+                                    Guardar Cambios
                                 </button>
                             </div>
                         </div>

@@ -15,11 +15,13 @@
                     <tr>
                         <th>Nombre</th>
                         <th>Apellido</th>
-                        <th>inasistencias</th>
-                        <th>rol</th>
-                        <th>estado</th>
+                        <th>Inasistencias</th>
+                        <th>Rol</th>
+                        <th>Activo</th>
                         <th></th>
-                        <th></th>
+                        <th>Editar</th>
+                        <th>listar</th>
+                        <th>Sancionados</th>
                     </tr>
                 </thead>
                 <tbody>                            
@@ -32,23 +34,18 @@
                         <td>{{$user->apellido}}</td>
                         <td>@if(isset($user->asistencias)){{$user->asistencias->count()}}@else 0 @endif</td>
                         <td>{{$user->rol->name}}</td>
-                        <td>@if($user->activo==true)<i class="material-icons green-text">sentiment_very_satisfied</i> @else
-                            <i class="material-icons red-text">sentiment_very_dissatisfied</i>
-                        @endif</td>
 
-                        <td> <form class="form-horizontal" method="POST" action="{{ route('usuarioactual') }}">
-                            {{ csrf_field() }}
-                            <div class="form-group">
-                                <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary" value="{{$user->id}}" name="iduser">
-                                        <i class="material-icons">list</i>
-                                    </button>
-                                </div>
-                            </div>
-                        </form></td>
+                       <td>
+                            <p onchange="change_status_activo({{$user->id}})">
+                              <label>
+                                <input type="checkbox" @if($user->activo) checked @endif >
+                                <span>Activo</span>
+                            </label>
+                        </p>
+                    </td>                       
                         <td>                               
                             <td>
-                               <form class="form-horizontal" method="POST" action="{{ route('edituserg') }}">
+                             <form class="form-horizontal" method="POST" action="{{ route('edituserg') }}">
                                 {{ csrf_field() }}
                                 <div class="form-group">
                                     <div class="col-md-6 col-md-offset-4">
@@ -59,23 +56,32 @@
                                 </div>
                             </form>
                         </td>
-                    </td>
-                    <td>
-                        <div class="switch" onchange="change_status({{$user->id}})">
-                            <label>
-                                con sancion
-                                <input type="checkbox" @if($user->activo) checked @endif >
-                                <span class="lever"></span>
-                                sin sancion
-                            </label>
+                       
+                    <td> <form class="form-horizontal" method="POST" action="{{ route('usuarioactual') }}">
+                        {{ csrf_field() }}
+                        <div class="form-group">
+                            <div class="col-md-6 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary" value="{{$user->id}}" name="iduser">
+                                    <i class="material-icons">list</i>
+                                </button>
+                            </div>
                         </div>
-                    </td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
-        {{$users->render()}}
-    </ul>
+                    </form></td>
+                </td>
+                <td>
+                    <div class="switch" onchange="change_status({{$user->id}})">
+                        <label>
+                            <input type="checkbox" @if($user->sancionado) checked @endif >
+                            <span class="lever"></span>
+                        </label>
+                    </div>
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+    {{$users->render()}}
+</ul>
 </div>
 </div>
 <a class="btn-floating btn-large waves-effect waves-light blue pulse fixed" href="{{ url('/registeradmin') }}"><i class="material-icons">add</i></a>
@@ -96,6 +102,7 @@
 </form>
 
 
+
 @endsection
 
 @section('javascript')
@@ -103,12 +110,28 @@
      //variables
      var token              = $("meta[name=csrf-token]").attr("content");
      var url_change_user_status = '{!! url("/change_user_status") !!}';
+     var url_change_user_status_activo= '{!! url("/change_user_status_activo") !!}';
 
 
      function change_status(user_id){
         $.ajax({
             method: "POST",
             url: url_change_user_status,
+            data: { 'user_id':user_id, '_token': token},
+            dataType: "json",
+            success:function(data){
+                console.log(data);
+                M.toast({html: 'usuario '+data.name+' '+data.sancionado})
+            },
+            error:function(error){
+                console.log(error);
+            }
+        });
+    }
+    function change_status_activo(user_id){
+        $.ajax({
+            method: "POST",
+            url: url_change_user_status_activo,
             data: { 'user_id':user_id, '_token': token},
             dataType: "json",
             success:function(data){
