@@ -101,15 +101,33 @@ class ClaseController extends Controller
 		->with('clase',$clase);
 	}
 
-
 	public function subscribeUser(Request $request){
 		$clase = Clase::find($request->class_id);
-		$clase->users()->attach($request->user_id);
-		$clase->cupos = $clase->cupos-1;
-		$clase->save();
+		if($clase->users()->where('users.id',$request->user_id)->count()===0){
+			$clase->users()->attach($request->user_id);
+			$clase->cupos = $clase->cupos-1;
+			$clase->save();
+		}else{
+			$clase->users()->detach($request->user_id);
+			$clase->cupos = $clase->cupos+1;
+			$clase->save();
+		}
 		return response()->json($clase, 200);
 	}
-
+	public function deleteUserOfClass(Request $request){
+		
+		$clase = Clase::find($request->clas_id);
+		$clase->users()->detach($request->user_id);
+		$clase->cupos = $clase->cupos+1;
+		$clase->save();
+		$iduser=$request->user_id;
+		$user=User::find($iduser);
+		$clases=Clase::Join('clase_usuarios', 'clases.id', '=', 'clase_usuarios.id_clase')
+		->where('clase_usuarios.id_user', '=',$iduser)->get();
+		return view('admin.clasesinscritas')
+		->with('user',$user)
+		->with('clases',$clases);
+	}
 
 	public function reservarclase(Request $request){
 		$reserva= Clase::find($request->class_id);
@@ -162,14 +180,6 @@ class ClaseController extends Controller
 		return response()->json($user);
 	}
 	/**AJAX*/
-	public function deleteClassUser(Request $request){
-		$user=Auth::user($request->user_id);
-		$clase=Clase::where('clase.usuarios','id_clase','clase','clase.usuarios',$request->clas_id)->get();
-		dd($clase);
-		$clases=Clase::Join('clase_usuarios', 'users.id', '=', 'clase_usuarios.id_clase')
-		->where('clase_usuarios.id_clase', '=',$clase->id)->get();
-		dd($clases);
-	}
 
 }
 

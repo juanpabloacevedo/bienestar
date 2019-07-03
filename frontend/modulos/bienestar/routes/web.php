@@ -88,7 +88,7 @@ Route::group(['middleware'=>['auth','admin']],function(){
 	/****************************** */
 
 	/**Ajax inscribir usuarios desde clase*/
-	Route::post('/deleteclassuser','ClaseController@deleteClassUser')->name('deleteclassuser');
+	Route::post('/deleteclassuser','ClaseController@deleteUserOfClass')->name('deleteclassuser');
 	Route::post('/change_user_status_activo', 'UserController@changeStatusActivo');
 	Route::post('/change_user_status', 'UserController@changeStatus');
 	Route::post('/subscribe_user', 'ClaseController@subscribeUser');

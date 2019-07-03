@@ -108,12 +108,13 @@ class UserController extends Controller
 		return redirect()->route('indexuser');
 		
 	}
-	public function editarDatos(Request $request){
-		$user=User::find($request->iduser);
-		$errors=Session::get('errors');
-		$tipo_documentos = TipoDocumento::all();
-		$roles = Rol::all();
+	/**Envia los datos del usuario a editar y cambia de pantalla dependiendo del tipo de usuario*/
+	public function editarDatos(Request $request){		
 		if (Auth::user()->id_rol==1) {
+			$user=User::find($request->iduser);
+			$errors=Session::get('errors');
+			$tipo_documentos = TipoDocumento::all();
+			$roles = Rol::all();
 			return view('admin.editarusuario')
 			->with('user',$user)
 			->with('errors', $errors)
@@ -121,11 +122,20 @@ class UserController extends Controller
 			->with('roles',$roles);
 
 		}else{
-			return view('usuarios.editarusuario')
-			->with('user',$user)
-			->with('errors', $errors)
-			->with('tipo_documentos',$tipo_documentos)
-		->with('roles',$roles);
+			return view('index');
+			/**
+			if (Auth::user()->id_rol!=1) {
+				$user=User::find(Auth::user()->id);
+				$errors=Session::get('errors');
+				$tipo_documentos = TipoDocumento::all();
+				return view('usuarios.editarusuario')
+				->with('user',$user)
+				->with('errors', $errors)
+				->with('tipo_documentos',$tipo_documentos);
+			}
+			else{
+				return view('index');
+			}*/
 		}
 	}
 	public function editUserP(Request $request){

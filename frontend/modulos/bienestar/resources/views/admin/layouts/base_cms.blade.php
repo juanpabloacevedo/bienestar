@@ -54,7 +54,7 @@
 		<li ><a href="{{url('/indexperiodo')}}">Periodos</a></li>
 		<li ><a href="{{url('/indexespacio')}}">Espacios</a></li>
 		<li ><a href="{{url('/indexreserva')}}">Reserva</a></li>
-		<li ><a href="{{url('/indexasistencia')}}">Asistencias</a></li>
+		<li><a href="{{ URL::previous() }}"><i class="material-icons red-text">arrow_back</i> Atrás</a></li>
 		<li><a class="subheader">Subheader</a></li>
 		<li><a href="http://www.ustatunja.edu.co">Usta Tunja</a></li>
 		<li><a href="https://plataformalms.ustatunja.edu.co/login/index.php">Campus Virtual</a></li>
@@ -91,7 +91,6 @@
 						</form>
 					</ul>
 					<ul style="height: 80px">
-						<li><a href="{{ URL::previous() }}"><i class="material-icons red-text">arrow_back</i></a></li>
 						<li>
 							<a class="navbar-brand" href="{{ url('/') }}">
 								<i class="material-icons">home</i>
@@ -146,6 +145,7 @@
 				<div class="collapsible-header" onclick="M.toast({html: 'Lista y asignacion de fecha,hora y epsacios a clases ya creadas'})"><i class="material-icons">timelapse</i>Reservas</div>
 				<div class="collapsible-body list-color"><a href="{{url('/indexreserva')}}">Administrar Reservas</a></div>
 			</li>
+			<li><a href="{{ URL::previous() }}"><i class="material-icons red-text">arrow_back</i> Atrás</a></li>
 		</ul>
 	</aside>
 	<article class="cst-content w-100">

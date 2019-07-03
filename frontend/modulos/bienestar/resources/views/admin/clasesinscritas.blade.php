@@ -23,44 +23,40 @@
                         <td>
                             <thead>
                                 <tr>                                    
-                                    <th>Clase</th>
-                                    <th>Actividad</th>
+                                    <th>id</th>
+                                    <th>clase</th>
+                                    <th>espacio deportivo</th>
                                     <th>espacio</th>
                                     <th>sede</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($clases as $clase)
-                                    <td>{{$clase->id_clase}}</td>
-                                    <td>{{$clase->espaciodeportivo->name}}</td>
-                                    <td>{{$clase->espacio->nombre_espacio}}</td>
-                                    <td>{{$clase->espacio->sede->name}}</td>
-                                    <td>
-                                        <form method="POST" action="{{ route('deleteclassuser') }}" >
-                                            {{ csrf_field() }}
-                                            <div class="form-group" style="display: none">
-                                                <label for="user_id" class="col-md-4 control-label">usuario</label>
-                                                <div class="col-md-6">
-                                                    <input id="user_id" type="number" class="form-control" value="{{$user->id}}" name="user_id" required>
-                                                </div>
-                                            </div>
-                                            <div class="form-group" style="display: none">
-                                                <label for="clas_id" class="col-md-4 control-label">clase</label>
-                                                <div class="col-md-6">
-                                                    <input id="clas_id" type="number" class="form-control" value="{{$clase->id_clase}}" name="clas_id" required>
-                                                </div>
-                                            </div>
-                                            <button class="btn waves-effect waves-light orange" type="submit" name="action">
-                                                <i class="material-icons right">delete</i>
-                                            </button>
-                                        </form>
-                                    </td>
+                                <td>{{$clase->id_clase}}</td>
+                                <td>{{$clase->name}}</td>
+                                <td>{{$clase->espaciodeportivo->name}}</td>
+                                <td>{{$clase->espacio->nombre_espacio}}</td>
+                                <td>{{$clase->espacio->sede->name}}</td>
 
                                 <td>
-
-                                    <a class="waves-effect waves-light btn" onchange="deleteClassUser({{$clase->id},{$user->id})"><i class="material-icons">delete</i></a>
-
-                                    <a class="waves-effect waves-light btn"><i class="material-icons">edit</i></a>
+                                    <form method="POST" action="{{ route('deleteclassuser') }}" >
+                                        {{ csrf_field() }}
+                                        <div class="form-group" style="display: none">
+                                            <label for="user_id" class="col-md-4 control-label">usuario</label>
+                                            <div class="col-md-6">
+                                                <input id="user_id" type="number" class="form-control" value="{{$user->id}}" name="user_id" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" style="display: none">
+                                            <label for="clas_id" class="col-md-4 control-label">clase</label>
+                                            <div class="col-md-6">
+                                                <input id="clas_id" type="number" class="form-control" value="{{$clase->id_clase}}" name="clas_id" required>
+                                            </div>
+                                        </div>
+                                        <button class="waves-effect waves-light btn red" type="submit" name="action">
+                                            <i class="material-icons right">delete</i>
+                                        </button>
+                                    </form>
                                 </td>
 
                             </tr>
@@ -99,6 +95,7 @@
             }
         });
     }
+
     function change_status_activo(user_id){
         $.ajax({
             method: "POST",
