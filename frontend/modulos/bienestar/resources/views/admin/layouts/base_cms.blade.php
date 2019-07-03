@@ -160,7 +160,7 @@
 			<div class="col l6 s12">
 				<h5 class="white-text">Gimnasio virtual</h5>
 				<p class="grey-text text-lighten-4">Gimnasio virtual version de prueba</p>
-				<p>Version 0.9.8 26-06-2019</p>
+				<p>Version 0.9.81 02-07-2019</p>
 			</div>
 		</div>
 	</div>
