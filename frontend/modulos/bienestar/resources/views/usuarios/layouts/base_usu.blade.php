@@ -8,7 +8,8 @@
 	<meta name="description" content="Reservas de turnos de uso de espacios deportivos en a universidad Santo Tomas">
 	<meta name="keywords" content="Gimnasio, USTA, usta,usta tunja,usta deportes,universidad santo tomas,bienestar universitario">
 	<link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="{{ asset('css/animate.css') }}" rel="stylesheet">
+
 
 	<!-- CSRF Token -->
 	<meta name="csrf-token" content="{{ csrf_token() }}">
@@ -31,14 +32,11 @@
 					<div class="collapse navbar-collapse" id="navbarNavDropdown">
 						<ul class="navbar-nav">
 							<li class="nav-item active  ">
-								<a class="nav-link" href="http://www.ustatunja.edu.co/areas-bienestar-universitario "> Bienestar </a>
+								<a class="nav-link" href="http://www.ustatunja.edu.co/areas-bienestar-universitario"> Bienestar </a>
 							</li>
 							<li class="nav-item active">
-								<a class="nav-link" href="Usuarios.html">Usuario</a>
+								<a class="nav-link" href="{{ url('/user') }}">Usuario</a>
 							</li>
-							<li><a class="navbar-brand" href="{{ url('changepass') }}">
-								<i class="material-icons" style="width: 100%">vpn_key</i>
-							</a></li>
 							<li class="nav-item active"><a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
 							<form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
 								{{ csrf_field() }}
@@ -63,6 +61,7 @@
 
 					<ul class="nav flex-column ">
 						<br/>
+
 						<li class="nav-item form-control form-group">
 							<a class="nav-link" href="{{ url('/actividades') }}">Actividades</a>
 						</li>
@@ -91,24 +90,29 @@
 	<div class="container" id="footer">
 		<div class="row">
 			<div class="col-md-12">
-			</br>
-			<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-				<div class="col-md-4"><h6 class="text-left text-white" >Universiad Santo Tomás  © 2019 <p> Facultad Ingenería de Sistemas </h6></div>
+				</br>
+				<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+					<div class="col-md-4"><h6 class="text-left text-white" >Universiad Santo Tomás  © 2019 <p> Facultad Ingenería de Sistemas </h6></div>
 					<div class="col-md-4"><h6 class="text-center text-white" >Juan Pablo Acevedo <p>Juan Sebatian Ulloa</h6></div>
-						<div class="col-md-4"><h6 class="text-right text-white" >Gimnasio Virtual <p> Línea gratuita nacional: 01-8000-932340 </h6></div>
-						</nav>
-					</div>
-				</div>
+					<div class="col-md-4"><h6 class="text-right text-white" >Gimnasio Virtual <p> Línea gratuita nacional: 01-8000-932340 </h6></div>
+
+
+
+				</nav>
+
 			</div>
+		</div>
+	</div>
 	<!--JQuery
-		<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>-->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="{{asset('js/bootstrap.js')}}" type="text/javascript"></script>
+	<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="{{asset('js/bootstrap.js')}}" type="text/javascript"></script>
 
-		<script src="{{ asset('js/main.js') }}"></script>
+	<!--Project asset va directamente a la raiz de public-->
+	<script src="{{ asset('js/main.js') }}"></script>
 
 
-		@yield('javascript')
+	@yield('javascript')
 
-	</body>
-	</html>
+</body>
+</html>

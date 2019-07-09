@@ -37,4 +37,20 @@ class HomeController extends Controller
     {
         return view('profesor.instructor');
     }
+    public  function  actividades()
+    {
+        return view('usuarios.actividades');
+    }
+    public  function  registro()
+    {
+        return view('usuarios.registro');
+    }
+    public  function  actividadesi()
+    {
+        return view('profesor.actividadesAdmin');
+    }
+    public  function  clasesi()
+    {
+        return view('profesor.clasesAdmin');
+    }
 }

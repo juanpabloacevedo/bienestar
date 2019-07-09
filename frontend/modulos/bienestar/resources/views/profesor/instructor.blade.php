@@ -1,5 +1,6 @@
-@extends('profesor.layout.base_inst')
-@section('contetnt')
+@extends('profesor.layouts.base_inst')
+
+@section('content')
 <body>
 <div class="card-body text-center align-content-center align-items-center">
   <div class="card-title text-center">
@@ -10,7 +11,7 @@
   </div>
   <br/>
   <div class="col-md-12  ">
-    <img src="../../dist/img/Gimnasio_al_Patio_USTA_Tunja.jpg" class="img img-fluid  align-items-center" alt="admin" style="width: 75%" >
+    <img src="{{asset('img/Gimnasio_al_Patio_USTA_Tunja.jpg')}}" class="img img-fluid  align-items-center" alt="admin" style="width: 75%" >
   </div>
 
   <br/>
@@ -25,8 +26,5 @@
 
 </body>
 
-<script src="../../dist/js/bootstrap.js" type="text/javascript"></script>
-
-</html>
 
 @endsection

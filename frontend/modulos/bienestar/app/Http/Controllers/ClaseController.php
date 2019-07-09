@@ -158,10 +158,10 @@ class ClaseController extends Controller
 		$espacios=Espacio::all();
 		$clases=Clase::all();
 		$user=Auth::user();
-		return view('profesor.clasesAdmin')
+        return view('usuarios.actividades')
 		->with('clases',$clases)
-		->with('user', $user)
-		->with('errors', $errors);
+		->with('user', $user);
+
 	}
 	/**lista todas las clases inscritas por el usuario actual */
 	public function claseusuario(){

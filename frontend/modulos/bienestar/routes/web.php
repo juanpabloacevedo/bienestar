@@ -33,6 +33,7 @@ Route::get('validar','ReservaController@validateReservation');
 Route::group(['middleware'=>['auth','admin']],function(){	
 	Route::get('/admin', 'HomeController@admin')->name('admin');
 	Route::get('/user', 'HomeController@user')->name('user');
+    Route::get('/instructor','HomeController@instructor')->name('instructor');
 	Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 	/**usuarios*/
 	Route::get('/indexuser', 'UserController@index')->name('indexuser');
@@ -99,10 +100,14 @@ Route::group(['middleware'=>['auth','admin']],function(){
 Route::group(['middleware'=>['auth','instructor']],function() {
     Route::get('/instructor', 'HomeController@instructor')->name('instructor');
     Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
+    Route::get('/clasesi', 'HomeController@clasesi')-> name('clasesi');
+    Route::get('/actividadesi', 'HomeController@actividadesi')-> name('actividadesi');
 });
 /**rutas de usuario*/
 Route::group(['middleware'=>['auth','user']],function(){	
 	Route::get('/user', 'HomeController@user')->name('user');
+    Route::get('/actividades', 'ClaseController@clases')-> name('actividades');
+    Route::get('/registro', 'HomeController@registro')-> name('registro');
 	Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 	Route::get('/home', 'HomeController@index')->name('home');
 	
