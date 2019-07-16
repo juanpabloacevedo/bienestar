@@ -26,6 +26,7 @@
 <body id="app">
 	<!-- Top Nav -->
 	<ul id="slide-out" class="sidenav" style="width:250px">
+
 		<li>
 			<div class="user-view">
 				<div class="background">
@@ -40,17 +41,20 @@
 				<ul>
 					<li><a href="#name"><span class="white-text name">{{Auth::user()->name}} {{Auth::user()->apellido}}</span></a></li>
 					<li><a href="#email"><span class="white-text email">{{Auth::user()->email}}</span></a></li>
+					<li><a class="navbar-brand" href="{{ url('changepass') }}">
+								<i class="material-icons" style="width: 100%">vpn_key</i>
+							</a></li>
 				</ul>
 			</div>
 		</li>
-		<li ><a href="{{ url('/indexuser') }}">Usuarios</a></li>
-		<li ><a href="{{ url('/indexespdep') }}">Actividades</a></li>
-		<li ><a href="{{ url('/indexclases') }}">Clases</a></li>
+		<li ><a href="{{url('/indexuser') }}">Administrar Usuarios</a></li>
+		<li ><a href="{{url('/indexespdep') }}">Actividades</a></li>
+		<li ><a href="{{url('/indexclases') }}">Clases</a></li>
 		<li ><a href="{{url('/indexsedes')}}">Sedes</a></li>
 		<li ><a href="{{url('/indexperiodo')}}">Periodos</a></li>
 		<li ><a href="{{url('/indexespacio')}}">Espacios</a></li>
 		<li ><a href="{{url('/indexreserva')}}">Reserva</a></li>
-		<li ><a href="{{url('/indexasistencia')}}">Asistencias</a></li>
+		<li><a href="{{ URL::previous() }}"><i class="material-icons red-text">arrow_back</i> Atrás</a></li>
 		<li><a class="subheader">Subheader</a></li>
 		<li><a href="http://www.ustatunja.edu.co">Usta Tunja</a></li>
 		<li><a href="https://plataformalms.ustatunja.edu.co/login/index.php">Campus Virtual</a></li>
@@ -58,6 +62,7 @@
 			<i class="material-icons">home</i>
 		</a></li>
 		<li clss="{{request()->routeIs('admin')?'active':''}}"><a href="{{ url('/admin') }}">Administrador</a></li>
+
 
 		<li><a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
 		<form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
@@ -78,6 +83,9 @@
 						<li><a href="https://plataformalms.ustatunja.edu.co/login/index.php">Campus Virtual</a></li>
 						<li clss="{{request()->routeIs('admin')?'active':''}}"><a href="{{ url('/admin') }}">{{Auth::user()->rol->name}}</a></li>
 						<li><a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+						<li><a class="navbar-brand" href="{{ url('changepass') }}">
+								<i class="material-icons" style="width: 100%">vpn_key</i>
+							</a></li>
 						<form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
 							{{ csrf_field() }}
 						</form>
@@ -86,8 +94,8 @@
 						<li>
 							<a class="navbar-brand" href="{{ url('/') }}">
 								<i class="material-icons">home</i>
-							</a>
-						</li>
+							</a>							
+						</li>						
 						<li>
 							<img src="{{asset('img/logoUsta.png')}}" style="
 							height:80px;
@@ -111,15 +119,15 @@
 		<ul id="slide-out-fxd" class="sidenav sidenav-fixed collapsible">
 			<li class="list-color">
 				<div class="collapsible-header" onclick="M.toast({html: 'Lista y registro de usuarios'})"><i class="material-icons">group</i>Usuarios</div>
-				<div class="collapsible-body"><a href="{{ url('/indexuser') }}">Usuarios</a></div>
+				<div class="collapsible-body"><a href="{{ url('/indexuser') }}">Administrar Usuarios</a></div>
 			</li >
 			<li class="list-color">
 				<div class="collapsible-header" onclick="M.toast({html: 'Lista y registro de actividades de gymnasio y deportivas'})"><i class="material-icons">directions_bike</i>Actividades</div>
-				<div class="collapsible-body"><a href="{{ url('/indexespdep') }}">Actividades</a></div>
+				<div class="collapsible-body"><a href="{{ url('/indexespdep') }}">Administrar Actividades</a></div>
 			</li>
 			<li class="list-color">
 				<div class="collapsible-header" onclick="M.toast({html: 'Lista y registro de ubicaciones o sedes de la universidad'})"><i class="material-icons">place</i>Sedes</div>
-				<div class="collapsible-body"><a href="{{url('/indexsedes')}}">Sedes</a></div>
+				<div class="collapsible-body"><a href="{{url('/indexsedes')}}">Administrar Sedes</a></div>
 			</li>
 			<li class="list-color">
 				<div class="collapsible-header" onclick="M.toast({html: 'Lista y registro de Gymnasios'})"><i class="material-icons">fitness_center</i>Espacios deportivos</div>
@@ -127,16 +135,17 @@
 			</li>
 			<li class="list-color">
 				<div class="collapsible-header" onclick="M.toast({html: 'Lista y registro de clases'})"><i class="material-icons">list</i>Clases</div>
-				<div class="collapsible-body"><a href="{{url('/indexclases') }}">Clases</a></div>
+				<div class="collapsible-body"><a href="{{url('/indexclases') }}">Administrar Clases</a></div>
 			</li>
 			<li class="list-color">
 				<div class="collapsible-header" onclick="M.toast({html: 'Lista y registro de periodos academicos'})"><i class="material-icons">date_range</i>Periodos Academicos</div>
-				<div class="collapsible-body"><a href="{{url('/indexperiodo')}}">Periodos</a></div>
+				<div class="collapsible-body"><a href="{{url('/indexperiodo')}}">Administrar Periodos</a></div>
 			</li>
 			<li class="list-color">
 				<div class="collapsible-header" onclick="M.toast({html: 'Lista y asignacion de fecha,hora y epsacios a clases ya creadas'})"><i class="material-icons">timelapse</i>Reservas</div>
-				<div class="collapsible-body list-color"><a href="{{url('/indexreserva')}}">Reserva</a></div>
+				<div class="collapsible-body list-color"><a href="{{url('/indexreserva')}}">Administrar Reservas</a></div>
 			</li>
+			<li><a href="{{ URL::previous() }}"><i class="material-icons red-text">arrow_back</i> Atrás</a></li>
 		</ul>
 	</aside>
 	<article class="cst-content w-100">
@@ -151,15 +160,18 @@
 			<div class="col l6 s12">
 				<h5 class="white-text">Gimnasio virtual</h5>
 				<p class="grey-text text-lighten-4">Gimnasio virtual version de prueba</p>
+				<p>Version 0.9.81 02-07-2019</p>
 			</div>
 		</div>
 	</div>
+
 	<div class="footer-copyright">
 		<div class="container">
-			© 2019 Juan Pablo Acevedo Torres
+			© 2019 Juan Pablo Acevedo Torres-Juan Sebastian Ulloa
 			<a class="grey-text text-lighten-4 right" href="http://www.ustatunja.edu.co">Universidad Santo Tomas Tunja</a>
 		</div>
 	</div>
+
 </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -168,6 +180,7 @@
 
 <!--Project asset va directamente a la raiz de public-->
 <script src="{{ asset('js/main.js') }}"></script>
+<script src="{{ asset('js/sweetalert2.all.min.js') }}"></script>
 
 
 @yield('javascript')

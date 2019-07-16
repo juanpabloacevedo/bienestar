@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title></title>
-</head>
+@extends('layouts.apps')
+@section('content')
 <body>
+
 <div class="container" id="header">
   <div class="row">
     <div class="col-md-12">
-      <br/>
       <br/>
       <br/>
     </div>
@@ -24,16 +21,20 @@
 
             <br/>
             <h3>Acceso a plataforma</h3>
+               @if($errors->any())
+    <h5 style="color:red; text-transform: uppercase;">{{$errors->first()}}</h5>
+@endif
           </div>
           <img src="{{asset('img/system/baseline-person-24px.svg')}}" class="img img-fluid" alt="Persona" style="width: 10%;">
 
           <div class="card-body">
             <div class="row text-center align-items-center justify-content-center">
               <div class="col-md-6">
-                <form method="POST">
+                <form method="POST" >
                   {{ csrf_field() }}
-
+              
               <div class="form-group">
+
                 <label for="email">Usuario</label>
                 <input id="email" type="email" class="form-control"  name="email" placeholder="E-mail">
               </div>
@@ -78,3 +79,4 @@
 <!--<script src="js/bootstrap.js" type="text/javascript"></script>-->
 
 </html>
+@endsection

@@ -5,6 +5,9 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
 use Session;
 use App\Periodo;
+use DB;
+
+
 
 class PeriodoController extends Controller{
 	public function index(){
@@ -37,28 +40,28 @@ class PeriodoController extends Controller{
 		$periodo = new Periodo();
 		$periodo->name   = $request->name;		
 		$periodo->inicio  = $request->dateinit;
-		$periodo->fin  = $request->dateinit;
-		$periodo->activo  = false;
+		$periodo->fin  = $request->dateend;
+		$periodo->activo  = true;
 		$periodo->save();
+		$this->validarperiodos();
 		return redirect()->route('indexperiodo');
 	}
-
 	public function validarperiodos(){
+		$actual=Carbon::now();
 		$periodos=Periodo::all();
-		$cont=0;
-		for ($i=0; $i <sizeof($periodos) ; $i++) { 
-			if ($periodos[$i]->activo==false) {
-				$cont=$cont+1;
+
+		DB::table('periodos')->update(array('activo' => false));
+
+		foreach ($periodos as $periodo) {			 
+			$inicio=Carbon::parse($periodo->inicio);
+			$fin=Carbon::parse($periodo->fin);
+			if ( $actual->gte($inicio) and $actual->lte($fin)) {
+			
+				$periodo->activo=true;
+				$periodo->save();
+			}else{
+				
 			}
 		}
-		printf($cont);
-		if($cont>1){
-			$cont=0;
-			for ($i=0; $i <sizeof($periodos) ; $i++) { 
-			$periodos[$i]->activo=false;
-			printf($periodos[$i]->activo);	
-			}
-		}
-		printf($cont);
 	}
 }

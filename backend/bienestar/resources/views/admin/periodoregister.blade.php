@@ -19,13 +19,13 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="name" class="col-md-4 control-label">Fecha Inicio</label>
+                            <label for="dateinit" class="col-md-4 control-label">Fecha Inicio</label>
                             <div class="col-md-6">
                                 <input type="text" class="datepicker" name="dateinit" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="name" class="col-md-4 control-label">Fecha Fin</label>
+                            <label for="dateend" class="col-md-4 control-label">Fecha Fin</label>
                             <div class="col-md-6">
                                 <input type="text" class="datepicker" name="dateend" required>
                             </div>

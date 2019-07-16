@@ -48,16 +48,6 @@ class User extends Authenticatable{
 		return false;
 	}
 
-	public function isUser(){
-		$user=Auth::user();
-		if ($user!=null) {
-			if ($user->id_rol==3||$user->id_rol==2) {
-				return true;
-			}
-		}
-		return false;
-	}
-
 	public function isInstructor(){
 		$user=Auth::user();
 		if ($user!=null) {
@@ -66,6 +56,15 @@ class User extends Authenticatable{
 			}
 		}
 		return false;  
+	}
+	public function isUser(){
+		$user=Auth::user();
+		if ($user!=null) {
+			if ($user->id_rol==3||$user->id_rol==4||$user->id_rol==5||$user->id_rol==6) {
+				return true;
+			}
+		}
+		return false;
 	}
 }
 

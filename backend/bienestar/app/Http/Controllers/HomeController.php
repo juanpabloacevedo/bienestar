@@ -23,7 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('welcome');
+        return view('index');
     }
     public function admin()
     {
@@ -31,6 +31,10 @@ class HomeController extends Controller
     }
     public function user()
     {
-        return view('usuarios.user');
+        return view('usuarios.bienbenidoU');
+    }
+    public  function instructor()
+    {
+        return view('profesor.instructor');
     }
 }

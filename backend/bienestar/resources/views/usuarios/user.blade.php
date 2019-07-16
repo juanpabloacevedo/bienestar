@@ -7,8 +7,8 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Gimnasio Virtual</div>
                 <h1>Modulo de usuarios</h1>
-                <div class="panel-body">
-                    @if (session('status'))
+                    <div class="panel-body">
+                        @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
                         </div>

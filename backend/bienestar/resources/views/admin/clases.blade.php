@@ -79,72 +79,23 @@
                     <br>
                     {{$user->codigo}}
                 </p>
-                <a class="secondary-content" href="javascript:add_user({{$user->id}})"><i class="material-icons">person_add</i></a>
+                <a class="secondary-content" href="javascript:add_user({{$user->id}})">
+                    @if($clase->users()->where('users.id',$user->id)->count()===0)
+                    <i class="material-icons">person_add</i>@else <i class="material-icons red background:white" >delete</i>@endif
+                </a>
             </li>
             @endforeach
         </ul>
     </div>
     <div class="modal-footer">
+        <div class=row>
+            <p style="text-align: justify;">Solo se podran inscribir usuarios que esten activos y actualmente no tengan sanción, si el usuario a inscribir no aparece, verificar el estado del usuario</p>
+        </div>
+        
         <a href="#!" class="modal-close waves-effect waves-green btn-flat">Aceptar</a>
     </div>
 </div>
 
-
-<div id="modal2" class="modal">
-  <div class="modal-content">
-    <h4>Reservas</h4>
-    <form class="form-horizontal" method="POST" action="{{ route('registerreserva') }}">
-        <!-- csrf token a nivel global-->
-        {{ csrf_field() }}
-        <div class="form-group">
-            <div class="form-group">
-                <label for="name" class="col-md-4 control-label">Nombre</label>
-                <div class="col-md-6">
-                    <input id="name" type="text" class="form-control" name="name" required>
-                </div>
-            </div>
-            <label for="id_espacio" class="col-md-4 control-label">Espacio</label>
-            <div class="col-md-6">                            
-                <select id="id_espacio"  name="id_espacio">
-                    @foreach($espacios as $espacio)
-                    <option value="{{$espacio->id}}">{{$espacio->nombre_espacio}}</option>  
-                    @endforeach                          
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="id_clase" class="col-md-4 control-label">Clase</label>
-                <div class="col-md-6">                            
-                    <select id="id_clase"  name="id_clase"><select>
-                    </div>
-                    <div class="form-group">
-                        <label for="inicio_dia" class="col-md-4 control-label">inicio</label>
-                        <div class="col-md-6">
-                            <input type="text" class="datepicker" name="incio_dia">
-                            <input type="text" class="timepicker" name="incio_hora">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="fin_dia" class="col-md-4 control-label">fin</label>
-                        <div class="col-md-6">
-                            <input type="text"  class="datepicker" name="fin_dia" format="yyyy-mm-dd">
-                            <input type="text"  class="timepicker" name="fin_hora">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-6 col-md-offset-4">
-                            <button type="submit" class="btn btn-primary">
-                                Registrar
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </ul>
-    </div>
-    <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Aceptar</a>
-    </div>
-</div>
 @endsection
 
 @section('javascript')

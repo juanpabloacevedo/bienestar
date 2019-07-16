@@ -12,21 +12,28 @@
 */
 
 Route::get('/', function () {
-	return view('welcome');
+	return view('index');
 });
+Route::get('/pruebas','PeriodoController@validarperiodos')->name('pruebas');
 Route::get('login', 'UserController@create_login')->name('login');
 Route::post('/login', 'UserController@login');
-Route::get('/importcsv', 'CSVController@importCSV')->name('importcsv');
+/**Cambiar contrasenia*/
+Route::get('/changepass','UserController@changePass')->name('changepass');
+Route::post('/changepass','UserController@changePassword');
+/**Editar Usuario*/
+Route::post('/edituserg','UserController@editarDatos')->name('edituserg');
+Route::post('/edituserp','UserController@editUserP')->name('edituserp');;
+
+
+
 Route::get('/register', 'UserController@create_register');
 Route::post('/register', 'UserController@register')->name('register');
 Route::get('validar','ReservaController@validateReservation');
-/**permisos de administrador
-*/
+/**permisos de administrador*/
 Route::group(['middleware'=>['auth','admin']],function(){	
 	Route::get('/admin', 'HomeController@admin')->name('admin');
-	Route::get('/user', 'HomeController@user')->name('user');	
+	Route::get('/user', 'HomeController@user')->name('user');
 	Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
-
 	/**usuarios*/
 	Route::get('/indexuser', 'UserController@index')->name('indexuser');
 	Route::post('/destroyuser','UserController@desactive')->name('destroyuser');
@@ -46,7 +53,7 @@ Route::group(['middleware'=>['auth','admin']],function(){
 	Route::get('/registerclase', 'ClaseController@create_register');
 	Route::post('/registerclase', 'ClaseController@store')->name('registerclase');
 	Route::get('/indexclases', 'ClaseController@index')->name('indexclases');
-	Route::post('/usuarioactual', 'ClaseController@listarclaseusuario')->name('usuarioactual');
+	Route::get('/user/{id}', 'ClaseController@listarclaseusuario')->name('usuarioactual');
 	Route::post('/claseactual', 'ClaseController@listarusuarioclase')->name('claseactual');
 	Route::get('/modalclase', 'ClaseController@modalusers')->name('modalclase');
 	/**clase por usuario*/
@@ -80,14 +87,19 @@ Route::group(['middleware'=>['auth','admin']],function(){
 	Route::get('/listaclases', 'UserController@listaclases');
 	/****************************** */
 
-	/**Ajax inscribir usaurios desde clase*/
+	/**Ajax inscribir usuarios desde clase*/
+	Route::get('/deleteclassuser/{user_id}/{class_id}','ClaseController@deleteUserOfClass')->name('deleteclassuser');
+	Route::post('/change_user_status_activo', 'UserController@changeStatusActivo');
 	Route::post('/change_user_status', 'UserController@changeStatus');
 	Route::post('/subscribe_user', 'ClaseController@subscribeUser');
 	Route::post('/clase_reserva', 'ClaseController@reservarclase');
 
 });
-
-
+/**Rutas de instructor*/
+Route::group(['middleware'=>['auth','instructor']],function() {
+    Route::get('/instructor', 'HomeController@instructor')->name('instructor');
+    Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
+});
 /**rutas de usuario*/
 Route::group(['middleware'=>['auth','user']],function(){	
 	Route::get('/user', 'HomeController@user')->name('user');
@@ -95,12 +107,4 @@ Route::group(['middleware'=>['auth','user']],function(){
 	Route::get('/home', 'HomeController@index')->name('home');
 	
 });
-
-
-//Auth::routes();
-
-
-
-
-
 

@@ -94,22 +94,25 @@
 				@yield('content')
 			</article>
 		</section>
-		<footer class="page-footer">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Gimnasio virtual</h5>
-                <p class="grey-text text-lighten-4">Gimnasio virtual version de prueba</p>
-              </div>
-              </div>
-          </div>
-          <div class="footer-copyright">
-            <div class="container">
-            © 2019 Juan Pablo Acevedo Torres
-            <a class="grey-text text-lighten-4 right" href="http://www.ustatunja.edu.co">Universidad Santo Tomas Tunja</a>
-            </div>
-          </div>
-        </footer>
+	<footer class="container" id="footer">
+	<div class="container jpa-color-base" >
+		<div class="row jpa-color-base">
+			<div class="col l6 s12">
+				<h5 class="white-text">Gimnasio virtual</h5>
+				<p class="grey-text text-lighten-4">Gimnasio virtual version de prueba</p>
+				<p>Version 0.9.81 02-07-2019</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer-copyright">
+		<div class="container">
+			© 2019 Juan Pablo Acevedo Torres-Juan Sebastian Ulloa
+			<a class="grey-text text-lighten-4 right" href="http://www.ustatunja.edu.co">Universidad Santo Tomas Tunja</a>
+		</div>
+	</div>
+
+</footer>
 	<!--JQuery
 	<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

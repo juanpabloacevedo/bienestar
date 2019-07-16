@@ -24,12 +24,6 @@ class ReservaController extends Controller
         return view('admin.reservas')
         ->with('reservas',$reservas);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create(){
         $espacios=Espacio::all();
         $clases=Clase::all();
@@ -41,15 +35,21 @@ class ReservaController extends Controller
     }
     
     public function validateReservation(Reserva $reserva){
+        $periodo=Periodo::where('activo',true)->first();
         $actual=Carbon::now();
         $inicio=Carbon::parse($reserva->inicio);
-        //dd($reserva, $inicio, $actual,$inicio);
-        if($inicio>=$actual){
+        $inicioperiodo=Carbon::parse($periodo->inicio);
+        $finperiodo=Carbon::parse($periodo->fin);
+        if($inicio->gte($actual)){
+           if($inicio->gte($inicioperiodo) and $inicio->lte($finperiodo)){
             return true;
         }else{
+            dd('se totio esta mierda');
             return false;
         }
-    }
+    }else{
+        dd('no valida');
+    }}
 
     public function store(Request $request){
         /**datos obligatorios para el registro */

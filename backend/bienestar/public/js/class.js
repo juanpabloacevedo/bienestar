@@ -21,12 +21,23 @@ function add_user(user_id){
 		url: url_subscribe_user,
 		data: {'class_id':current_class, 'user_id':user_id, '_token': token},
 		dataType: "json",
+
 		success:function(data){
 			console.log(data);
-			alert('success');
+			Swal.fire(
+				'Usuario Agregado',
+				'',
+				'success'
+				)
 			document.getElementById('cupos_clase_'+current_class).innerHTML = data.cupos;
 		},
 		error:function(error){
+			Swal.fire({
+  type: 'error',
+  title: 'Oops...',
+  text: 'Algo salio mal'+error,
+  footer: '<a href>Why do I have this issue?</a>'
+})
 			console.log(error);
 		}
 	});

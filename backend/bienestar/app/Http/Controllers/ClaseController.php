@@ -1,15 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
+use Session;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Redirect;
 use App\EspacioDeportivo;
 use App\Espacio;
 use App\Periodo;
 use App\Clase;
 use App\User;
-use Session;
 
 class ClaseController extends Controller
 {
@@ -22,13 +24,19 @@ class ClaseController extends Controller
 	public function index(){
 		$espacios=Espacio::all();
 		$clases=Clase::all();
-		$users=User::where('activo',true)->get();
+		$users=User::where('sancionado',false)->where('activo',true)->where('id_rol','!=',1)->get();
 		return view('admin.clases')
 		->with('clases',$clases)
 		->with('espacios',$espacios)
 		->with('users',$users);
 	}
-
+	/**lista de clases del usuario logueado*/
+	public function listClass(){
+		$espacios=Espacio::all();
+		$clases=Clase::all();
+		$user=Auth::user();
+		dd($user->id);
+	}
 
 	public function store(Request $request){
 		/**datos obligatorios para el registro */
@@ -63,7 +71,7 @@ class ClaseController extends Controller
 		$errors=Session::get('errors');
 		$espaciosdeportivos= EspacioDeportivo::all();
 		$periodos=Periodo::where("activo","=",1)->get();
-		$users = User::where('id_rol',2)
+		$users = User::where('id_rol','!=',1)
 		->where('sancionado',false)
 		->where('activo',true)
 		->get();
@@ -76,10 +84,10 @@ class ClaseController extends Controller
 	
 	/*recibe la id de usuario y envia la lista de clases inscritas por ese usuario*/
 	public function listarclaseusuario(Request $request){
-		$iduser=$request->iduser;
+		$iduser=$request->id;
 		$user=User::find($iduser);
 		$clases=Clase::Join('clase_usuarios', 'clases.id', '=', 'clase_usuarios.id_clase')
-   		->where('clase_usuarios.id_user', '=',$iduser)->get();
+		->where('clase_usuarios.id_user', '=',$iduser)->get();
 		return view('admin.clasesinscritas')
 		->with('user',$user)
 		->with('clases',$clases);
@@ -89,21 +97,46 @@ class ClaseController extends Controller
 		$idclase=$request->idclase;
 		$clase=Clase::find($idclase);
 		$users=User::Join('clase_usuarios','users.id','=','clase_usuarios.id_user')
-   		->where('clase_usuarios.id_clase', '=',$idclase)->get();
+		->where('clase_usuarios.id_clase', '=',$idclase)->get();
 		return view('admin.usuariosinscritos')
 		->with('users',$users)
 		->with('clase',$clase);
 	}
 
-
 	public function subscribeUser(Request $request){
 		$clase = Clase::find($request->class_id);
-		$clase->users()->attach($request->user_id);
-		$clase->cupos = $clase->cupos-1;
-		$clase->save();
+		if($clase->users()->where('users.id',$request->user_id)->count()===0){
+			$clase->users()->attach($request->user_id);
+			$clase->cupos = $clase->cupos-1;
+			$clase->save();
+		}else{
+			$clase->users()->detach($request->user_id);
+			$clase->cupos = $clase->cupos+1;
+			$clase->save();
+		}
 		return response()->json($clase, 200);
 	}
 
+	public function deleteUserOfClass(Request $request){
+		$clase = Clase::find($request->class_id);
+		if ($clase) {
+			$clase->users()->detach($request->user_id);
+			$clase->cupos = $clase->cupos+1;
+			$clase->save();
+			$iduser=$request->user_id;
+			$user=User::find($iduser);
+			$clases=Clase::Join('clase_usuarios', 'clases.id', '=', 'clase_usuarios.id_clase')
+			->where('clase_usuarios.id_user', '=',$iduser)->get();
+			if($clases->count() > 0) 
+				return view('admin.clasesinscritas')
+			->with('user',$user)
+			->with('clases',$clases);
+			else
+				return redirect()->route('indexuser');
+		}else{
+			return Redirect::back();
+		}
+	}
 
 	public function reservarclase(Request $request){
 		$reserva= Clase::find($request->class_id);
@@ -127,6 +160,35 @@ class ClaseController extends Controller
 		->with('user', $user)
 		->with('errors', $errors);
 	}
+	/**controladores de usuario*/
 
-	
+	/**lista todas las clases y retorna el usuario actual*/
+	public function clases(){
+		$espacios=Espacio::all();
+		$clases=Clase::all();
+		$user=Auth::user();
+		return view('profesor.clasesAdmin')
+		->with('clases',$clases)
+		->with('user', $user)
+		->with('errors', $errors);
+	}
+	/**lista todas las clases inscritas por el usuario actual */
+	public function claseusuario(){
+		$user=Auth::user();
+		$clases=Clase::Join('clase_usuarios', 'clases.id', '=', 'clase_usuarios.id_clase')
+		->where('clase_usuarios.id_user', '=',$user->id)->get();
+		return view('admin.clasesinscritas')
+		->with('user',$user)
+		->with('clases',$clases);
+	}
+
+	function changeStatus(Request $request){
+		$user = User::find($request->user_id);
+		$user->sancionado = !$user->sancionado;
+		$user->save();
+		return response()->json($user);
+	}
+	/**AJAX*/
+
 }
+
